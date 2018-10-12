@@ -8,7 +8,7 @@
 package citbyui.cit260.cityofaaron.model;
 
 import java.io.Serializable;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Objects;
 /**
  *
@@ -34,11 +34,10 @@ public class Scoreboard implements Serializable {
     
     @Override
     public String toString() {
-        return "Scoreboard{" + "score=" + score + '}';
+        return "Scoreboard{" + "score = " + score + '}';
     }
     
     
-
     @Override
     public int hashCode() {
         int hash = 7;
@@ -63,9 +62,4 @@ public class Scoreboard implements Serializable {
         }
         return true;
     }
-
-    public void setScoreboard(String nextLine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
