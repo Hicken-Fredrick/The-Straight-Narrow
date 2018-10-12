@@ -33,7 +33,7 @@ public class CityOfAaron {
         */
         
         //sample calls InventoryItem + Condition + ItemType
-        /*
+        
         InventoryItem item = new InventoryItem();
        
         System.out.println("Enter the item name: ");
@@ -45,16 +45,16 @@ public class CityOfAaron {
         System.out.println("Enter the item Age: ");
         item.setAge(scanner.nextInt());
         
-        System.out.println("Enter if item is perishable: " + "\n");
+        System.out.println("Enter if item is perishable: ");
         item.setPerishable(scanner.nextBoolean());
         
-        System.out.println(item.getName());
+        System.out.println("\n" + item.getName());
         System.out.println(item.getItemType());
         System.out.println(item.getCondition());
         System.out.println(item.getQuantity());
         System.out.println(item.getAge());
         System.out.println(item.isPerishable());
-        */
+        
         
         //sample calls **
         

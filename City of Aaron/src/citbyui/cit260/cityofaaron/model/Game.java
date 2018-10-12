@@ -5,10 +5,12 @@
  */
 package citbyui.cit260.cityofaaron.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Meroko
  */
-public class Game {
+public class Game implements Serializable {
     
 }
