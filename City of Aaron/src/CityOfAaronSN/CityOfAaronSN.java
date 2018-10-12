@@ -60,7 +60,11 @@ public class CityOfAaronSN {
         author.setAuthor(scanner.nextLine());
         System.out.println("\n" + author.getAuthor());
         
-        
+        Scoreboard scoreboard;
+        scoreboard = new Scoreboard();
+        System.out.println("Enter the score: ");
+        scoreboard.setScoreboard(scanner.nextLine());
+        System.out.println("\n" + scoreboard + scoreboard.getScore());
     }
             
     public static void testTaylorClasses() {
