@@ -29,11 +29,11 @@ public class CityOfAaron {
         System.out.println("Enter a name: ");
         player.setName(scanner.nextLine());
         
-        System.out.println(player.getName() + "\n");
+        System.out.println("\n" + player.getName());
         */
         
         //sample calls InventoryItem + Condition + ItemType
-        
+        /*
         InventoryItem item = new InventoryItem();
        
         System.out.println("Enter the item name: ");
@@ -54,7 +54,7 @@ public class CityOfAaron {
         System.out.println(item.getQuantity());
         System.out.println(item.getAge());
         System.out.println(item.isPerishable());
-        
+        */
         
         //sample calls **
         

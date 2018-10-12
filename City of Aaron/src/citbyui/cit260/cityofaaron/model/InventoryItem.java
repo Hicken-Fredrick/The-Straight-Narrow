@@ -81,7 +81,8 @@ public class InventoryItem implements Serializable {
     public void setPerishable(boolean perishable) {
         this.perishable = perishable;
     }
-
+    
+    //hash, equal, and toString
     @Override
     public int hashCode() {
         int hash = 7;
