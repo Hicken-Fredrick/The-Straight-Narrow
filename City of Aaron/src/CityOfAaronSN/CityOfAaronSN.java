@@ -94,7 +94,7 @@ public class CityOfAaronSN {
     
     public static void main(String[] args) {
         //testTeamClasses();
-        testFredClasses();
+        //testFredClasses();
         //testEdgarClasses();
         //testTaylorClasses();
     }
