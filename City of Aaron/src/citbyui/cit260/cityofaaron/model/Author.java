@@ -5,7 +5,7 @@
  * Team: Straight And Narrow
  * Fred, Taylor & Edgar
  ********************************************/
-
+package citbyui.cit260.cityofaaron.model;
 /**
  *
  * @author Team4
@@ -19,12 +19,16 @@ public class Author implements Serializable {
 //String for Author Name
     private String author;
 
-    public Author(String author) {
-        this.author = author;
+    public Author() {
     }
 
+   
     public String getAuthor() {
         return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     @Override
@@ -52,4 +56,11 @@ public class Author implements Serializable {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Author{" + "author=" + author + '}';
+    }
+   
+    
 }

@@ -55,6 +55,11 @@ public class CityOfAaronSN {
     }
             
     public static void testEdgarClasses() {
+        Author author = new Author();
+        System.out.println("Enter the item name: ");
+        author.setAuthor(scanner.nextLine());
+        System.out.println("\n" + author.getAuthor());
+        
         
     }
             
@@ -65,7 +70,7 @@ public class CityOfAaronSN {
     public static void main(String[] args) {
         //testTeamClasses();
         //testFredClasses();
-        //testEdgarClasses();
+        testEdgarClasses();
         //testTaylorClasses();
     }
     
