@@ -46,19 +46,10 @@ public class Author implements Serializable {
             return false;
         }
         final Author other = (Author) obj;
-        if (!Objects.equals(this.author, other.author)) {
+        if (Objects.equals(this.author, other.author)) {
+        } else {
             return false;
         }
         return true;
-    }
-
-    
-    
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Author() {
-         name = "Aaron";
     }
 }
