@@ -28,12 +28,13 @@ public class InventoryItem implements Serializable {
     private boolean perishable;
     
     //public instances
-
+    //Constructors
     public InventoryItem() {
         itemType = itemType.Tool;
         condition = condition.Good;
     }
     
+    //Getters / Setters
     public String getName() {
         return name;
     }
