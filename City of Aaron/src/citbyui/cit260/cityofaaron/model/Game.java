@@ -29,7 +29,7 @@ public class Game implements Serializable {
     //contains player name and current score
     private ScoreBoard score;
     
-    //public instances
+    //public instances GETTERS/SETTERS
 
     public Player getThePlayer() {
         return thePlayer;

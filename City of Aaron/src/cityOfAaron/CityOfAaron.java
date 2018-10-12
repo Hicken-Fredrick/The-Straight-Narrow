@@ -9,6 +9,7 @@ import java.util.Scanner;
 //Imports
 import citbyui.cit260.cityofaaron.model.Player;
 import citbyui.cit260.cityofaaron.model.InventoryItem;
+import citbyui.cit260.cityofaaron.model.Game;
 
 /**
  *
