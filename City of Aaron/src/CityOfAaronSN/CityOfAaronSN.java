@@ -3,38 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cityOfAaron;
+package CityOfAaronSN;
 import java.util.Scanner;
 
 //Imports
-import citbyui.cit260.cityofaaron.model.Player;
-import citbyui.cit260.cityofaaron.model.InventoryItem;
-import citbyui.cit260.cityofaaron.model.Game;
+import citbyui.cit260.cityofaaron.model.*;
 
 /**
  *
  * @author Meroko
  */
-public class CityOfAaron {
+public class CityOfAaronSN {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner( System.in );
+    public static Scanner scanner = new Scanner( System.in );
+    
+    public static void testTeamClasses() {
         
-        //sample calls PLAYER
-        /*
         Player player = new Player();
         
         System.out.println("Enter a name: ");
         player.setName(scanner.nextLine());
         
         System.out.println("\n" + player.getName());
-        */
+    }
+    
+    public static void testFredClasses() {
         
-        //sample calls InventoryItem + Condition + ItemType
-        /*
         InventoryItem item = new InventoryItem();
        
         System.out.println("Enter the item name: ");
@@ -55,10 +52,21 @@ public class CityOfAaron {
         System.out.println(item.getQuantity());
         System.out.println(item.getAge());
         System.out.println(item.isPerishable());
-        */
+    }
+            
+    public static void testEdgarClasses() {
         
-        //sample calls **
+    }
+            
+    public static void testTaylorClasses() {
         
+    }
+    
+    public static void main(String[] args) {
+        //testTeamClasses();
+        //testFredClasses();
+        //testEdgarClasses();
+        //testTaylorClasses();
     }
     
 }

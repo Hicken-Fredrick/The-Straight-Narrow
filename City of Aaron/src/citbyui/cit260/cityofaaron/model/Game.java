@@ -30,7 +30,7 @@ public class Game implements Serializable {
     private ScoreBoard score;
     
     //public instances GETTERS/SETTERS
-
+    
     public Player getThePlayer() {
         return thePlayer;
     }
