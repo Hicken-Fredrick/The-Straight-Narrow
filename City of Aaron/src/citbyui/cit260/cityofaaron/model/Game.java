@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Meroko
+ * @author Group Work
  */
 public class Game implements Serializable {
     //Private instances
@@ -27,7 +27,7 @@ public class Game implements Serializable {
     //current wheat stored for use
     private int wheatinStorage;
     //contains player name and current score
-    private ScoreBoard score;
+    private Scoreboard score;
     
     //public instances GETTERS/SETTERS
     

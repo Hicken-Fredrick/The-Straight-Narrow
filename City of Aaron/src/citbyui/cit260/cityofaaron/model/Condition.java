@@ -7,7 +7,7 @@ package citbyui.cit260.cityofaaron.model;
 
 /**
  *
- * @author Meroko
+ * @author Fred Hicken
  * standard enum for conditions used in InventoryItem
  */
 public enum Condition {

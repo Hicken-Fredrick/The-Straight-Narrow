@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Meroko
+ * @author Fred Hicken
  */
 public class InventoryItem implements Serializable {
     //private instances
