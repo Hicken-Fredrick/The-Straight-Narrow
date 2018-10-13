@@ -56,7 +56,7 @@ public class CityOfAaronSN {
         //Question Test case
         Question question = new Question();
         //setting
-        question.setQuestionText("What is the first line in the book of mormon?");
+        question.setQuestionText("What is the first line in the book of mormon?" + "\n");
         question.setAnswerOne("1. I, Nephi, having been born of goodly parents");
         question.setAnswerTwo("2. My father dwelt in a tent");
         question.setAnswerThree("3. And as he entered the city he was an hungered");
