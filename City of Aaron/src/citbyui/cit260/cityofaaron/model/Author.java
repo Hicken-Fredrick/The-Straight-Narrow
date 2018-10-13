@@ -8,7 +8,7 @@
 package citbyui.cit260.cityofaaron.model;
 /**
  *
- * @author Team4
+ * @author Meroko and friends
  */
 
 import java.io.Serializable;
