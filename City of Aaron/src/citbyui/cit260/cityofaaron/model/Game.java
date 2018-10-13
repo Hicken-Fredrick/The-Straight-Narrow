@@ -79,11 +79,11 @@ public class Game implements Serializable {
         this.wheatinStorage = wheatinStorage;
     }
 
-    public ScoreBoard getScore() {
+    public Scoreboard getScore() {
         return score;
     }
 
-    public void setScore(ScoreBoard score) {
+    public void setScore(Scoreboard score) {
         this.score = score;
     }
     
