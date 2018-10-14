@@ -53,6 +53,18 @@ public class CityOfAaronSN {
         System.out.println(item.getAge());
         System.out.println(item.isPerishable());
         
+        /*
+        InventoryItem item = new InventoryItem();
+        item.setName("Shovel");
+        item.setAge(1);
+        item.setQuantity(1);
+        item.setPerishable(false);
+        item.setCondition(Condition.Good);
+        item.setItemType(ItemType.Tool);
+        
+        System.out.println(item.toString());
+        */
+        
         //Question Test case
         Question question = new Question();
         //setting
@@ -94,7 +106,7 @@ public class CityOfAaronSN {
     
     public static void main(String[] args) {
         //testTeamClasses();
-        //testFredClasses();
+        testFredClasses();
         //testEdgarClasses();
         //testTaylorClasses();
     }
