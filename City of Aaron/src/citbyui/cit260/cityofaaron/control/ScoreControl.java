@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.cityofaaron.control;
+package citbyui.cit260.cityofaaron.control;
 
 /**
  *
@@ -34,6 +34,7 @@ public class ScoreControl {
         //calculate score
         score = year * ((population * 2) + (wheat * 1) + (acres * 20));
         
+        //return score
         return score;
     }
     

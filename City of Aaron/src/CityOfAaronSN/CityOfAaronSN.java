@@ -8,10 +8,11 @@ import java.util.Scanner;
 
 //Imports
 import citbyui.cit260.cityofaaron.model.*;
+import citbyui.cit260.cityofaaron.control.*;
 
 /**
  *
- * @author Meroko
+ * @author Group
  */
 public class CityOfAaronSN {
 
@@ -21,13 +22,15 @@ public class CityOfAaronSN {
     public static Scanner scanner = new Scanner( System.in );
     
     public static void testTeamClasses() {
-        
+        /*
         Player player = new Player();
         
         System.out.println("Enter a name: ");
         player.setName(scanner.nextLine());
         
         System.out.println("\n" + player.getName());
+        */
+        
     }
     
     public static void testFredClasses() {
@@ -106,7 +109,7 @@ public class CityOfAaronSN {
     
     public static void main(String[] args) {
         //testTeamClasses();
-        testFredClasses();
+        //testFredClasses();
         //testEdgarClasses();
         //testTaylorClasses();
     }
