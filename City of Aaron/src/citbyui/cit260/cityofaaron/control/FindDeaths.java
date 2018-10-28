@@ -30,11 +30,10 @@ public class FindDeaths {
 	return -1;
         
         //calculate deaths
-        deaths = (population *(2 + (year / 10)))-wheat;
-        
+        deaths = (population *(2 + (year / 10))) - wheat;
         
         //return deaths
-        return deaths /2;
+        return deaths / 2;
     }
     
     
