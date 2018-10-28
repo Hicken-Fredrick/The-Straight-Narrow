@@ -19,6 +19,7 @@ public class Scene implements Serializable {
     private InventoryItem item;
 
     public Scene() {
+        name = "City of Aaron";
     }
     
     
