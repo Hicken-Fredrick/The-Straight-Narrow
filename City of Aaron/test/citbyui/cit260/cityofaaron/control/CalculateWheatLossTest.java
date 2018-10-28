@@ -84,9 +84,9 @@ public class CalculateWheatLossTest {
         
         //test seven - valid - fixed with using double for calc
         System.out.println("calcWheatLoss");
-        tithing = 115;
+        tithing = 125;
         wheat = 1000;
-        expResult = 996;
+        expResult = 1000;
         result = CalculateWheatLoss.calcWheatLoss(tithing, wheat);
         assertEquals(expResult, result);
         System.out.println(result + " " + expResult);
