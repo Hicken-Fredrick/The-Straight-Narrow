@@ -21,22 +21,29 @@ public class CalculateWheatLoss {
             return 0;
         
         //create variables for calulations
-        int tithingPercent = 0;
+        double tithingPercent = 0;
         int vermin = 0;
         
         //find tithing percent
-        tithingPercent  = (tithing / wheat) * 100;
+        tithingPercent  = tithing;
+        tithingPercent /= wheat;
+        tithingPercent *= 100;
         
-        //create vermin
-        if (tithingPercent >= 12)
+        /*create vermin
+        Above 12%	0 vermin
+        8% - 12%	2 vermin
+        Below 8%	5 vermin
+        */
+        if (tithingPercent > 12) {
             vermin = 0;
-        if (tithingPercent < 12)
+        } else if (tithingPercent <= 12 && tithingPercent > 7) {
             vermin = 2;
-        if (tithingPercent < 8)
+        } else if (tithingPercent <= 7){
             vermin = 5;
+        }
         
         //subtract loss from wheat
-        wheat -= vermin * 2;
+        wheat -= (vermin * 2);
         
         //check if wheat is negative
         if (wheat < 0) 
