@@ -9,17 +9,38 @@ import java.util.Scanner;
 //Imports
 import citbyui.cit260.cityofaaron.model.*;
 import citbyui.cit260.cityofaaron.control.*;
+import citbyui.cit260.cityofaaron.view.*;
 
 /**
  *
  * @author Group
  */
 public class CityOfAaronSN {
-
     /**
      * @param args the command line arguments
      */
     public static Scanner scanner = new Scanner( System.in );
+    
+    //statics for game / player
+    private static Game currentGame= null;
+    private static Player player = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        CityOfAaronSN.currentGame = currentGame;
+    }
+
+    public static Player getThePlayer() {
+        return player;
+    }
+
+    public static void setThePlayer(Player player) {
+        CityOfAaronSN.player = player;
+    }
+    
     
     public static void testTeamClasses() {
         /*
@@ -31,6 +52,11 @@ public class CityOfAaronSN {
         System.out.println("\n" + player.getName());
         */
         
+    }
+    
+    private static void testTecmClassesView() {
+        //program creation
+        StartProgramView program = new StartProgramView();
     }
     
     public static void testFredClasses() {
@@ -109,9 +135,12 @@ public class CityOfAaronSN {
     
     public static void main(String[] args) {
         //testTeamClasses();
+        testTecmClassesView();
+        
         //testFredClasses();
         //testEdgarClasses();
         //testTaylorClasses();
     }
+
     
 }
