@@ -18,6 +18,10 @@ public class StartProgramView {
     public static Scanner scanner = new Scanner( System.in );
     
     public StartProgramView() {   
+    }
+    
+    public void displayStartProgramView() {
+        
         boolean endOfView = false;
         
         do {
@@ -32,15 +36,11 @@ public class StartProgramView {
         
     }
     
-    public void displayStartProgramView() {
-        
-        
-    }
-    
     public boolean doAction(String inputs[]) {
         System.out.println("**** GetActions() Called ****");
         
-        Player player = SavePlayer.savePlayer(inputs[0]);
+        String playerName = inputs[0];
+        Player player = SavePlayer.savePlayer(playerName);
         
         if (player == null) {
             System.out.println("Failed to create player. " +
@@ -50,9 +50,9 @@ public class StartProgramView {
         }
         
         System.out.println("==================================="
-        + "Welcome to the game " + inputs[0]
-        + "We hope you have a lot of fun!"
-        + "===================================");
+        + "\nWelcome to the game " + playerName
+        + "\nWe hope you have lots of fun!"
+        + "\n===================================");
         
         CityOfAaronSN.setThePlayer(player);
         

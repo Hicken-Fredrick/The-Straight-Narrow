@@ -57,6 +57,7 @@ public class CityOfAaronSN {
     private static void testTecmClassesView() {
         //program creation
         StartProgramView program = new StartProgramView();
+        program.displayStartProgramView();
     }
     
     public static void testFredClasses() {
