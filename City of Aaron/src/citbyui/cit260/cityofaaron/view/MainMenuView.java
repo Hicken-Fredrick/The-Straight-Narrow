@@ -121,11 +121,19 @@ public class MainMenuView {
     }
     
     private void loadGame() {
+        System.out.println("**** loadGame() Called ****");
         
+        //call start existing game view
+        StartExistingGameView startExistingGameView = new StartExistingGameView();
+        startExistingGameView.displayStartExistingGameView();
     }
     
     private void getHelp() {
+        System.out.println("**** getHelp() Called ****");
         
+        //call help menu view
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.displayHelpMenuView();
     }
     
 }
