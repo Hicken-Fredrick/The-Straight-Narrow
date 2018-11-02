@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.cityofaaron.view;
 
+import CityOfAaronSN.CityOfAaronSN;
+import citbyui.cit260.cityofaaron.control.GameControl;
 import java.util.Scanner;
 /**
  *
@@ -19,7 +21,29 @@ public class MainMenuView {
     }
 
     void displayMainMenuView() {
+        //set variables
+        boolean endOfView = false;
+        String[] inputs = new String[1];
         
+        //menu infographic
+        System.out.println( "\n" + 
+               "*********************************\n" + 
+               "*   CITY OF AARON : MAIN MENU   *\n" +
+               "*********************************\n" +
+               " N - Start New Game\n" +
+               " L - Restart The Game\n" +
+               " H - Get Help on Playing the Game\n" + 
+               " S - Save Game\n" + 
+               " Q - Quit\n"
+        );
+        
+        //loop for game sequence
+        do {
+            inputs = getInputs();
+            
+            
+            endOfView = this.doAction(inputs);
+        } while(endOfView != true);
     }
     
     private String[] getInputs() {
@@ -32,8 +56,8 @@ public class MainMenuView {
         //gather input and check validity before setting escape to true
         while (valid == false) {
             //prompt / input
-            System.out.println("Please Enter a Name (Caps Included) : ");
-            inputs[0]=(scanner.nextLine());
+            System.out.println("Please Enter Your Choice : ");
+            inputs[0] = (scanner.nextLine());
             inputs[0] = inputs[0].trim();
             
             //validate
@@ -48,8 +72,56 @@ public class MainMenuView {
     
     public boolean doAction(String inputs[]) {
         System.out.println("**** GetActions() Called ****");
+        String choice = inputs[0];
         
+        switch (choice.toLowerCase()) {
+            //call new game
+            case "n":{
+                startNewGame();
+                break;
+            }
+            //call restart for current game    
+            case "l":{
+                loadGame();
+                break;
+            }
+            //call help menu       
+            case "h":{
+                getHelp();
+                break;
+            }
+            //save the game    
+            case "s":{
+                
+                break;
+            }
+            //quit out of game    
+            case "q":
+                return true;
+            //unknown menu item choice
+            default:{
+                System.out.println("Unknown Menu Choice Please Try Again");
+                return false;
+            }
+            
+        }
+            
         
         return true;
     }
+    
+    private void startNewGame() {
+        System.out.println("**** startNewGame() Called ****");
+        
+        GameControl.creatNewGame(CityOfAaronSN.getThePlayer());
+    }
+    
+    private void loadGame() {
+        
+    }
+    
+    private void getHelp() {
+        
+    }
+    
 }

@@ -73,7 +73,7 @@ public class StartProgramView {
         while (valid == false) {
             //prompt / input
             System.out.println("Please Enter a Name (Caps Included) : ");
-            inputs[0]=(scanner.nextLine());
+            inputs[0] = (scanner.nextLine());
             inputs[0] = inputs[0].trim();
             
             //validate
