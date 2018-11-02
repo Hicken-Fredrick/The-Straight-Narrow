@@ -39,11 +39,9 @@ public class MainMenuView {
         
         //loop for game sequence
         do {
+            //gather input
             inputs = getInputs();
-            
-            if (inputs == null || "q".equals(inputs[0].toLowerCase()))
-                return;
-            
+            //use inputs to determine action
             endOfView = this.doAction(inputs);
         } while(endOfView != true);
     }
@@ -64,7 +62,7 @@ public class MainMenuView {
             
             //validate
             if (inputs[0].length() != 1) 
-                System.out.println("You must a valid option");
+                System.out.println("You must choose a valid option");
             else
                 valid = true;
         }

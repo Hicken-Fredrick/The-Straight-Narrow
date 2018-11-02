@@ -19,6 +19,11 @@ class HelpMenuView {
 
     void displayHelpMenuView() {
         System.out.println("**** getHelp() Called ****");
+        //set variables
+        boolean endOfView = false;
+        String[] inputs = new String[1];
+        
+        //menu infographic
         System.out.println(
                "*********************************\n" + 
                "*   CITY OF AARON : MAIN MENU   *\n" +
@@ -29,20 +34,14 @@ class HelpMenuView {
                " S - Scoring Details\n" +
                " R - Reports Menu Details\n" + 
                " T - Tithing Info\n" + 
-               " Q - Quit\n"
+               " Q - Quit"
             );
-        //set variables
-        boolean endOfView = false;
-        String[] inputs = new String[1];
-        
-        //menu infographic
-        
         
         //loop for game sequence
         do {
+            //gather input
             inputs = getInputs();
-            
-            
+            //use input to determine action
             endOfView = this.doAction(inputs);
         } while(endOfView != true);
     }
@@ -50,7 +49,6 @@ class HelpMenuView {
         private String[] getInputs() {
         System.out.println("**** getInputs() Called ****");
         String[] inputs = new String[1];
-        
         //loop escape boolean
         boolean valid = false;
         
@@ -64,7 +62,7 @@ class HelpMenuView {
             
             //validate
             if (inputs[0].length() != 1) {
-                System.out.println("You must a valid option");
+                System.out.println("You must choose a valid option");
                 System.out.println(
                "*********************************\n" + 
                "*   CITY OF AARON : MAIN MENU   *\n" +
@@ -75,7 +73,7 @@ class HelpMenuView {
                " S - Scoring Details\n" +
                " R - Reports Menu Details\n" + 
                " T - Tithing Info\n" + 
-               " Q - Quit\n");
+               " Q - Quit");
             }
             else
                 valid = true;
