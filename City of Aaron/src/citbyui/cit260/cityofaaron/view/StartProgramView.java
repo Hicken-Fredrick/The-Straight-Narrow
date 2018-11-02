@@ -37,7 +37,7 @@ public class StartProgramView {
     }
     
     public boolean doAction(String inputs[]) {
-        System.out.println("**** GetActions() Called ****");
+        System.out.println("**** getActions() Called ****");
         
         String playerName = inputs[0];
         Player player = SavePlayer.savePlayer(playerName);
@@ -63,7 +63,7 @@ public class StartProgramView {
     }
 
     private String[] getInputs() {
-        System.out.println("**** GetInputs() Called ****");
+        System.out.println("**** getInputs() Called ****");
         String[] inputs = new String[1];
         
         //loop escape boolean

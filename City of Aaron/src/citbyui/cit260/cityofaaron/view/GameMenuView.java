@@ -10,5 +10,12 @@ package citbyui.cit260.cityofaaron.view;
  * @author Meroko
  */
 public class GameMenuView {
+
+    public GameMenuView() {
+    }
+
+    void displayMainMenuView() {
+        System.out.println("**** displayMainMenuView() Called ****");
+    }
     
 }
