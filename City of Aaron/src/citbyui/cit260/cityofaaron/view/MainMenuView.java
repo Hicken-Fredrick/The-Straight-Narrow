@@ -25,20 +25,20 @@ public class MainMenuView {
         boolean endOfView = false;
         String[] inputs = new String[1];
         
-        //menu infographic
-        System.out.println( "\n" + 
-               "*********************************\n" + 
-               "*   CITY OF AARON : MAIN MENU   *\n" +
-               "*********************************\n" +
-               " N - Start New Game\n" +
-               " L - Restart The Game\n" +
-               " H - Get Help on Playing the Game\n" + 
-               " S - Save Game\n" + 
-               " Q - Quit\n"
-        );
         
         //loop for game sequence
         do {
+            //menu infographic
+            System.out.println( "\n" + 
+                "*********************************\n" + 
+                "*   CITY OF AARON : MAIN MENU   *\n" +
+                "*********************************\n" +
+                " N - Start New Game\n" +
+                " L - Restart The Game\n" +
+                " H - Get Help on Playing the Game\n" + 
+                " S - Save Game\n" + 
+                " Q - Quit\n"
+            );
             //gather input
             inputs = getInputs();
             //use inputs to determine action
@@ -61,8 +61,18 @@ public class MainMenuView {
             inputs[0] = inputs[0].trim();
             
             //validate
-            if (inputs[0].length() != 1) 
+            if (inputs[0].length() != 1) {
                 System.out.println("You must choose a valid option");
+                System.out.println( "\n" + 
+               "*********************************\n" + 
+               "*   CITY OF AARON : MAIN MENU   *\n" +
+               "*********************************\n" +
+               " N - Start New Game\n" +
+               " L - Restart The Game\n" +
+               " H - Get Help on Playing the Game\n" + 
+               " S - Save Game\n" + 
+               " Q - Quit\n");
+            }
             else
                 valid = true;
         }
@@ -78,22 +88,22 @@ public class MainMenuView {
             //call new game
             case "n":{
                 startNewGame();
-                break;
+                return true;
             }
             //call restart for current game    
             case "l":{
                 loadGame();
-                break;
+                return true;
             }
             //call help menu       
             case "h":{
                 getHelp();
-                break;
+                return false;
             }
             //save the game    
             case "s":{
                 
-                break;
+                return true;
             }
             //quit out of game    
             case "q":
@@ -106,8 +116,6 @@ public class MainMenuView {
             
         }
             
-        
-        return true;
     }
     
     private void startNewGame() {
