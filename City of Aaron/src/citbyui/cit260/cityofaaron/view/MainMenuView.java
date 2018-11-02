@@ -41,6 +41,8 @@ public class MainMenuView {
         do {
             inputs = getInputs();
             
+            if (inputs == null || "q".equals(inputs[0].toLowerCase()))
+                return;
             
             endOfView = this.doAction(inputs);
         } while(endOfView != true);
