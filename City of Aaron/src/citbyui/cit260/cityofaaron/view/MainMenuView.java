@@ -88,12 +88,12 @@ public class MainMenuView {
             //call new game
             case "n":{
                 startNewGame();
-                return true;
+                return false;
             }
             //call restart for current game    
             case "l":{
                 loadGame();
-                return true;
+                return false;
             }
             //call help menu       
             case "h":{
@@ -103,7 +103,7 @@ public class MainMenuView {
             //save the game    
             case "s":{
                 
-                return true;
+                return false;
             }
             //quit out of game    
             case "q":
