@@ -47,7 +47,6 @@ public class MainMenuView {
     }
     
     private String[] getInputs() {
-        System.out.println("**** getInputs() Called ****");
         String[] inputs = new String[1];
         
         //loop escape boolean
@@ -81,7 +80,6 @@ public class MainMenuView {
     }
     
     public boolean doAction(String inputs[]) {
-        System.out.println("**** getActions() Called ****");
         String choice = inputs[0];
         
         switch (choice.toLowerCase()) {
@@ -119,7 +117,6 @@ public class MainMenuView {
     }
     
     private void startNewGame() {
-        System.out.println("**** startNewGame() Called ****");
         //create game and push previously made player
         GameControl.creatNewGame(CityOfAaronSN.getThePlayer());
         
@@ -129,7 +126,6 @@ public class MainMenuView {
     }
     
     private void loadGame() {
-        System.out.println("**** loadGame() Called ****");
         
         //call start existing game view
         StartExistingGameView startExistingGameView = new StartExistingGameView();
@@ -137,7 +133,6 @@ public class MainMenuView {
     }
     
     private void getHelp() {
-        System.out.println("**** getHelp() Called ****");
         
         //call help menu view
         HelpMenuView helpMenuView = new HelpMenuView();

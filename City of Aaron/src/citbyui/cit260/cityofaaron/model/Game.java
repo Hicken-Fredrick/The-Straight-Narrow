@@ -24,8 +24,13 @@ public class Game implements Serializable {
     private int currentPopulation;
     //current land owned by player
     private int acresOwned;
+    //current acres planted
+    private int acresPlanted;
     //current wheat stored for use
     private int wheatinStorage;
+    //tithing payed this year
+    private int tithingPayed;
+    
     //contains player name and current score
     private Scoreboard score;
     
@@ -69,6 +74,22 @@ public class Game implements Serializable {
 
     public void setAcresOwned(int acresOwned) {
         this.acresOwned = acresOwned;
+    }
+
+    public int getAcresPlanted() {
+        return acresPlanted;
+    }
+
+    public void setAcresPlanted(int acresPlanted) {
+        this.acresPlanted = acresPlanted;
+    }
+
+    public int getTithingPayed() {
+        return tithingPayed;
+    }
+
+    public void setTithingPayed(int tithingPayed) {
+        this.tithingPayed = tithingPayed;
     }
 
     public int getWheatinStorage() {

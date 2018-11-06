@@ -18,7 +18,6 @@ class HelpMenuView {
     }
 
     void displayHelpMenuView() {
-        System.out.println("**** getHelp() Called ****");
         //set variables
         boolean endOfView = false;
         String[] inputs = new String[1];
@@ -34,7 +33,7 @@ class HelpMenuView {
                " S - Scoring Details\n" +
                " R - Reports Menu Details\n" + 
                " T - Tithing Info\n" + 
-               " Q - Quit"
+               " Q - Quit\n"
             );
         
         //loop for game sequence
@@ -47,7 +46,6 @@ class HelpMenuView {
     }
     
         private String[] getInputs() {
-        System.out.println("**** getInputs() Called ****");
         String[] inputs = new String[1];
         //loop escape boolean
         boolean valid = false;
@@ -55,15 +53,7 @@ class HelpMenuView {
         //gather input and check validity before setting escape to true
         while (valid == false) {
             //prompt / input
-            
-            System.out.println("Please Enter Your Choice : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() != 1) {
-                System.out.println("You must choose a valid option");
-                System.out.println(
+            System.out.println(
                "*********************************\n" + 
                "*   CITY OF AARON : MAIN MENU   *\n" +
                "*********************************\n" +
@@ -73,7 +63,16 @@ class HelpMenuView {
                " S - Scoring Details\n" +
                " R - Reports Menu Details\n" + 
                " T - Tithing Info\n" + 
-               " Q - Quit");
+               " Q - Quit\n");
+            System.out.println("Please Enter Your Choice : ");
+            inputs[0] = (scanner.nextLine());
+            inputs[0] = inputs[0].trim();
+            
+            
+            //validate
+            if (inputs[0].length() != 1) {
+                System.out.println("You must choose a valid option\n");
+                
             }
             else
                 valid = true;
@@ -83,7 +82,6 @@ class HelpMenuView {
     }
     
     public boolean doAction(String inputs[]) {
-        System.out.println("**** getActions() Called ****");
         String choice = inputs[0];
         
         switch (choice.toLowerCase()) {
