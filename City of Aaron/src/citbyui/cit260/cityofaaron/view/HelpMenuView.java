@@ -40,7 +40,7 @@ class HelpMenuView {
         while (valid == false) {
             //prompt / input
             System.out.println(
-               "*********************************\n" + 
+               "\n*********************************\n" + 
                "*   CITY OF AARON : MAIN MENU   *\n" +
                "*********************************\n" +
                " G - What Is The Mission Of The Game\n" +

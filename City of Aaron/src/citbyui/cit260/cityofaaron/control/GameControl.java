@@ -24,6 +24,13 @@ public class GameControl {
         //set player in game
         game.setThePlayer(player);
         
+        //use this area to set starting conditions for game
+        game.setWheatinStorage(50);
+        game.setAcresOwned(5);
+        game.setAcresPlanted(1);
+        game.setCurrentPopulation(20);
+        game.setTithingPayed(0);
+        
         //return game
         return game;
         

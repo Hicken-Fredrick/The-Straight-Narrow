@@ -44,7 +44,7 @@ public class GameMenuView {
         while (valid == false) {
             //prompt / input
             System.out.println(
-               "*********************************\n" + 
+               "\n*********************************\n" + 
                "*   CITY OF AARON : Game Menu   *\n" +
                "*********************************\n" +
                " V - View Map & Move\n" +
@@ -71,22 +71,21 @@ public class GameMenuView {
     //complete actions for input
     public boolean doAction(String inputs[]) {
         String choice = inputs[0];
-        System.out.println("doAction Called");
         
         switch (choice.toLowerCase()) {
             //view map and move
             case "v":{
-                this.viewMapAndMove();
+                viewMapAndMove();
                 return false;
             }
             //manage crops    
             case "m":{
-                this.manageCrops();
+                manageCrops();
                 return false;
             }
             //proceed to next year      
             case "l":{
-                this.liveYear();
+                liveYear();
                 return false;
             }
             //save the game    
@@ -96,7 +95,7 @@ public class GameMenuView {
             }
             //reports menu
             case "r": {
-               this.reportsMenu();
+               reportsMenu();
                return false;
             }
             //quit out of game    
@@ -113,6 +112,9 @@ public class GameMenuView {
 
     private void manageCrops() {
         
+        //create manageCropsView
+        ManageCropsView manageCropsView = new ManageCropsView();
+        manageCropsView.displayManageCropsView();
     }
 
     private void viewMapAndMove() {
