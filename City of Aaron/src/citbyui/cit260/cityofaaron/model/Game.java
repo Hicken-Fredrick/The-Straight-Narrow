@@ -28,12 +28,10 @@ public class Game implements Serializable {
     private int acresPlanted;
     //acre cost for the year
     private int acreCost;
-
     //current wheat stored for use
     private int wheatinStorage;
     //tithing payed this year
     private int tithingPayed;
-    
     //contains player name and current score
     private Scoreboard score;
     
