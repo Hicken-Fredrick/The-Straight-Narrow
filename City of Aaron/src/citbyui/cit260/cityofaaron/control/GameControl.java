@@ -21,6 +21,7 @@ public class GameControl {
         //create game
         Game game = new Game();
         int cost = (int )(Math.random() * 10 + 17);
+        System.out.println(cost);
         
         //set player in game
         game.setThePlayer(player);
