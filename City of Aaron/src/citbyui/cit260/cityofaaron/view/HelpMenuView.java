@@ -54,7 +54,6 @@ class HelpMenuView {
             inputs[0] = (scanner.nextLine());
             inputs[0] = inputs[0].trim();
             
-            
             //validate
             if (inputs[0].length() != 1) {
                 System.out.println("You must choose a valid option\n");

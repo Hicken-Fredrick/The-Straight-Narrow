@@ -40,6 +40,7 @@ public class GameMenuView {
         //loop escape boolean
         boolean valid = false;
         
+        //get input and validate loop
         while (valid == false) {
             //prompt / input
             System.out.println(
@@ -54,7 +55,15 @@ public class GameMenuView {
                " Q - Return To Main Menu\n");
             System.out.println("Please Enter Your Choice : ");
             inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();   
+            inputs[0] = inputs[0].trim();
+            
+            //validate
+            if (inputs[0].length() != 1) {
+                System.out.println("You must choose a valid option\n");
+                
+            }
+            else
+                valid = true;
         }
         return inputs;
     }
@@ -62,13 +71,61 @@ public class GameMenuView {
     //complete actions for input
     public boolean doAction(String inputs[]) {
         String choice = inputs[0];
+        System.out.println("doAction Called");
         
         switch (choice.toLowerCase()) {
-            
+            //view map and move
+            case "v":{
+                this.viewMapAndMove();
+                return false;
+            }
+            //manage crops    
+            case "m":{
+                this.manageCrops();
+                return false;
+            }
+            //proceed to next year      
+            case "l":{
+                this.liveYear();
+                return false;
+            }
+            //save the game    
+            case "s":{
+                
+                return false;
+            }
+            //reports menu
+            case "r": {
+               this.reportsMenu();
+               return false;
+            }
+            //quit out of game    
+            case "q":
+                return true;
+            //unknown menu item choice
+            default:{
+                System.out.println("Unknown Menu Choice Please Try Again");
+                return false;
+            }
             
         }
-        
-        return true;
     }
+
+    private void manageCrops() {
+        
+    }
+
+    private void viewMapAndMove() {
+        
+    }
+
+    private void liveYear() {
+        
+    }
+
+    private void reportsMenu() {
+        
+    }
+
     
 }
