@@ -20,6 +20,7 @@ public class GameControl {
     public static Game creatNewGame(Player player) {
         //create game
         Game game = new Game();
+        int cost = (int )(Math.random() * 10 + 17);
         
         //set player in game
         game.setThePlayer(player);
@@ -30,6 +31,7 @@ public class GameControl {
         game.setAcresPlanted(1);
         game.setCurrentPopulation(20);
         game.setTithingPayed(0);
+        game.setAcreCost(cost);
         
         //return game
         return game;

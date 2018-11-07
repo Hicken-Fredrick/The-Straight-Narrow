@@ -26,6 +26,9 @@ public class Game implements Serializable {
     private int acresOwned;
     //current acres planted
     private int acresPlanted;
+    //acre cost for the year
+    private int acreCost;
+
     //current wheat stored for use
     private int wheatinStorage;
     //tithing payed this year
@@ -82,6 +85,14 @@ public class Game implements Serializable {
 
     public void setAcresPlanted(int acresPlanted) {
         this.acresPlanted = acresPlanted;
+    }
+    
+    public int getAcreCost() {
+        return acreCost;
+    }
+
+    public void setAcreCost(int acreCost) {
+        this.acreCost = acreCost;
     }
 
     public int getTithingPayed() {
