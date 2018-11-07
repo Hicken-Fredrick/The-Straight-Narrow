@@ -66,7 +66,6 @@ public class ManageCropsView {
 
     private boolean doAction(String[] inputs) {
         String choice = inputs[0];
-        System.out.println("doAction Called");
         
         switch (choice.toLowerCase()) {
             //buy land
@@ -107,23 +106,28 @@ public class ManageCropsView {
     }
 
     private void buyLand() {
-        
+        BuyLandView buyLandView = new BuyLandView();
+        buyLandView.displayBuyLandView();
     }
 
     private void sellLand() {
-        
+        SellLandView sellLandView = new SellLandView();
+        sellLandView.displaySellLandView();
     }
 
     private void feedThePeople() {
-        
+        FeedThePeopleView feedThePeopleView = new FeedThePeopleView();
+        feedThePeopleView.displayFeedThePeopleView();
     }
 
     private void plantCrops() {
-        
+        PlantCropsView plantCropsView = new PlantCropsView();
+        plantCropsView.displayPlantCropsView();
     }
 
     private void tithingAndOfferings() {
-        
+        TithingAndOfferingView tithingAndOfferingView = new TithingAndOfferingView();
+        tithingAndOfferingView.displayTithingAndOfferingsView();
     }
 
        
