@@ -22,20 +22,6 @@ class HelpMenuView {
         boolean endOfView = false;
         String[] inputs = new String[1];
         
-        //menu infographic
-        System.out.println(
-               "*********************************\n" + 
-               "*   CITY OF AARON : MAIN MENU   *\n" +
-               "*********************************\n" +
-               " G - What Is The Mission Of The Game\n" +
-               " M - How To Move\n" +
-               " H - Harvesting Details\n" + 
-               " S - Scoring Details\n" +
-               " R - Reports Menu Details\n" + 
-               " T - Tithing Info\n" + 
-               " Q - Quit\n"
-            );
-        
         //loop for game sequence
         do {
             //gather input

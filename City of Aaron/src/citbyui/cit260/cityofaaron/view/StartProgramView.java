@@ -6,7 +6,7 @@
 package citbyui.cit260.cityofaaron.view;
 
 import citbyui.cit260.cityofaaron.model.Player;
-import citbyui.cit260.cityofaaron.control.SavePlayer;
+import citbyui.cit260.cityofaaron.control.GameControl;
 import CityOfAaronSN.CityOfAaronSN;
 import java.util.Scanner;
 
@@ -39,7 +39,7 @@ public class StartProgramView {
     public boolean doAction(String inputs[]) {
         
         String playerName = inputs[0];
-        Player player = SavePlayer.savePlayer(playerName);
+        Player player = GameControl.savePlayer(playerName);
         
         if (player == null) {
             System.out.println("Failed to create player. " +

@@ -7,6 +7,7 @@ package citbyui.cit260.cityofaaron.view;
 
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.control.GameControl;
+import citbyui.cit260.cityofaaron.model.Game;
 import java.util.Scanner;
 /**
  *
@@ -118,7 +119,8 @@ public class MainMenuView {
     
     private void startNewGame() {
         //create game and push previously made player
-        GameControl.creatNewGame(CityOfAaronSN.getThePlayer());
+        Game game = GameControl.creatNewGame(CityOfAaronSN.getThePlayer());
+        CityOfAaronSN.setCurrentGame(game);
         
         //call game menu view
         GameMenuView gameMenuView = new GameMenuView();
