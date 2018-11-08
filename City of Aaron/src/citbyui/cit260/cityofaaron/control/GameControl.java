@@ -14,12 +14,14 @@ import citbyui.cit260.cityofaaron.model.Player;
  */
 public class GameControl {
 
+    private static Game game = new Game();
+    
     public GameControl() {
     }
     
     public static Game creatNewGame(Player player) {
         //create game
-        Game game = new Game();
+        
         int cost = (int )(Math.random() * 10 + 17);
         System.out.println(cost);
         
@@ -50,4 +52,12 @@ public class GameControl {
         
         return newPlayer;
     }
+    
+    public static void plantCrops(int plant) {
+        game.setAcresPlanted(game.getAcresPlanted() + plant);
+        game.setAcresOwned(game.getAcresOwned() - plant);
+        game.setWheatinStorage(game.getWheatinStorage() - (plant / 2));
+    }
+    public static void paidTithing(int tithing) {
+        game.setWheatinStorage(game.getWheatinStorage() - (tithing / 100) );    }
 }
