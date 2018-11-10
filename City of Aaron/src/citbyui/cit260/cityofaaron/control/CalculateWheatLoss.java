@@ -15,9 +15,9 @@ public class CalculateWheatLoss {
         //check for failure states
         if (tithing < 0)
             return -1;
-        if (wheat < 0)
+        else if (wheat < 0)
             return -1;
-        if (wheat == 0)
+        else if (wheat == 0)
             return 0;
         
         //create variables for calulations
