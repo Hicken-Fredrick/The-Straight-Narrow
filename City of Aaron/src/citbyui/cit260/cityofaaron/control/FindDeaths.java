@@ -24,9 +24,9 @@ public class FindDeaths {
         
        if (year <= 0)
 	return -1;
-            else if (population < 0)
+       else if (population < 0)
 	return 0;
-            else if (wheat < 0)
+       else if (wheat < 0)
 	return -1;
         
         //calculate deaths
