@@ -9,28 +9,21 @@ import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.control.GameControl;
 import citbyui.cit260.cityofaaron.model.Game;
 import java.util.Scanner;
+
 /**
  *
  * @author Meroko
  */
-public class MainMenuView {
-    public static Scanner scanner = new Scanner( System.in );
-
+public class MainMenuView extends View {
 
     public MainMenuView() {
-        
     }
-
-    void displayMainMenuView() {
-        //set variables
-        boolean endOfView = false;
+    
+    public String[] getInputs() {
         String[] inputs = new String[1];
         
-        
-        //loop for game sequence
-        do {
-            //menu infographic
-            System.out.println( "\n" + 
+        //build prompt message
+        String promptMessage = "\n" + 
                 "*********************************\n" + 
                 "*   CITY OF AARON : MAIN MENU   *\n" +
                 "*********************************\n" +
@@ -38,44 +31,9 @@ public class MainMenuView {
                 " L - Restart The Game\n" +
                 " H - Get Help on Playing the Game\n" + 
                 " S - Save Game\n" + 
-                " Q - Quit\n"
-            );
-            //gather input
-            inputs = getInputs();
-            //use inputs to determine action
-            endOfView = this.doAction(inputs);
-        } while(endOfView != true);
-    }
-    
-    private String[] getInputs() {
-        String[] inputs = new String[1];
+                " Q - Quit\n";
         
-        //loop escape boolean
-        boolean valid = false;
-        
-        //gather input and check validity before setting escape to true
-        while (valid == false) {
-            //prompt / input
-            System.out.println("Please Enter Your Choice : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() != 1) {
-                System.out.println("You must choose a valid option");
-                System.out.println( "\n" + 
-               "*********************************\n" + 
-               "*   CITY OF AARON : MAIN MENU   *\n" +
-               "*********************************\n" +
-               " N - Start New Game\n" +
-               " L - Restart The Game\n" +
-               " H - Get Help on Playing the Game\n" + 
-               " S - Save Game\n" + 
-               " Q - Quit\n");
-            }
-            else
-                valid = true;
-        }
+        inputs[0] = getInput(promptMessage);
         
         return inputs;
     }

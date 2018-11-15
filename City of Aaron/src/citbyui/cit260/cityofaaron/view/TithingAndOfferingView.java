@@ -105,7 +105,7 @@ class TithingAndOfferingView {
         while (pass != true)
         {
         try {
-        System.out.println("\nEnter the number of the percentage of thithing and offering that you wsant to pay:");
+        System.out.println("\nEnter the number of the percentage of tithing and offering that you wsant to pay:");
         tithing = Integer.parseInt(scanner.nextLine());
         pass = true;}
         catch (NumberFormatException e) { System.out.println("Invalid Input"); }
