@@ -56,7 +56,7 @@ public class StartProgramView {
         CityOfAaronSN.setThePlayer(player);
         
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
         
         return true;
     }
