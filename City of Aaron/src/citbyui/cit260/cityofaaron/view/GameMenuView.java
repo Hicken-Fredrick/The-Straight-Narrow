@@ -50,6 +50,7 @@ public class GameMenuView {
                " V - View Map & Move\n" +
                " M - Manage Crops\n" +
                " L - Live The Year\n" + 
+               " B - Buy and Sell Land\n" +
                " S - Save Game\n" +
                " R - Reports Menu\n" + 
                " Q - Return To Main Menu\n");
@@ -98,6 +99,11 @@ public class GameMenuView {
                reportsMenu();
                return false;
             }
+            //proceed to buy and sell menu     
+            case "b":{
+                buyAndSellLand();
+                return false;
+            }
             //quit out of game    
             case "q":
                 return true;
@@ -127,6 +133,11 @@ public class GameMenuView {
 
     private void reportsMenu() {
         
+    }
+
+    private void buyAndSellLand() {
+        LandView landView = new LandView();
+        landView.display();
     }
 
     

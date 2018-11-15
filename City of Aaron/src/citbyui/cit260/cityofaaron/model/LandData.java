@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.cityofaaron.control;
+package citbyui.cit260.cityofaaron.model;
 
 import java.io.Serializable;
 
@@ -11,24 +11,7 @@ import java.io.Serializable;
  *
  * @author Familia
  */
-public class LandData {
-
-    public int getAcresOwned() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int getWheatInStore() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setWheatInStore(int wheatInStore) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setWheatForPeople(int wheatForPeople) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    public class landData implements Serializable {
+public class LandData implements Serializable {
     
       // variables
     
@@ -52,11 +35,11 @@ public class LandData {
     // constructors
     
     // default constructor
-    public landData() {
+    public LandData() {
     }
 
     // other constructor - initializes all variables
-    public landData(int year, int population, int acresOwned, int cropYield, int wheatInStore, int numberWhoDied, int newPeople, int harvest, int harvestAfterOffering, int offering, int offeringBushels, int peopleFed, int acresPlanted, int numStarved, int eatenByRats, int wheatForPeople) {
+    public LandData(int year, int population, int acresOwned, int cropYield, int wheatInStore, int numberWhoDied, int newPeople, int harvest, int harvestAfterOffering, int offering, int offeringBushels, int peopleFed, int acresPlanted, int numStarved, int eatenByRats, int wheatForPeople) {
         this.year = year;
         this.population = population;
         this.acresOwned = acresOwned;
@@ -242,7 +225,7 @@ public class LandData {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CropData other = (CropData) obj;
+        final LandData other = (LandData) obj;
         if (this.year != other.year) {
             return false;
         }
@@ -296,4 +279,3 @@ public class LandData {
     
 }
 
-}

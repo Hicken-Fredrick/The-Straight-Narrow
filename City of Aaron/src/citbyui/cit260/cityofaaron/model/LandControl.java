@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.cityofaaron.view;
+package citbyui.cit260.cityofaaron.model;
 
-import citbyui.cit260.cityofaaron.control.LandData;
+import citbyui.cit260.cityofaaron.model.LandData;
 import citbyui.cit260.cityofaaron.model.Game;
+import java.util.Random;
 
 
 /**
  *
  * @author Indivudual Week 8
- */
+ 
 class LandControl {
 
-    static int YIELD_BASE;
-    static Game Game;
-    static LandData landData;
+  //  static int YIELD_BASE;
+  //  static Game Game;
+  //  static LandData landData;
 
     static void plantLand(int landToPlant, LandData landData) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -40,6 +41,7 @@ class LandControl {
     }
     
 }
+*/
 
 /**
  *
@@ -52,8 +54,8 @@ public class LandControl {
     private static int ACRESPERBUSHEL;
     private static int PEOPLE_PER_ACRE;
     private static int YIELD_BASE;
-    private static Game Game;
-    private static LandData landData;
+   // private static Game Game;
+   // private static LandData landData;
 
     public LandControl() {
     }
@@ -64,7 +66,7 @@ public class LandControl {
         // Generate random number
         Random random = new Random();
         // Generate random number using parameters
-        int landPrice = random.nextInt(max) + min;
+        int landPrice = random.nextInt(max-min) + min;
         // Return result
         return landPrice;
     }
@@ -88,8 +90,8 @@ public class LandControl {
     * Purpose: to Buy Land
     * - population * 10 >= currentTotalLand + wantsToBuy
     */
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
-        try {
+    public static int buyLand(int landPrice, int acresToBuy, LandData landData) {
+  /*      try {
             int totalPrice = acresToBuy * landPrice;
                 
             // if acresToBuy < 0, ERROR
@@ -126,6 +128,7 @@ public class LandControl {
             System.out.println("I cannot do that Dave");
             System.out.println(e.getMessage());
         }
+    */
         return 0;
     }
 
@@ -134,18 +137,19 @@ public class LandControl {
      * acres to sell must be positive
      * acres to sell must be greater or equal to acres owned
      */
-    public static int sellLand(int landPrice, int acresToSell, CropData cropData) {
-       try {
+    public static int sellLand(int landPrice, int acresToSell, LandData landData) {
+     
         // acresOwned Variable
-        int acresOwned = cropData.getAcresOwned();
+        int acresOwned = landData.getAcresOwned();
         
         // if acresToSell < 0, return -1
         if (acresToSell < 0)
-            throw new LandException("A negative value was input.");   
+            return -1;
+        //("A negative value was input.");   
         
         // if acresToSell > acresOwned, return -1
         if (acresToSell > acresOwned)
-            throw new LandException("You don't own enough land to sell that amount.");  
+            return -2;
         
         // if pre-conditions are met, this code block is executed
         else {
@@ -153,29 +157,24 @@ public class LandControl {
         acresOwned -= acresToSell;
         
         // save new acresOwned amount            
-        cropData.setAcresOwned(acresOwned);
+        landData.setAcresOwned(acresOwned);
         
         // wheatInStore = wheatInStore + (acresToSell * landPrice)
-        int wheatInStore = cropData.getWheatInStore();
+        int wheatInStore = landData.getWheatInStore();
         wheatInStore += (acresToSell * landPrice);
        
         // save result to wheatInStore
-        cropData.setWheatInStore(wheatInStore);
+        landData.setWheatInStore(wheatInStore);
         }
         // return acresOwned
-        return cropData.getAcresOwned(); 
+        return landData.getAcresOwned(); 
     }
-       catch (LandException e) {
-            System.out.println("I cannot do that Dave");
-            System.out.println(e.getMessage());
-        }
-       return cropData.getAcresOwned(); 
-    }
-    public static int setOffering(int percent, CropData cropData) {
+     
+    public static int setOffering(int percent, LandData landData) {
        
         if (percent > 0) {
-            int offering = (percent * cropData.getWheatInStore()) / 100;
-            cropData.setOffering(offering);
+            int offering = (percent * landData.getWheatInStore()) / 100;
+            landData.setOffering(offering);
             return offering;
         }
         
