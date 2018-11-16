@@ -16,7 +16,7 @@ class HelpMenuView extends View {
     }
     
     @Override
-        public String[] getInputs() {
+    public String[] getInputs() {
         String[] inputs = new String[1];
         
         //build prompt message

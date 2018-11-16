@@ -16,17 +16,11 @@ public class ManageCropsView extends View {
     
     @Override
     public String[] getInputs() {
-                
         String[] inputs = new String[1];
         
-        //loop escape boolean
-        boolean valid = false;
-        
-        //get input and validate loop
-        while (valid == false) {
-            //prompt / input
-            System.out.println(
-               "\n*************************************\n" + 
+        //build prompt message
+        String promptMessage = 
+                "\n*************************************\n" + 
                "* CITY OF AARON : Manage Crops Menu *\n" +
                "*************************************\n" +
                " B - Buy Land\n" +
@@ -34,19 +28,10 @@ public class ManageCropsView extends View {
                " F - Feed The People\n" + 
                " P - Plant Crops\n" +
                " T - Tithing & Offerings\n" + 
-               " R - Return To Game Menu\n");
-            System.out.println("Please Enter Your Choice : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() != 1) {
-                System.out.println("You must choose a valid option\n");
-                
-            }
-            else
-                valid = true;
-        }
+               " R - Return To Game Menu\n";
+        
+        inputs[0] = getInput(promptMessage);
+        
         return inputs;
     }
 
