@@ -8,73 +8,43 @@ package citbyui.cit260.cityofaaron.view;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.model.Game;
 import citbyui.cit260.cityofaaron.control.GameControl;
+import static citbyui.cit260.cityofaaron.view.PlantCropsView.game;
 import java.util.Scanner;
 
 /**
  *
  * @author Meroko
  */
-class TithingAndOfferingView {
+public class TithingAndOfferingView extends View{
     public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
     public TithingAndOfferingView() {
     }
     
-    void displayTithingAndOfferingsView() {
-        boolean endOfView = false;
-        String[] inputs = new String[1];
+    
+   @Override      
+   public String[] getInputs() {
+       
+       String[] inputs = new String[1];
         
-        
-        //loop for game sequence
-        do {
-        System.out.println("Plant Crops Display");
-        inputs = getInputs();
-            //use inputs to determine action
-            endOfView = this.doAction(inputs);
-        } while(endOfView != true);
-        
-    }
-         
-   private String[] getInputs() {
-        String[] inputs = new String[1];
-        
-        //loop escape boolean
-        boolean valid = false;
-        
-        //gather input and check validity before setting escape to true
-        while (valid == false) {
-            System.out.println( "\n" + 
+        //build prompt message
+        String promptMessage = 
+                
+                "\n" + 
                "*********************************\n" + 
                 "*   CITY OF AARON : Tithing and Offering    *\n" +
                 "*********************************\n" +
                "You currently have: " + game.getWheatinStorage() + "Wheat in storage \n"
                     + "Do you want to pay tithing on that? " +
                "\n P - Pay Tithing and Offering \n" +
-               " R - return to previous menu\n");
-            //prompt / input
-            System.out.println("Please Enter Your Choice : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() != 1) {
-                System.out.println("You must choose a valid option");
-                System.out.println( "\n" + 
-               "*********************************\n" + 
-                "*   CITY OF AARON : Tithing and Offering   *\n" +
-                "*********************************\n" +
-               "You currently have: " + game.getWheatinStorage() + " Wheat in storage \n"
-                    + "Do you want to pay tithing on that? " +
-               "\n P - Pay Tithing and Offering \n" +
-               " R - return to previous menu\n");
-            }
-            else
-                valid = true;
-        }
+               " R - return to previous menu\n";
+        
+        inputs[0] = getInput(promptMessage);
         
         return inputs;
+       
     }
-    
+    @Override
     public boolean doAction(String inputs[]) {
         String choice = inputs[0];
         

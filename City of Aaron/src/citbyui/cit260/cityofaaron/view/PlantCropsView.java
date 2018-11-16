@@ -15,70 +15,36 @@ import java.util.Scanner;
  *
  * @author Meroko
  */
-class PlantCropsView {
+public class PlantCropsView extends View{
     public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
+    
     public PlantCropsView() {
         
     }
-
-    void displayPlantCropsView() {
-        boolean endOfView = false;
-        String[] inputs = new String[1];
-        
-        
-        //loop for game sequence
-        do {
-        System.out.println("Plant Crops Display");
-        inputs = getInputs();
-            //use inputs to determine action
-            endOfView = this.doAction(inputs);
-        } while(endOfView != true);
-        
-    }
     
-    private String[] getInputs() {
-        String[] inputs = new String[1];
+    @Override
+    public String[] getInputs() {
+         String[] inputs = new String[1];
         
-        //loop escape boolean
-        boolean valid = false;
-        
-        //gather input and check validity before setting escape to true
-        while (valid == false) {
-            System.out.println( "\n" + 
+        //build prompt message
+        String promptMessage = 
+                "\n" + 
                "*********************************\n" + 
                 "*   CITY OF AARON : Plant Crops   *\n" +
                 "*********************************\n" +
-               "You currently have: " + game.getWheatinStorage() + "Wheat in storage \n"
+               "You currently have: " + game.getWheatinStorage() + " Wheat in storage \n"
                     + "This is how many plated arces you have: " + game.getAcresPlanted()
                         + "\n" + "And this many unplanted: " + game.getAcresOwned() +
                "\n P - plant additional crops\n" +
-               " R - return to previous menu\n");
-            //prompt / input
-            System.out.println("Please Enter Your Choice : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() != 1) {
-                System.out.println("You must choose a valid option");
-                System.out.println( "\n" + 
-               "*********************************\n" + 
-                "*   CITY OF AARON : Plant Crops   *\n" +
-                "*********************************\n" +
-               "You currently have: " + game.getWheatinStorage() + "Wheat in storage \n"
-                    + "This is how many plated arces you have: " + game.getAcresPlanted()
-                        + "\n" + "And this many unplanted: " + game.getAcresOwned() +
-               "\n P - plant additional crops\n" +
-               " R - return to previous menu\n");
-            }
-            else
-                valid = true;
-        }
+               " R - return to previous menu\n";
+        
+        inputs[0] = getInput(promptMessage);
         
         return inputs;
+        
     }
-    
+    @Override
     public boolean doAction(String inputs[]) {
         String choice = inputs[0];
         

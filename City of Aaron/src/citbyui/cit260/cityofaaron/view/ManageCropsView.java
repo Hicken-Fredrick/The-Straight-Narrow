@@ -94,12 +94,12 @@ public class ManageCropsView extends View {
 
     private void plantCrops() {
         PlantCropsView plantCropsView = new PlantCropsView();
-        plantCropsView.displayPlantCropsView();
+        plantCropsView.display();
     }
 
     private void tithingAndOfferings() {
         TithingAndOfferingView tithingAndOfferingView = new TithingAndOfferingView();
-        tithingAndOfferingView.displayTithingAndOfferingsView();
+        tithingAndOfferingView.display();
     }
 
        
