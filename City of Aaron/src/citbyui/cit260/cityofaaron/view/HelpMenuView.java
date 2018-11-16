@@ -5,43 +5,24 @@
  */
 package citbyui.cit260.cityofaaron.view;
 
-import java.util.Scanner;
 
 /**
  *
  * @author Meroko
  */
-class HelpMenuView {
-    public static Scanner scanner = new Scanner( System.in );
+class HelpMenuView extends View {
 
     public HelpMenuView() {
     }
-
-    void displayHelpMenuView() {
-        //set variables
-        boolean endOfView = false;
-        String[] inputs = new String[1];
-        
-        //loop for game sequence
-        do {
-            //gather input
-            inputs = getInputs();
-            //use input to determine action
-            endOfView = this.doAction(inputs);
-        } while(endOfView != true);
-    }
     
-        private String[] getInputs() {
+    @Override
+        public String[] getInputs() {
         String[] inputs = new String[1];
-        //loop escape boolean
-        boolean valid = false;
         
-        //gather input and check validity before setting escape to true
-        while (valid == false) {
-            //prompt / input
-            System.out.println(
-               "\n*********************************\n" + 
-               "*   CITY OF AARON : MAIN MENU   *\n" +
+        //build prompt message
+        String promptMessage = 
+                "\n*********************************\n" + 
+               "*   CITY OF AARON : HELP MENU   *\n" +
                "*********************************\n" +
                " G - What Is The Mission Of The Game\n" +
                " M - How To Move\n" +
@@ -49,23 +30,14 @@ class HelpMenuView {
                " S - Scoring Details\n" +
                " R - Reports Menu Details\n" + 
                " T - Tithing Info\n" + 
-               " Q - Quit\n");
-            System.out.println("Please Enter Your Choice : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() != 1) {
-                System.out.println("You must choose a valid option\n");
-                
-            }
-            else
-                valid = true;
-        }
+               " Q - Quit\n";
+        
+        inputs[0] = getInput(promptMessage);
         
         return inputs;
     }
     
+    @Override
     public boolean doAction(String inputs[]) {
         String choice = inputs[0];
         

@@ -5,46 +5,24 @@
  */
 package citbyui.cit260.cityofaaron.view;
 
-import java.util.Scanner;
 
 /**
  *
  * @author Meroko
  */
-public class GameMenuView {
-    public static Scanner scanner = new Scanner( System.in );
+public class GameMenuView extends View{
 
     public GameMenuView() {
     }
 
-    //start display loop
-    void displayMainMenuView() {
-        boolean endOfView = false;
-        String[] inputs = new String[1];
-        
-        //loop for game sequence
-        do {
-            //gather input
-            inputs = getInputs();
-            //use input to determine action
-            endOfView = this.doAction(inputs);
-        } while(endOfView != true);
-        
-    }
-
     //gather inputs from user
-    private String[] getInputs() {
+    @Override
+    public String[] getInputs() {
         
         String[] inputs = new String[1];
         
-        //loop escape boolean
-        boolean valid = false;
-        
-        //get input and validate loop
-        while (valid == false) {
-            //prompt / input
-            System.out.println(
-               "\n*********************************\n" + 
+        //build prompt message
+        String promptMessage = "\n*********************************\n" + 
                "*   CITY OF AARON : Game Menu   *\n" +
                "*********************************\n" +
                " V - View Map & Move\n" +
@@ -53,23 +31,15 @@ public class GameMenuView {
                " B - Buy and Sell Land\n" +
                " S - Save Game\n" +
                " R - Reports Menu\n" + 
-               " Q - Return To Main Menu\n");
-            System.out.println("Please Enter Your Choice : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() != 1) {
-                System.out.println("You must choose a valid option\n");
-                
-            }
-            else
-                valid = true;
-        }
+               " Q - Return To Main Menu\n";
+        
+        inputs[0] = getInput(promptMessage);
+        
         return inputs;
     }
     
     //complete actions for input
+    @Override
     public boolean doAction(String inputs[]) {
         String choice = inputs[0];
         
@@ -120,7 +90,7 @@ public class GameMenuView {
         
         //create manageCropsView
         ManageCropsView manageCropsView = new ManageCropsView();
-        manageCropsView.displayManageCropsView();
+        manageCropsView.display();
     }
 
     private void viewMapAndMove() {

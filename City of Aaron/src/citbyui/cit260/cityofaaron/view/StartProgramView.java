@@ -14,28 +14,25 @@ import java.util.Scanner;
  *
  * @author Meroko
  */
-public class StartProgramView {
+public class StartProgramView extends View{
     public static Scanner scanner = new Scanner( System.in );
     
     public StartProgramView() {   
     }
     
-    public void displayStartProgramView() {
+    @Override
+    public String[] getInputs() {
+        String[] inputs = new String[1];
         
-        boolean endOfView = false;
+        //build prompt message
+        String promptMessage = "Enter Your Name";
         
-        do {
-            String[] inputs = this.getInputs();
-            
-            if (inputs == null || "q".equals(inputs[0].toLowerCase()))
-                return;
-           
-            endOfView = this.doAction(inputs);
-           
-        } while(endOfView != true);
+        inputs[0] = getInput(promptMessage);
         
+        return inputs;
     }
     
+    @Override
     public boolean doAction(String inputs[]) {
         
         String playerName = inputs[0];
@@ -61,29 +58,7 @@ public class StartProgramView {
         return true;
     }
 
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        
-        //loop escape boolean
-        boolean valid = false;
-        
-        //gather input and check validity before setting escape to true
-        while (valid == false) {
-            //prompt / input
-            System.out.println("Please Enter a Name (Caps Included) : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() <= 0) 
-                System.out.println("You must enter a non-blank name");
-            else
-                valid = true;
-                
-        }
-                
-        return inputs;
-    }
+   
     
     
 }

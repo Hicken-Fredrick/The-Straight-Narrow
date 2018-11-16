@@ -8,7 +8,6 @@ package citbyui.cit260.cityofaaron.view;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.control.GameControl;
 import citbyui.cit260.cityofaaron.model.Game;
-import java.util.Scanner;
 
 /**
  *
@@ -19,6 +18,7 @@ public class MainMenuView extends View {
     public MainMenuView() {
     }
     
+    @Override
     public String[] getInputs() {
         String[] inputs = new String[1];
         
@@ -38,6 +38,7 @@ public class MainMenuView extends View {
         return inputs;
     }
     
+    @Override
     public boolean doAction(String inputs[]) {
         String choice = inputs[0];
         
@@ -82,7 +83,7 @@ public class MainMenuView extends View {
         
         //call game menu view
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayMainMenuView();
+        gameMenuView.display();
     }
     
     private void loadGame() {
@@ -96,7 +97,7 @@ public class MainMenuView extends View {
         
         //call help menu view
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
     
 }

@@ -5,31 +5,17 @@
  */
 package citbyui.cit260.cityofaaron.view;
 
-import java.util.Scanner;
 /**
  *
  * @author Meroko
  */
-public class ManageCropsView {
-    public static Scanner scanner = new Scanner( System.in );
+public class ManageCropsView extends View {
 
     public ManageCropsView() {
     }
-
-    void displayManageCropsView() {
-        boolean endOfView = false;
-        String[] inputs = new String[1];
-        
-        //loop for game sequence
-        while(endOfView != true) {
-            //gather input
-            inputs = getInputs();
-            //use input to determine action
-            endOfView = this.doAction(inputs);
-        }
-    }
-
-    private String[] getInputs() {
+    
+    @Override
+    public String[] getInputs() {
                 
         String[] inputs = new String[1];
         
@@ -64,7 +50,8 @@ public class ManageCropsView {
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         String choice = inputs[0];
         
         switch (choice.toLowerCase()) {

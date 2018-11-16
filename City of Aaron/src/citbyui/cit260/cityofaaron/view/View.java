@@ -49,6 +49,7 @@ public abstract class View implements ViewInterface {
             
             //output prompt
             System.out.println(promptMessage);
+            System.out.println("Please Enter Your Choice: \n");
             
             //get input and trim
             input = (scanner.nextLine());
