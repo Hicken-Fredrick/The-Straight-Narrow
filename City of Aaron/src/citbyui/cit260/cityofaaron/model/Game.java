@@ -20,6 +20,8 @@ public class Game implements Serializable {
     private Map theMap;
     //contains storehouse for array of items contained
     private Storehouse theStorehouse;
+    //current Year
+    private int year;
     //current population of that land
     private int currentPopulation;
     //current land owned by player
