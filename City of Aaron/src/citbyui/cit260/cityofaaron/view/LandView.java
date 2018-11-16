@@ -71,7 +71,7 @@ public class LandView {
                " V - View current land\n" +
                " B - Buy Land\n" +
                " S - Sell Land\n" + 
-               " Q - Quit\n");
+               " Q - Return To Game\n");
             System.out.println("Please Enter Your Choice : ");
             inputs[0] = (scanner.nextLine());
             inputs[0] = inputs[0].trim();
@@ -92,26 +92,26 @@ public class LandView {
         String choice = inputs[0];
         
         switch (choice.toLowerCase()) {
-            //This is the menu for the Game
+            //View Availible Land
             case "v":{
                 System.out.println("View the land available.\n"
                         + "Here you can see the land.\n");
                 return false;
             }
-            //How To Move 
+            //Buy Land Choice
             case "b":{
-                System.out.println("Here is here you buy land.\n"
+                System.out.println("Here is where you buy land.\n"
                        + "you must be rich.\n");
                 return false;
             }
-            //Harvesting Details     
+            //Sell Land Choice    
             case "s":{
                 System.out.println("Here is where you can SELL land\n"
                       + "you must be poor.\n");
                 return false;
             }
-          //quit out of menu   
-            case "q":
+          //return to menu   
+            case "r":
                 return true;
             //unknown menu item choice
             default:{
