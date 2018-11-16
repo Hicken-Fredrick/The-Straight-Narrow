@@ -22,7 +22,8 @@ public class GameMenuView extends View{
         String[] inputs = new String[1];
         
         //build prompt message
-        String promptMessage = "\n*********************************\n" + 
+        String promptMessage = 
+                "\n*********************************\n" + 
                "*   CITY OF AARON : Game Menu   *\n" +
                "*********************************\n" +
                " V - View Map & Move\n" +
