@@ -22,7 +22,7 @@ public class GameControl {
     public static Game creatNewGame(Player player) {
         //create game
         
-        int cost = getLandCost();
+        int cost = generateLandCost();
         
         //set player in game
         game.setThePlayer(player);
@@ -61,7 +61,7 @@ public class GameControl {
     public static void paidTithing(int tithing) {
         game.setWheatinStorage(game.getWheatinStorage() - (tithing / 100) );    }
 
-    private static int getLandCost() {
+    private static int generateLandCost() {
         int cost = (int )(Math.random() * 10 + 17);
         return cost;
     }
