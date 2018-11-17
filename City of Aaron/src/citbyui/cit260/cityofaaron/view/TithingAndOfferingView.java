@@ -9,19 +9,14 @@ import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.model.Game;
 import citbyui.cit260.cityofaaron.control.GameControl;
 import static citbyui.cit260.cityofaaron.view.PlantCropsView.game;
-import java.util.Scanner;
 
 /**
  *
  * @author Meroko
  */
 public class TithingAndOfferingView extends View{
-    public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
-    public TithingAndOfferingView() {
-    }
-    
-    
+
    @Override      
    public String[] getInputs() {
        
