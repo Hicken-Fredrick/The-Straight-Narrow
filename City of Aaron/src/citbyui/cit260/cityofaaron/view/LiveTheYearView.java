@@ -16,6 +16,9 @@ import citbyui.cit260.cityofaaron.model.Game;
 class LiveTheYearView extends View {
     public static Game game = CityOfAaronSN.getCurrentGame();
 
+    public LiveTheYearView() {
+    }
+
     @Override
     public String[] getInputs() {
         String[] inputs = new String[1];
