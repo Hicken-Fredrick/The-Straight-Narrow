@@ -9,40 +9,6 @@ import citbyui.cit260.cityofaaron.model.LandData;
 import citbyui.cit260.cityofaaron.model.Game;
 import java.util.Random;
 
-
-/**
- *
- * @author Indivudual Week 8
- 
-class LandControl {
-
-  //  static int YIELD_BASE;
-  //  static Game Game;
-  //  static LandData landData;
-
-    static void plantLand(int landToPlant, LandData landData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    static void buyLand(int price, int toBuy, LandData landData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    static int calcLandPrice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    static void plantLand(int landToPlant, LandData landData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    static void buyLand(int price, int toBuy, landData landData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-}
-*/
-
 /**
  *
  * @author Indivudual Week 8
@@ -56,6 +22,10 @@ public class LandControl {
     private static int YIELD_BASE;
    // private static Game Game;
    // private static LandData landData;
+
+    public static void calcLandPrice(int acres) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public LandControl() {
     }
@@ -91,44 +61,7 @@ public class LandControl {
     * - population * 10 >= currentTotalLand + wantsToBuy
     */
     public static int buyLand(int landPrice, int acresToBuy, LandData landData) {
-  /*      try {
-            int totalPrice = acresToBuy * landPrice;
-                
-            // if acresToBuy < 0, ERROR
-            if (acresToBuy < 0) { 
-                throw new LandException("A negative value was input.");  
-               }
-        
-            // if wheatInStore < totalPrice, ERROR
-            if (cropData.getWheatInStore() < totalPrice) { 
-                throw new LandException("There is insufficient wheat to buy this much land."); 
-            }
-        
-            // if population <= (oldAcres + newAcres) / 10, ERROR
-            if ((cropData.getPopulation() * 10) < (cropData.getAcresOwned() + acresToBuy)) { 
-                throw new LandException("The population isn't large enough to buy this much land.");  
-            }
-        
-            if (acresToBuy == 0) { return cropData.getAcresOwned(); }
-        
-            else {
-                // else, add number of acres purchased to acres owned
-                cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
-        
-                // subtract price from WheatInStore
-                cropData.setWheatInStore(cropData.getWheatInStore() - totalPrice);
-        
-                // return new acresOwned Value
-                return cropData.getAcresOwned();
-                //return cropData.getAcresOwned();
-            }
-        }
-        // There needs to be a catch here
-        catch (LandException e) {
-            System.out.println("I cannot do that Dave");
-            System.out.println(e.getMessage());
-        }
-    */
+  
         return 0;
     }
 
@@ -170,22 +103,7 @@ public class LandControl {
         return landData.getAcresOwned(); 
     }
      
-    public static int setOffering(int percent, LandData landData) {
-       
-        if (percent > 0) {
-            int offering = (percent * landData.getWheatInStore()) / 100;
-            landData.setOffering(offering);
-            return offering;
-        }
-        
-        if (percent == 0) {
-            return 0;            
-        }
-        
-        else {
-            return -1;
-        }
-    }
+   
 
     public String toString() {
         return "LandControl{" + '}';

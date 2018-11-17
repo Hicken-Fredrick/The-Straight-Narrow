@@ -7,9 +7,8 @@ package citbyui.cit260.cityofaaron.view;
 
 /**
  *
- * @author Indivudual Week 8
+ * @author Indivudual Week 9
  */
-
 
 import citbyui.cit260.cityofaaron.model.LandControl;
 import CityOfAaronSN.CityOfAaronSN;
@@ -19,143 +18,81 @@ import static citbyui.cit260.cityofaaron.view.HelpMenuView.scanner;
 import java.util.Scanner;
 
 
-public class LandView {
-    
-  
-    
+public class LandView extends View{
     // Scanner Object
-    private static Scanner keyboard = new Scanner(System.in);
+    public static Scanner keyboard = new Scanner(System.in);
     // References to Game 
-    private static Game game;
-    private static LandData landData;
+    public static Game game;
+    public static LandData landData;
     //constructor
+    
     public LandView() {
          game = CityOfAaronSN.getCurrentGame();
          landData = game.getLandData();
     
     }
     
-    
-    public void display() {
-              
-        boolean endOfView = false;
-        String[] inputs = new String[1];
+    @Override
+   public String[] getInputs() {
+         String[] inputs = new String[1];
         
-        //loop for game sequence
-        do {
-            //gather input
-            inputs = getInputs();
-            //use input to determine action
-            endOfView = this.doAction(inputs);
-        } while(endOfView != true);
-
-// call buyLandView
-  //      buyLandView();
-  //     sellLandView(); 
+        //build prompt message
+        String promptMessage = 
+                "\n" + 
+               "*********************************\n" + 
+                "*   CITY OF AARON : Land View   *\n" +
+                "*********************************\n" +
+               "You currently have: " + game.getAcresOwned() + " acres available \n"
+                    + "If you want to buy more acres, it will cost you: " + game.getAcreCost() +
+               " R - return to previous menu\n";
         
-       
-    }
-    
-     private String[] getInputs() {
-        String[] inputs = new String[1];
-        //loop escape boolean
-        boolean valid = false;
-        
-        //gather input and check validity before setting escape to true
-        while (valid == false) {
-            //prompt / input
-            System.out.println(
-               "\n*********************************\n" + 
-               "*   CITY OF AARON : LAND MENU   *\n" +
-               "*********************************\n" +
-               " V - View current land\n" +
-               " B - Buy Land\n" +
-               " S - Sell Land\n" + 
-               " Q - Return To Game\n");
-            System.out.println("Please Enter Your Choice : ");
-            inputs[0] = (scanner.nextLine());
-            inputs[0] = inputs[0].trim();
-            
-            //validate
-            if (inputs[0].length() != 1) {
-                System.out.println("You must choose a valid option\n");
-                
-            }
-            else
-                valid = true;
-        }
+        inputs[0] = getInput(promptMessage);
         
         return inputs;
+        
     }
-    
+   @Override
     public boolean doAction(String inputs[]) {
         String choice = inputs[0];
         
         switch (choice.toLowerCase()) {
-            //View Availible Land
-            case "v":{
-                System.out.println("View the land available.\n"
-                        + "Here you can see the land.\n");
-                return false;
-            }
-            //Buy Land Choice
+            //call new game
             case "b":{
-                System.out.println("Here is where you buy land.\n"
-                       + "you must be rich.\n");
+                acreOwned();
                 return false;
             }
-            //Sell Land Choice    
-            case "s":{
-                System.out.println("Here is where you can SELL land\n"
-                      + "you must be poor.\n");
-                return false;
-            }
-          //return to menu   
+            //call restart for current game    
             case "r":
                 return true;
             //unknown menu item choice
             default:{
-                System.out.println("Unknown Menu Choice Please Try Again\n");
+                System.out.println("Unknown Menu Choice Please Try Again");
                 return false;
             }
             
         }
-            
     }
-  
-    public static void buyLandView() {
-        
-        // get the cost of land for this round 
-        int price = LandControl.calcLandPrice();
-       
-        System.out.format("Land is selling for %d points per acre.%n", price);
-        
-        // get the user's input and save it
-        int toBuy = 0;
-        boolean paramsNotOkay; 
-        do {
-            
-                System.out.print("How many acres of land do you wish to buy?");
-                toBuy = keyboard.nextInt();            
-                LandControl.buyLand(price, toBuy, landData);
-                
-                
-                paramsNotOkay = false;
-           
-            
-       
-        } while(paramsNotOkay); 
-          // call buyLand() in contol layer to actually buy the land
-        LandControl.buyLand(price, toBuy, landData);
+
+    private void acreOwned() {
+        Boolean pass = false;
+        int acres = 0;
+        Boolean validate = false;
+        while (validate != true){
+            pass = false;
+        while (pass != true)
+        {
+        try {
+        System.out.println("\nEnter the number that you want to purchase:");
+        acres = Integer.parseInt(scanner.nextLine());
+        pass = true;}
+        catch (NumberFormatException e) { System.out.println("Invalid Input"); }
+
+        }
+        validate = validateInput(acres);
+        }
     }
     
-    /**
-     * Method: sellLandView
-     * Purpose: interface for selling land
-     * Parameters: none
-     * Returns: none
-     */
-    public static void sellLandView() {
+     public static void sellLandView() {
         // get cost of land this round
         int price = LandControl.calcLandPrice();
         int toSell = 0;
@@ -167,19 +104,24 @@ public class LandView {
     }         
          
     
-        public static void landReportView(LandData landData) {
-        System.out.println("Land Report View"); 
-       
-        int year = landData.getYear(); 
-        int acresOwned = landData.getAcresOwned(); 
-        int wheatInStore = landData.getWheatInStore();
-        int population = landData.getPopulation(); 
-        
-        //System.out.print(year);
-        System.out.format("The year is %d. %n", year); 
-        System.out.format("You own %d acres of land.%n", acresOwned); 
-        System.out.format("There are %d bushels of wheat in store.%n", wheatInStore); 
-        System.out.format("The population is %d people.%n", population); 
-        
+      
+    private Boolean validateInput(int acres) {
+        if (acres > game.getAcresOwned()){
+            System.out.println("\nYou do not have enough land to do that");
+            return false;
+        }
+        else if (acres / 2 > game.getWheatinStorage()){
+            System.out.println("\nYou do not have enough to do that");
+            return false;
+        }
+        else {
+            System.out.println("\nLand successfully purchase ");
+            LandControl.calcLandPrice(acres);
+            
+            return true;
+            
+        }
     }
+    
 }
+
