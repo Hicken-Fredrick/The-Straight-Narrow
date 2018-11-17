@@ -99,7 +99,8 @@ public class GameMenuView extends View{
     }
 
     private void liveYear() {
-        
+        LiveTheYearView liveTheYearView = new LiveTheYearView();
+        liveTheYearView.display();
     }
 
     private void reportsMenu() {

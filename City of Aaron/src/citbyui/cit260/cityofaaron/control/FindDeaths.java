@@ -29,11 +29,14 @@ public class FindDeaths {
        else if (wheat < 0)
 	return -1;
         
-        //calculate deaths
-        deaths = (population *(2 + (year / 10))) - wheat;
+       //calculate deaths
+       deaths = (population *(2 + (year / 10))) - wheat;
         
-        //return deaths
-        return deaths / 2;
+       if (deaths < 1)
+            return 0;
+        
+       //return deaths
+       return deaths / 2;
     }
     
     

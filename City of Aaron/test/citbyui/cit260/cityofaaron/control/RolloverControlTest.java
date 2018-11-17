@@ -18,7 +18,7 @@ public class RolloverControlTest {
     }
 
     /**
-     * Test of yearRollover method, of class RolloverControl.
+     * Test of wheatEatin method, of class RolloverControl.
      */
     @Test
     public void testYearRollover() {
@@ -26,7 +26,6 @@ public class RolloverControlTest {
         //initialize variables
         int wheat = 0;
         int population = 0;
-        int acres = 0;
         double expResult = 0;
         double result = 0;
         
@@ -34,9 +33,8 @@ public class RolloverControlTest {
         System.out.println("Test 01");
         wheat = 100;
         population = 50;
-        acres = 50;
         expResult = 1;
-        result = RolloverControl.yearRollover(wheat, population, acres);
+        result = RolloverControl.wheatEatin(wheat, population);
         assertEquals(expResult, result, 0.0);
         System.out.println(result + " " + expResult);
         
@@ -44,9 +42,8 @@ public class RolloverControlTest {
         System.out.println("Test 02");
         wheat = 100;
         population = -500;
-        acres = -50;
         expResult = -1;
-        result = RolloverControl.yearRollover(wheat, population, acres);
+        result = RolloverControl.wheatEatin(wheat, population);
         assertEquals(expResult, result, 0.0);
         System.out.println(result + " " + expResult);
         
@@ -54,9 +51,8 @@ public class RolloverControlTest {
         System.out.println("Test 03");
         wheat = -5;
         population = 100;
-        acres = 100;
         expResult = -1;
-        result = RolloverControl.yearRollover(wheat, population, acres);
+        result = RolloverControl.wheatEatin(wheat, population);
         assertEquals(expResult, result, 0.0);
         System.out.println(result + " " + expResult);
         
@@ -64,9 +60,8 @@ public class RolloverControlTest {
         System.out.println("Test 04");
         wheat = 25;
         population = 5;
-        acres = -5;
         expResult = -1;
-        result = RolloverControl.yearRollover(wheat, population, acres);
+        result = RolloverControl.wheatEatin(wheat, population);
         assertEquals(expResult, result, 0.0);
         System.out.println(result + " " + expResult);
         
@@ -74,9 +69,8 @@ public class RolloverControlTest {
         System.out.println("Test 05");
         wheat = 35;
         population = -50;
-        acres = 3;
         expResult = -1;
-        result = RolloverControl.yearRollover(wheat, population, acres);
+        result = RolloverControl.wheatEatin(wheat, population);
         assertEquals(expResult, result, 0.0);
         System.out.println(result + " " + expResult);
         
@@ -84,9 +78,8 @@ public class RolloverControlTest {
         System.out.println("Test 06");
         wheat = 100;
         population = -5;
-        acres = -1;
         expResult = -1;
-        result = RolloverControl.yearRollover(wheat, population, acres);
+        result = RolloverControl.wheatEatin(wheat, population);
         assertEquals(expResult, result, 0.0);
         System.out.println(result + " " + expResult);
         
@@ -94,9 +87,8 @@ public class RolloverControlTest {
         System.out.println("Test 07");
         wheat = 100;
         population = -50;
-        acres = -5;
         expResult = -1;
-        result = RolloverControl.yearRollover(wheat, population, acres);
+        result = RolloverControl.wheatEatin(wheat, population);
         assertEquals(expResult, result, 0.0);
         System.out.println(result + " " + expResult);
         

@@ -90,6 +90,14 @@ public class Game implements Serializable {
     public void setCurrentPopulation(int currentPopulation) {
         this.currentPopulation = currentPopulation;
     }
+    
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
 
     public int getAcresOwned() {
         return acresOwned;

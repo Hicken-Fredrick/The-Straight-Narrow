@@ -7,6 +7,7 @@ package citbyui.cit260.cityofaaron.control;
 
 import citbyui.cit260.cityofaaron.model.Game;
 import citbyui.cit260.cityofaaron.model.Player;
+import citbyui.cit260.cityofaaron.control.*;
 
 /**
  *
@@ -28,6 +29,7 @@ public class GameControl {
         game.setThePlayer(player);
         
         //use this area to set starting conditions for game
+        game.setYear(1);
         game.setWheatinStorage(50);
         game.setAcresOwned(5);
         game.setAcresPlanted(1);
@@ -64,6 +66,21 @@ public class GameControl {
     private static int generateLandCost() {
         int cost = (int )(Math.random() * 10 + 17);
         return cost;
+    }
+    
+    public static void yearRollover() {
+        //find how much wheat we made during the year
+        game.setWheatinStorage(RolloverControl.wheatGenerated
+        (game.getTithingPayed(), game.getWheatinStorage(), game.getAcresPlanted()));
+        
+        //generate vermin to eat a portion of your stored wheat
+        game.setWheatinStorage(CalculateWheatLoss.calcWheatLoss
+        (game.getTithingPayed(), game.getWheatinStorage()));
+        
+        //needs more work here to complete including a game over state
+        
+        //increment the year upwards
+        game.setYear(game.getYear()+1);
     }
     
 }

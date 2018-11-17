@@ -5,16 +5,18 @@
  */
 package citbyui.cit260.cityofaaron.control;
 
+import java.util.Random;
+
 /**
  *
  * @author tayta
  */
 public class RolloverControl {
-    
-    //check score validity and return score if it passes
-    public static double yearRollover(int wheat, int population, int acres) {
         
-        double rollover = 0;
+    //check wheat eatin for the year
+    public static double wheatEatin(int wheat, int population) {
+        
+        double wheatEatin = 0;
         
         /*error checking
         population must be > or = 0
@@ -25,14 +27,50 @@ public class RolloverControl {
             return -1;
         else  if (wheat < 0)
             return -1;
-        else if (acres < 0)
-            return -1;
         
         //calculate score
-        rollover = ((population * 2) / wheat ) + (population - acres);
+        wheatEatin = wheat - (population * 2);
         
         //return score
-        return rollover;
+        return wheatEatin;
     }
+
+    static int wheatGenerated(int tithing, int wheat, int land) {
+        //find how many bushels gained per acre
+        int bushelsPerAcre = 0;
+        Random rn = new Random();
+        //used to define the possible values for bushelsPerAcre
+        double tithingPercent = 0;
+        int min = 0;
+        int max = 0;
+        
+        //find tithing percent
+        tithingPercent  = tithing;
+        tithingPercent /= wheat;
+        tithingPercent *= 100;
+        
+        //break down tithing percents
+        if (tithingPercent > 12) {
+            min = 2;
+            max = 5;
+        } else if (tithingPercent <= 12 && tithingPercent > 7) {
+            min = 2;
+            max = 4;
+        } else if (tithingPercent <= 7){
+            min = 1;
+            max = 3;
+        }
+        
+        //generate a random based on tithing given
+        bushelsPerAcre = rn.nextInt(max - min + 1) + min;
+        
+        //calculate wheat generated
+        wheat += land * bushelsPerAcre;
+        
+        //return wheat new wheat total
+        return wheat;
+    }
+
+    
     
 }
