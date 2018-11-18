@@ -104,7 +104,8 @@ public class GameMenuView extends View{
     }
 
     private void reportsMenu() {
-        
+        ReportsView reportsView = new ReportsView();
+        reportsView.display();
     }
 
     private void buyAndSellLand() {
