@@ -78,12 +78,17 @@ public class MainMenuView extends View {
     
     private void startNewGame() {
         //create game and push previously made player
-        Game game = GameControl.creatNewGame(CityOfAaronSN.getThePlayer());
-        CityOfAaronSN.setCurrentGame(game);
+        int returnValue = GameControl.createNewGame(CityOfAaronSN.getThePlayer());
         
-        //call game menu view
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
+        //check to see if create new game worked
+        if (returnValue < 0)
+            System.out.println("ERROR - Failed to create new game");
+        
+        //else call game menu view
+        else {
+            GameMenuView gameMenuView = new GameMenuView();
+            gameMenuView.display();
+        }
     }
     
     private void loadGame() {

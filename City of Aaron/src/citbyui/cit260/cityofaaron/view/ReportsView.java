@@ -8,6 +8,10 @@ package citbyui.cit260.cityofaaron.view;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.model.Game;
 import citbyui.cit260.cityofaaron.control.GameControl;
+import citbyui.cit260.cityofaaron.control.StorehouseControl;
+import citbyui.cit260.cityofaaron.model.InventoryItem;
+import citbyui.cit260.cityofaaron.model.ItemType;
+import java.util.ArrayList;
 
 import java.util.Scanner;
 
@@ -29,17 +33,19 @@ public class ReportsView extends View{
         
         //build prompt message
         String promptMessage = 
-                "\n" + 
-               "*********************************\n" + 
-                "*   CITY OF AARON : Reports View  *\n" +
-                "*********************************\n" +
-                "\n" + "Game Wheat Owned: " + game.getWheatinStorage() + "\n"
+                "\n"  
+                + "*********************************\n" 
+                + "*  CITY OF AARON : Reports View  *\n" 
+                + "*********************************\n" 
+                + "\n" + "Game Wheat Owned: " + game.getWheatinStorage() + "\n"
                 + "Game Arces Owned: " + game.getAcresOwned() + "\n"
-                        + "Game Arces Planted: " + game.getAcresPlanted() + "\n"
-                                + "Game Tithing and Offering: " + game.getTithingPayed() +
-               "\n" +
-                "A - Find the Author list\n" +
-               " R - return to previous menu\n";
+                + "Game Arces Planted: " + game.getAcresPlanted() + "\n"
+                + "Game Tithing and Offering: " + game.getTithingPayed() + "\n" 
+                + "M - View The Game Maker Author List\n"
+                + "A - View List of Animals\n"
+                + "D - View List of Medicine\n"
+                + "T - View List of Tools\n"
+                + "R - return to previous menu\n";
         
         inputs[0] = getInput(promptMessage);
         
@@ -51,13 +57,27 @@ public class ReportsView extends View{
         String choice = inputs[0];
         
         switch (choice.toLowerCase()) {
-            
-            //call author veiw class
-            case "A":{
+            //call author view class
+            case "m":{
                 authorList();
                 return false;
             }
-            //call restart for current game    
+            //call animal list view
+            case "a":{
+                printAnimalList();
+                return false;
+            }
+            //call medicine list view
+            case "d":{
+                printMedicineList();
+                return false;
+            }
+            //call tool list view
+            case "t":{
+                printToolList();
+                return false;
+            }
+            //return to previous menu    
             case "r":
                 return true;
             //unknown menu item choice
@@ -74,6 +94,27 @@ public class ReportsView extends View{
     private void authorList() {
         AuthorView authorView = new AuthorView();
         authorView.displayauthorView();
+    }
+
+    private void printAnimalList() {
+        ArrayList<InventoryItem> animalList = new ArrayList<>();
+        animalList = StorehouseControl.buildAnimalList();
+        
+        System.out.println("*****************************\n" +
+                           "*** LIST OF OWNED ANIMALS ***\n");
+        
+        for (int i = 0; i < animalList.size(); i++) {
+            InventoryItem item = animalList.get(i);
+            System.out.println(item.getName() + " - " + item.getAge() + " years old - valued at");
+        }
+    }
+
+    private void printMedicineList() {
+        
+    }
+
+    private void printToolList() {
+        
     }
 }
 

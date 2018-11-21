@@ -16,7 +16,6 @@ public class Player implements Serializable {
     private String name;
 
     public Player() {
-         name = "Aaron";
     }
     
     public String getName() {

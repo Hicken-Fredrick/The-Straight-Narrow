@@ -8,27 +8,30 @@
 package citbyui.cit260.cityofaaron.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
  * @author Meroko and friends
  */
 public class Storehouse implements Serializable {
-   private InventoryItem items[];
+   private ArrayList<InventoryItem> inventory;
    private Author author[];
 
     public Storehouse() {
     }
 
-   
-    public InventoryItem[] getItems() {
-        return items;
+    public ArrayList<InventoryItem> getInventory() {
+        return inventory;
     }
 
-    public void setItems(InventoryItem[] items) {
-        this.items = items;
+    public void setInventory(ArrayList<InventoryItem> inventory) {
+        this.inventory = inventory;
     }
+
+   
 
     public Author[] getAuthor() {
         return author;
@@ -41,7 +44,7 @@ public class Storehouse implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + Arrays.deepHashCode(this.items);
+        hash = 97 * hash + Objects.hashCode(this.inventory);
         hash = 97 * hash + Arrays.deepHashCode(this.author);
         return hash;
     }
@@ -58,7 +61,7 @@ public class Storehouse implements Serializable {
             return false;
         }
         final Storehouse other = (Storehouse) obj;
-        if (!Arrays.deepEquals(this.items, other.items)) {
+        if (!Objects.equals(this.inventory, other.inventory)) {
             return false;
         }
         if (!Arrays.deepEquals(this.author, other.author)) {
@@ -69,8 +72,10 @@ public class Storehouse implements Serializable {
 
     @Override
     public String toString() {
-        return "Storehouse{" + "items=" + items + ", author=" + author + '}';
+        return "Storehouse{" + "inventory=" + inventory + ", author=" + author + '}';
     }
+
+
  
    
    

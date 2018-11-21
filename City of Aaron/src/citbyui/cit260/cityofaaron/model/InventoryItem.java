@@ -30,8 +30,6 @@ public class InventoryItem implements Serializable {
     //public instances
     //Constructors
     public InventoryItem() {
-        itemType = itemType.Tool;
-        condition = condition.Good;
     }
     
     //Getters / Setters

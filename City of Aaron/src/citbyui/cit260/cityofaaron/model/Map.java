@@ -22,8 +22,6 @@ public class Map implements Serializable {
     public Map() {
         
     }
-
-    
     
     public Location getLocations() {
         return locations;
