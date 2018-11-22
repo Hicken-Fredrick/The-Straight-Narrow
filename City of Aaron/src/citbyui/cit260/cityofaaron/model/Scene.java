@@ -22,7 +22,6 @@ public class Scene implements Serializable {
         name = "City of Aaron";
     }
     
-    
 
     public String getName() {
         return name;

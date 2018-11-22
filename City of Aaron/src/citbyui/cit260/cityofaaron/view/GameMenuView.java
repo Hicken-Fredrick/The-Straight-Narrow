@@ -26,7 +26,7 @@ public class GameMenuView extends View{
                 "\n*********************************\n" + 
                "*   CITY OF AARON : Game Menu   *\n" +
                "*********************************\n" +
-               " V - View Map & Move\n" +
+               " V - Map Menu\n" +
                " M - Manage Crops\n" +
                " L - Live The Year\n" + 
                " B - Buy and Sell Land\n" +
@@ -88,14 +88,13 @@ public class GameMenuView extends View{
     }
 
     private void manageCrops() {
-        
-        //create manageCropsView
         ManageCropsView manageCropsView = new ManageCropsView();
         manageCropsView.display();
     }
 
     private void viewMapAndMove() {
-        
+        MapView mapView = new MapView();
+        mapView.display();
     }
 
     private void liveYear() {

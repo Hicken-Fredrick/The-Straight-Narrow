@@ -167,7 +167,7 @@ public class GameControl {
         //set name
         location.setName("The Ruler's Court");
         //set map symbol
-        location.setMapSymbol("CO");
+        location.setMapSymbol("RC");
         //save location
         locations[0][0] = location;
         
@@ -176,7 +176,7 @@ public class GameControl {
         //set point of location
         point = new Point();
         point.setRow(1);
-        point.setColumn(1);
+        point.setColumn(2);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
@@ -192,7 +192,7 @@ public class GameControl {
         //set point of location
         point = new Point();
         point.setRow(1);
-        point.setColumn(1);
+        point.setColumn(3);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
@@ -208,14 +208,14 @@ public class GameControl {
         //set point of location
         point = new Point();
         point.setRow(1);
-        point.setColumn(1);
+        point.setColumn(4);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("The Temple");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("TS");
         //save location
         locations[0][3] = location;
         
@@ -224,14 +224,14 @@ public class GameControl {
         //set point of location
         point = new Point();
         point.setRow(1);
-        point.setColumn(1);
+        point.setColumn(5);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("The Farms");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("FL");
         //save location
         locations[0][4] = location;
         
@@ -239,15 +239,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
+        point.setRow(2);
         point.setColumn(1);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Border Lands");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("BL");
         //save location
         locations[1][0] = location;
         
@@ -255,15 +255,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(2);
+        point.setColumn(2);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Personal Room");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("PR");
         //save location
         locations[1][1] = location;
         
@@ -271,15 +271,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(2);
+        point.setColumn(3);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Westerfall");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("WF");
         //save location
         locations[1][2] = location;
         
@@ -287,15 +287,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(2);
+        point.setColumn(4);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Bywald");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("BW");
         //save location
         locations[1][3] = location;
         
@@ -303,15 +303,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(2);
+        point.setColumn(5);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Aldmarsh");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("AM");
         //save location
         locations[1][4] = location;
         
@@ -319,15 +319,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
+        point.setRow(3);
         point.setColumn(1);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Morford");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("MF");
         //save location
         locations[2][0] = location;
         
@@ -335,15 +335,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(3);
+        point.setColumn(2);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Snowbeech");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("SW");
         //save location
         locations[2][1] = location;
         
@@ -351,15 +351,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(3);
+        point.setColumn(3);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Butterdell");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("BD");
         //save location
         locations[2][2] = location;
         
@@ -367,15 +367,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(3);
+        point.setColumn(4);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Sevokith");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("SK");
         //save location
         locations[2][3] = location;
         
@@ -383,15 +383,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(3);
+        point.setColumn(5);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Kingdom of Coir");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("KC");
         //save location
         locations[2][4] = location;
         
@@ -399,15 +399,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
+        point.setRow(4);
         point.setColumn(1);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("West Border");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("WB");
         //save location
         locations[3][0] = location;
         
@@ -415,15 +415,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(4);
+        point.setColumn(2);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("East Border");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("EB");
         //save location
         locations[3][1] = location;
         
@@ -431,15 +431,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(4);
+        point.setColumn(3);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("North Border");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("NB");
         //save location
         locations[3][2] = location;
         
@@ -447,15 +447,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(4);
+        point.setColumn(4);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("South Border");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("SB");
         //save location
         locations[3][3] = location;
         
@@ -463,15 +463,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(4);
+        point.setColumn(5);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Captain's Office");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("CO");
         //save location
         locations[3][4] = location;
         
@@ -479,15 +479,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
+        point.setRow(5);
         point.setColumn(1);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Judge's Office");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("JO");
         //save location
         locations[4][0] = location;
         
@@ -495,15 +495,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(5);
+        point.setColumn(2);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Advisor's Office");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("AO");
         //save location
         locations[4][1] = location;
         
@@ -511,15 +511,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(5);
+        point.setColumn(3);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Tool Store");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("TS");
         //save location
         locations[4][2] = location;
         
@@ -527,15 +527,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(5);
+        point.setColumn(4);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Animal Store");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("AS");
         //save location
         locations[4][3] = location;
         
@@ -543,15 +543,15 @@ public class GameControl {
         location = new Location();
         //set point of location
         point = new Point();
-        point.setRow(1);
-        point.setColumn(1);
+        point.setRow(5);
+        point.setColumn(5);
         location.setPoint(point);
         //set visited
         location.setVisted(false);
         //set name
-        location.setName("boise");
+        location.setName("Medicine Store");
         //set map symbol
-        location.setMapSymbol("BI");
+        location.setMapSymbol("MS");
         //save location
         locations[4][4] = location;
         

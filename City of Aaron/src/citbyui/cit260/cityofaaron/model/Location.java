@@ -18,7 +18,6 @@ public class Location implements Serializable {
     private boolean visted;
     private String description;
     private Scene scene;
-    private InventoryItem item;
     private String mapSymbol;
 
     public Location() {
@@ -64,14 +63,6 @@ public class Location implements Serializable {
 
     public void setScene(Scene scene) {
         this.scene = scene;
-    }
-
-    public InventoryItem getItem() {
-        return item;
-    }
-
-    public void setItem(InventoryItem item) {
-        this.item = item;
     }
 
     public String getMapSymbol() {
