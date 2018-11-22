@@ -89,7 +89,7 @@ public class GameControl {
     private static ArrayList<InventoryItem> createItems() {
         ArrayList<InventoryItem> items = new ArrayList<>();
         
-        //reate and item
+        //create and item
         InventoryItem cow = new InventoryItem();
         cow.setName("Bertha");
         cow.setAge(3);
