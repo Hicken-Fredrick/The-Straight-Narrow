@@ -15,8 +15,11 @@ import java.util.Objects;
 public class Location implements Serializable {
     private String name;
     private Point point;
+    private boolean visted;
     private String description;
     private Scene scene;
+    private InventoryItem item;
+    private String mapSymbol;
 
     public Location() {
     }
@@ -39,6 +42,14 @@ public class Location implements Serializable {
         this.point = point;
     }
 
+    public boolean isVisted() {
+        return visted;
+    }
+
+    public void setVisted(boolean visted) {
+        this.visted = visted;
+    }
+    
     public String getDescription() {
         return description;
     }
@@ -54,6 +65,23 @@ public class Location implements Serializable {
     public void setScene(Scene scene) {
         this.scene = scene;
     }
+
+    public InventoryItem getItem() {
+        return item;
+    }
+
+    public void setItem(InventoryItem item) {
+        this.item = item;
+    }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+    
 
     @Override
     public int hashCode() {

@@ -20,6 +20,8 @@ public class InventoryItem implements Serializable {
     private ItemType itemType;
     //quantity var using int, no decimals
     private int quantity;
+    //the value in wheat of an item
+    private int value;
     //Condition Enum Good, Fair, Poor
     private Condition condition;
     //age int, if un-needed set to NULL
@@ -57,6 +59,14 @@ public class InventoryItem implements Serializable {
         this.quantity = quantity;
     }
 
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+    
     public Condition getCondition() {
         return condition;
     }

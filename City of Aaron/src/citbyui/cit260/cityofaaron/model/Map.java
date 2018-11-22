@@ -14,28 +14,31 @@ import java.util.Objects;
  */
 public class Map implements Serializable {
     
-    private Location locations;
-    private Point currentLocation;
+    private Location [][] locations;
+    private Location currentLocation;
     private int rows;
     private int columns;
+    private int currentRow;
+    private int currentColumn;
+    private boolean visited;
 
     public Map() {
         
     }
-    
-    public Location getLocations() {
+
+    public Location[][] getLocations() {
         return locations;
     }
 
-    public void setLocations(Location locations) {
+    public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
 
-    public Point getCurrentLocation() {
+    public Location getCurrentLocation() {
         return currentLocation;
     }
 
-    public void setCurrentLocation(Point currentLocation) {
+    public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
     }
 
@@ -54,6 +57,32 @@ public class Map implements Serializable {
     public void setColumns(int columns) {
         this.columns = columns;
     }
+
+    public int getCurrentRow() {
+        return currentRow;
+    }
+
+    public void setCurrentRow(int currentRow) {
+        this.currentRow = currentRow;
+    }
+
+    public int getCurrentColumn() {
+        return currentColumn;
+    }
+
+    public void setCurrentColumn(int currentColumn) {
+        this.currentColumn = currentColumn;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+    
+    
 
     @Override
     public int hashCode() {

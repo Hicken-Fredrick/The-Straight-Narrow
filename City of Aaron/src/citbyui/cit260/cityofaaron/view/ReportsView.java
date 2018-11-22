@@ -105,7 +105,8 @@ public class ReportsView extends View{
         
         for (int i = 0; i < animalList.size(); i++) {
             InventoryItem item = animalList.get(i);
-            System.out.println(item.getName() + " - " + item.getAge() + " years old - valued at");
+            System.out.println(item.getName() + " - " + item.getAge() 
+                    + " years old - valued at " + item.getValue() + " bushels of wheat\n");
         }
     }
 
