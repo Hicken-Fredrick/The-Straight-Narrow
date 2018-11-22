@@ -36,14 +36,6 @@ public class GameControl {
         //set the game
         CityOfAaronSN.setCurrentGame(game);
         
-        //use this area to set starting conditions for game
-        game.setYear(1);
-        game.setWheatinStorage(50);
-        game.setAcresOwned(5);
-        game.setAcresPlanted(1);
-        game.setCurrentPopulation(20);
-        game.setTithingPayed(0);
-        game.setAcreCost(cost);
         
         //create starting inventory for player TO BE IMPLEMENTED (see below)
         Storehouse storehouse = new Storehouse();
@@ -66,7 +58,20 @@ public class GameControl {
         else
             game.setTheMap(map);
         
+        //use this area to set starting conditions for game
+        game.setYear(1);
+        game.setWheatinStorage(50);
+        game.setAcresOwned(5);
+        game.setAcresPlanted(1);
+        game.setCurrentPopulation(20);
+        game.setTithingPayed(0);
+        game.setAcreCost(cost);
         
+        //set starting location
+        map.setCurrentLocation(map.getLocations()[0][0]);
+        map.getCurrentLocation().setVisited(true);
+        map.setCurrentRow(1);
+        map.setCurrentColumn(1);
         //return value for success
         return 1;
         
@@ -163,7 +168,7 @@ public class GameControl {
         point.setColumn(1);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("The Ruler's Court");
         //set map symbol
@@ -179,7 +184,7 @@ public class GameControl {
         point.setColumn(2);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Village");
         //set map symbol
@@ -195,7 +200,7 @@ public class GameControl {
         point.setColumn(3);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Local River");
         //set map symbol
@@ -211,7 +216,7 @@ public class GameControl {
         point.setColumn(4);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("The Temple");
         //set map symbol
@@ -227,7 +232,7 @@ public class GameControl {
         point.setColumn(5);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("The Farms");
         //set map symbol
@@ -243,7 +248,7 @@ public class GameControl {
         point.setColumn(1);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Border Lands");
         //set map symbol
@@ -259,7 +264,7 @@ public class GameControl {
         point.setColumn(2);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Personal Room");
         //set map symbol
@@ -275,7 +280,7 @@ public class GameControl {
         point.setColumn(3);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Westerfall");
         //set map symbol
@@ -291,7 +296,7 @@ public class GameControl {
         point.setColumn(4);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Bywald");
         //set map symbol
@@ -307,7 +312,7 @@ public class GameControl {
         point.setColumn(5);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Aldmarsh");
         //set map symbol
@@ -323,7 +328,7 @@ public class GameControl {
         point.setColumn(1);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Morford");
         //set map symbol
@@ -339,7 +344,7 @@ public class GameControl {
         point.setColumn(2);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Snowbeech");
         //set map symbol
@@ -355,7 +360,7 @@ public class GameControl {
         point.setColumn(3);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Butterdell");
         //set map symbol
@@ -371,7 +376,7 @@ public class GameControl {
         point.setColumn(4);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Sevokith");
         //set map symbol
@@ -387,7 +392,7 @@ public class GameControl {
         point.setColumn(5);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Kingdom of Coir");
         //set map symbol
@@ -403,7 +408,7 @@ public class GameControl {
         point.setColumn(1);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("West Border");
         //set map symbol
@@ -419,7 +424,7 @@ public class GameControl {
         point.setColumn(2);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("East Border");
         //set map symbol
@@ -435,7 +440,7 @@ public class GameControl {
         point.setColumn(3);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("North Border");
         //set map symbol
@@ -451,7 +456,7 @@ public class GameControl {
         point.setColumn(4);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("South Border");
         //set map symbol
@@ -467,7 +472,7 @@ public class GameControl {
         point.setColumn(5);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Captain's Office");
         //set map symbol
@@ -483,7 +488,7 @@ public class GameControl {
         point.setColumn(1);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Judge's Office");
         //set map symbol
@@ -499,7 +504,7 @@ public class GameControl {
         point.setColumn(2);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Advisor's Office");
         //set map symbol
@@ -515,7 +520,7 @@ public class GameControl {
         point.setColumn(3);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Tool Store");
         //set map symbol
@@ -531,7 +536,7 @@ public class GameControl {
         point.setColumn(4);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Animal Store");
         //set map symbol
@@ -547,7 +552,7 @@ public class GameControl {
         point.setColumn(5);
         location.setPoint(point);
         //set visited
-        location.setVisted(false);
+        location.setVisited(false);
         //set name
         location.setName("Medicine Store");
         //set map symbol

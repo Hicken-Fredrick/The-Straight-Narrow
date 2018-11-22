@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Location implements Serializable {
     private String name;
     private Point point;
-    private boolean visted;
+    private boolean visited;
     private String description;
     private Scene scene;
     private String mapSymbol;
@@ -41,12 +41,12 @@ public class Location implements Serializable {
         this.point = point;
     }
 
-    public boolean isVisted() {
-        return visted;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public void setVisted(boolean visted) {
-        this.visted = visted;
+    public void setVisited(boolean visted) {
+        this.visited = visted;
     }
     
     public String getDescription() {

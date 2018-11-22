@@ -13,12 +13,20 @@ class SceneView extends View {
 
     @Override
     public String[] getInputs() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String[] inputs = new String[1];
+        
+        //build prompt message
+        String promptMessage = 
+               "THIS MENU ISN'T IMPLEMENTED YET - any value to return";
+        
+        inputs[0] = getInput(promptMessage);
+        
+        return inputs;
     }
 
     @Override
     public boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
     
 }
