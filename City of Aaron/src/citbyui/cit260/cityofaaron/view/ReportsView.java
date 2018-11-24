@@ -42,7 +42,7 @@ public class ReportsView extends View{
                 + "Game Arces Planted: " + game.getAcresPlanted() + "\n"
                 + "Game Tithing and Offering: " + game.getTithingPayed() + "\n" 
                 + "M - View The Game Maker Author List\n"
-                + "A - View List of Animals\n"
+                + "A - View List of Animals: \n"
                 + "D - View List of Medicine\n"
                 + "T - View List of Tools\n"
                 + "R - return to previous menu\n";
@@ -105,8 +105,8 @@ public class ReportsView extends View{
         
         for (int i = 0; i < animalList.size(); i++) {
             InventoryItem item = animalList.get(i);
-            System.out.println(item.getName() + " - " + item.getAge() 
-                    + " years old - valued at " + item.getValue() + " bushels of wheat\n");
+            System.out.println(item.getName() + " and has " + item.getAge() 
+                    + " years old and it is Valued at " + item.getValue() + " Bushels of Wheat\n");
         }
     }
 
