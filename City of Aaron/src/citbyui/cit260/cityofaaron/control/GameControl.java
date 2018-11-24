@@ -92,25 +92,56 @@ public class GameControl {
     private static ArrayList<InventoryItem> createItems() {
         ArrayList<InventoryItem> items = new ArrayList<>();
         
-        //createing items to fill inventory
+        //creating items to fill inventory
         //item 1
         InventoryItem item = new InventoryItem();
-        item.setName("Bertha");
+        item.setName("Moo");
         item.setAge(3);
         item.setItemType(ItemType.Animal);
         item.setValue(15);
-        //add the item
+
+        //add item 1
         items.add(item);
+        
         //item 2
         item = new InventoryItem();
-        item.setName("Hammer");
-        item.setAge(1);
-        item.setItemType(ItemType.Tool);
-        item.setValue(2);
-        //add the item
+        item.setName("Ninja");
+        item.setAge(4);
+        item.setItemType(ItemType.Animal);
+        item.setValue(14);
+        
+        //add item 2
+        items.add(item);  
+        
+        //item 3
+        item = new InventoryItem();
+        item.setName("GrassLover");
+        item.setAge(5);
+        item.setItemType(ItemType.Animal);
+        item.setValue(13);
+        
+        //add item 3
         items.add(item);
         
+        //item 4
+        item = new InventoryItem();
+        item.setName("Shadow");
+        item.setAge(6);
+        item.setItemType(ItemType.Animal);
+        item.setValue(12);
         
+        //add item 4
+        items.add(item);
+        
+        //item 5
+        item = new InventoryItem();
+        item.setName("Speedy");
+        item.setAge(7);
+        item.setItemType(ItemType.Animal);
+        item.setValue(11);
+        
+        //add item 5
+        items.add(item);
         
         //output arraylist
         for (InventoryItem inventoryItem : items) {
