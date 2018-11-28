@@ -115,7 +115,7 @@ public class ReportsView extends View{
         medicineList = StorehouseControl.buildMedicineList();
         
         System.out.println("*****************************\n" +
-                           "*** LIST OF OWNED ANIMALS ***\n");
+                           "*** LIST OF OWNED Medicines ***\n");
         
         for (int i = 0; i < medicineList.size(); i++) {
             InventoryItem item = medicineList.get(i);
