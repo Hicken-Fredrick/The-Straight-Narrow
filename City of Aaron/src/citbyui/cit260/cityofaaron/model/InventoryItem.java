@@ -16,6 +16,8 @@ public class InventoryItem implements Serializable {
     //private instances
     //name var
     private String name;
+    //item descritpion
+    private String description;
     //ItemType Enum Animal, Tool, Medicine, Food
     private ItemType itemType;
     //quantity var using int, no decimals
@@ -43,6 +45,14 @@ public class InventoryItem implements Serializable {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
     public ItemType getItemType() {
         return itemType;
     }

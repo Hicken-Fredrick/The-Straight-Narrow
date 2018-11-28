@@ -34,5 +34,25 @@ public class StorehouseControl {
         
         return animalList;
     }
+
+    public static ArrayList<InventoryItem> buildMedicineList() {
+        //reutrn type
+        ArrayList<InventoryItem> medicineList = new ArrayList<>();
+        
+        //full inventory for sorting
+        ArrayList<InventoryItem> inventoryList = new ArrayList<>();
+        inventoryList = CityOfAaronSN.getCurrentGame().getTheStorehouse().getInventory();
+        
+        //sort loop
+        for (InventoryItem inventoryItem : inventoryList) {
+            //check if medicine & there is stock
+            if (inventoryItem.getItemType() == ItemType.Medicine 
+                    && inventoryItem.getQuantity() > 1)
+                //add item to return list
+                medicineList.add(inventoryItem);
+        }
+        
+        return medicineList;
+    }
     
 }

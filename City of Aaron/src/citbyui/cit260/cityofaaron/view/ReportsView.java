@@ -111,7 +111,18 @@ public class ReportsView extends View{
     }
 
     private void printMedicineList() {
+        ArrayList<InventoryItem> medicineList = new ArrayList<>();
+        medicineList = StorehouseControl.buildMedicineList();
         
+        System.out.println("*****************************\n" +
+                           "*** LIST OF OWNED ANIMALS ***\n");
+        
+        for (int i = 0; i < medicineList.size(); i++) {
+            InventoryItem item = medicineList.get(i);
+            System.out.println(item.getName() + " x " + item.getQuantity() 
+                    + "\n" + item.getDescription() + " - Perishable: " 
+                    + item.isPerishable() + "\n");
+        }
     }
 
     private void printToolList() {

@@ -143,6 +143,42 @@ public class GameControl {
         //add item 5
         items.add(item);
         
+        //item 6
+        item = new InventoryItem();
+        item.setName("Curative Moss");
+        item.setDescription("Cures all Diseases");
+        item.setItemType(ItemType.Medicine);
+        item.setQuantity(3);
+        item.setValue(3);
+        item.setPerishable(true);
+        
+        //add item 6
+        items.add(item);
+        
+        //item 7
+        item = new InventoryItem();
+        item.setName("Mana");
+        item.setDescription("Removes all Hunger Costs this Year");
+        item.setItemType(ItemType.Medicine);
+        item.setQuantity(0);
+        item.setValue(100);
+        item.setPerishable(true);
+        
+        //add item 7
+        items.add(item);
+        
+        //item 8
+        item = new InventoryItem();
+        item.setName("Blessed Water");
+        item.setDescription("Icreased Faith & Protection");
+        item.setItemType(ItemType.Medicine);
+        item.setQuantity(2);
+        item.setValue(10);
+        item.setPerishable(false);
+        
+        //add item 8
+        items.add(item);
+        
         //output arraylist
         for (InventoryItem inventoryItem : items) {
             if (inventoryItem.getItemType() == ItemType.Animal)
