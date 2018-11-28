@@ -35,6 +35,7 @@ public class StorehouseControl {
         return animalList;
     }
 
+    //creates an array list of all the medicine in inventory and returns it
     public static ArrayList<InventoryItem> buildMedicineList() {
         //reutrn type
         ArrayList<InventoryItem> medicineList = new ArrayList<>();
