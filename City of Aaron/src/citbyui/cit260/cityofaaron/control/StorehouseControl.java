@@ -56,4 +56,25 @@ public class StorehouseControl {
         return medicineList;
     }
     
+    //creates an array list of all the medicine in inventory and returns it
+    public static ArrayList<InventoryItem> buildToolList() {
+        //reutrn type
+        ArrayList<InventoryItem> toolList = new ArrayList<>();
+        
+        //full inventory for sorting
+        ArrayList<InventoryItem> inventoryList = new ArrayList<>();
+        inventoryList = CityOfAaronSN.getCurrentGame().getTheStorehouse().getInventory();
+        
+        //sort loop
+        for (InventoryItem inventoryItem : inventoryList) {
+            //check if medicine & there is stock
+            if (inventoryItem.getItemType() == ItemType.Tool 
+                    && inventoryItem.getQuantity() > 1)
+                //add item to return list
+                toolList.add(inventoryItem);
+        }
+        
+        return toolList;
+    }
+    
 }

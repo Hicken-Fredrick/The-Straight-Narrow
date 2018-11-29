@@ -179,6 +179,42 @@ public class GameControl {
         //add item 8
         items.add(item);
         
+        //item 9
+        item = new InventoryItem();
+        item.setName("Hammer");
+        item.setDescription("Needed for all building");
+        item.setItemType(ItemType.Tool);
+        item.setQuantity(3);
+        item.setValue(3);
+        item.setPerishable(false);
+        
+        //add item 9
+        items.add(item);
+        
+        //item 10
+        item = new InventoryItem();
+        item.setName("Graden Hoe");
+        item.setDescription("Helps with preparing the feilds");
+        item.setItemType(ItemType.Tool);
+        item.setQuantity(1);
+        item.setValue(100);
+        item.setPerishable(false);
+        
+        //add item 10
+        items.add(item);
+        
+        //item 11
+        item = new InventoryItem();
+        item.setName("Sickle");
+        item.setDescription("To cut all of the wheat");
+        item.setItemType(ItemType.Tool);
+        item.setQuantity(2);
+        item.setValue(100);
+        item.setPerishable(false);
+        
+        //add item 11
+        items.add(item);
+        
         //output arraylist
         for (InventoryItem inventoryItem : items) {
             if (inventoryItem.getItemType() == ItemType.Animal)

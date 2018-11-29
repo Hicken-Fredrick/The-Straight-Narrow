@@ -126,7 +126,18 @@ public class ReportsView extends View{
     }
 
     private void printToolList() {
+        ArrayList<InventoryItem> toolList = new ArrayList<>();
+        toolList = StorehouseControl.buildToolList();
         
+        System.out.println("*****************************\n" +
+                           "*** LIST OF OWNED Tools ***\n");
+        
+        for (int i = 0; i < toolList.size(); i++) {
+            InventoryItem item = toolList.get(i);
+            System.out.println(item.getName() + " x " + item.getQuantity() 
+                    + "\n" + item.getDescription() + " - Perishable: " 
+                    + item.isPerishable() + "\n");
+        }
     }
 }
 
