@@ -5,17 +5,37 @@
  */
 package citbyui.cit260.cityofaaron.view;
 
+import CityOfAaronSN.CityOfAaronSN;
+import citbyui.cit260.cityofaaron.model.Game;
+import java.util.Scanner;
+
 /**
  *
  * @author Meroko
  */
-class SellLandView {
-
-    public SellLandView() {
+class SellLandView extends View {
+    public static Scanner scanner = new Scanner( System.in );
+    public static Game game = CityOfAaronSN.getCurrentGame();
+    
+    @Override
+    public String[] getInputs() {
+        String[] inputs = new String[1];
+        
+        //build prompt message
+        String promptMessage = 
+                "NOT YET BUILT";
+        
+        inputs[0] = getInput(promptMessage);
+        
+        return inputs;
     }
 
-    void displaySellLandView() {
-        System.out.println("Sell Land Display");
+    @Override
+    public boolean doAction(String[] inputs) {
+        System.out.println("TO BE IMPLEMENTED");
+        return true;
     }
+
+    
     
 }

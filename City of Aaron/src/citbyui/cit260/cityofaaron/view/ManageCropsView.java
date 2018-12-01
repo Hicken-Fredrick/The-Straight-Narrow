@@ -79,12 +79,12 @@ public class ManageCropsView extends View {
 
     private void buyLand() {
         BuyLandView buyLandView = new BuyLandView();
-        buyLandView.displayBuyLandView();
+        buyLandView.display();
     }
 
     private void sellLand() {
         SellLandView sellLandView = new SellLandView();
-        sellLandView.displaySellLandView();
+        sellLandView.display();
     }
 
     private void feedThePeople() {
