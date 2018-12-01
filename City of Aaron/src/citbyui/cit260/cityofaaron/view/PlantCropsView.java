@@ -33,9 +33,9 @@ public class PlantCropsView extends View{
                "*********************************\n" + 
                 "*   CITY OF AARON : Plant Crops   *\n" +
                 "*********************************\n" +
-               "You currently have: " + game.getWheatinStorage() + " Wheat in storage \n"
-                    + "This is how many plated arces you have: " + game.getAcresPlanted()
-                        + "\n" + "And this many unplanted: " + game.getAcresOwned() +
+               "You currently have: " + game.getWheatinStorage() + " Wheat in storage \n" +
+               "Current Acres Planted: " + game.getAcresPlanted() +
+               "\n" + "Current Acres Unplanted: " + game.getAcresOwned() +
                "\n P - plant additional crops\n" +
                " R - return to previous menu\n";
         
@@ -68,6 +68,7 @@ public class PlantCropsView extends View{
 
     private void plantCrops() {
         Boolean pass = false;
+        String choice = null;
         int plant = 0;
         Boolean validate = false;
         while (validate != true){
@@ -75,8 +76,15 @@ public class PlantCropsView extends View{
         while (pass != true)
         {
         try {
-        System.out.println("\nEnter the number that you want to plant:");
-        plant = Integer.parseInt(scanner.nextLine());
+        System.out.println("\nEnter the number that you want to plant(q to quit):");
+        choice = scanner.nextLine();
+            
+            if(choice.toLowerCase().trim().equals("q")) {
+                System.out.println("quitting to previous menu");
+                return;
+            }
+        
+        plant = Integer.parseInt(choice);
         pass = true;}
         catch (NumberFormatException e) { System.out.println("Invalid Input"); }
 

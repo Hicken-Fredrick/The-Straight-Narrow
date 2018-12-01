@@ -29,8 +29,8 @@ public class TithingAndOfferingView extends View{
                "*********************************\n" + 
                 "*   CITY OF AARON : Tithing and Offering    *\n" +
                 "*********************************\n" +
-               "You currently have: " + game.getWheatinStorage() + "Wheat in storage \n"
-                    + "Do you want to pay tithing on that? " +
+               "You currently have: " + game.getWheatinStorage() + "Wheat in storage \n" +
+               "Do you want to pay tithing on that? " +
                "\n P - Pay Tithing and Offering \n" +
                " R - return to previous menu\n";
         
@@ -70,7 +70,7 @@ public class TithingAndOfferingView extends View{
         while (pass != true)
         {
         try {
-        System.out.println("\nEnter the number of the percentage of tithing and offering that you wsant to pay:");
+        System.out.println("\nEnter the Tithing to Be Paid:");
         tithing = Integer.parseInt(scanner.nextLine());
         pass = true;}
         catch (NumberFormatException e) { System.out.println("Invalid Input"); }
@@ -81,16 +81,18 @@ public class TithingAndOfferingView extends View{
     }
 
     private Boolean validateInput(int tithing) {
-        if (tithing > 100 ){
-            System.out.println("\nNot Vaild");
+        Game game = CityOfAaronSN.getCurrentGame();
+        
+        if (tithing > game.getWheatinStorage() ){
+            System.out.println("\nYou Don't Have ENough Wheat");
             return false;
         }
         else if (tithing < 1 ){
-            System.out.println("\nNot Vaild");
+            System.out.println("\nValue must be 1 or Greater");
             return false;
         }
         else {
-            System.out.println("\nLand successfully paid Tithing and Offering ");
+            System.out.println("\nSuccessfully Submittited Tithing To Temple");
             GameControl.paidTithing(tithing);
             
             return true;

@@ -665,7 +665,8 @@ public class GameControl {
     public static void paidTithing(int tithing) {
         Game game = CityOfAaronSN.getCurrentGame();
         
-        game.setWheatinStorage(game.getWheatinStorage() - (tithing / 100) );    }
+        game.setWheatinStorage(game.getWheatinStorage() - tithing);    
+    }
 
     private static int generateLandCost() {
         int cost = (int )(Math.random() * 10 + 17);

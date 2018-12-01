@@ -42,9 +42,9 @@ public class LandView extends View{
                "*********************************\n" + 
                 "*   CITY OF AARON : Land View   *\n" +
                 "*********************************\n" +
-               "You currently have: " + game.getAcresOwned() + " acres available \n"
-                    + "If you want to buy more acres, it will cost you: " + game.getAcreCost() +
-               " R - return to previous menu\n";
+               "You currently have: " + game.getAcresOwned() + " acres available \n" +
+               "If you want to buy more acres, it will cost you: " + game.getAcreCost() +
+               "\n" + "R - return to previous menu\n";
         
         inputs[0] = getInput(promptMessage);
         

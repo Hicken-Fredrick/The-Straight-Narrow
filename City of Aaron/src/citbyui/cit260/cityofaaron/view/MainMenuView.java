@@ -126,10 +126,6 @@ public class MainMenuView extends View {
         } catch (GameControlException gce) {
             System.out.println(gce.getMessage());
             return;
-        } catch (Throwable ge) {
-            System.out.println(ge.getMessage());
-            ge.printStackTrace();
-            return;
         }
 
         GameMenuView gameMenuView = new GameMenuView();
