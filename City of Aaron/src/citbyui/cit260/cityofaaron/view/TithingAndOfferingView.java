@@ -29,7 +29,7 @@ public class TithingAndOfferingView extends View{
                "*********************************\n" + 
                 "*   CITY OF AARON : Tithing and Offering    *\n" +
                 "*********************************\n" +
-               "You currently have: " + game.getWheatinStorage() + "Wheat in storage \n" +
+               "You currently have: " + game.getWheatinStorage() + " Wheat in storage \n" +
                "Do you want to pay tithing on that? " +
                "\n P - Pay Tithing and Offering \n" +
                " R - return to previous menu\n";
@@ -63,19 +63,29 @@ public class TithingAndOfferingView extends View{
 
     private void payTithing() {
         Boolean pass = false;
+        String choice = null;
         int tithing = 0;
         Boolean validate = false;
+        
         while (validate != true){
             pass = false;
         while (pass != true)
         {
         try {
         System.out.println("\nEnter the Tithing to Be Paid:");
-        tithing = Integer.parseInt(scanner.nextLine());
-        pass = true;}
-        catch (NumberFormatException e) { System.out.println("Invalid Input"); }
-
+        choice = scanner.nextLine();
+        
+            //check for escape
+            if(choice.toLowerCase().trim().equals("q")) {
+                System.out.println("quitting to previous menu");
+                return;
+            }
+            
+        tithing = Integer.parseInt(choice);
+        pass = true;} catch (NumberFormatException e) { 
+            System.out.println("Invalid Input"); }
         }
+        
         validate = validateInput(tithing);
         }
     }
@@ -84,7 +94,7 @@ public class TithingAndOfferingView extends View{
         Game game = CityOfAaronSN.getCurrentGame();
         
         if (tithing > game.getWheatinStorage() ){
-            System.out.println("\nYou Don't Have ENough Wheat");
+            System.out.println("\nYou Don't Have Enough Wheat");
             return false;
         }
         else if (tithing < 1 ){
@@ -101,3 +111,15 @@ public class TithingAndOfferingView extends View{
     }
     
 }
+/*
+try {
+
+GameControl.payTithing(tithing);
+return true
+
+} catch (TithingException te) {
+
+    System.out.println(te.getMessage());
+    return false
+}
+*/

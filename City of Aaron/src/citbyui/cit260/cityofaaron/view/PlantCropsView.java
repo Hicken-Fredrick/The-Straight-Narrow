@@ -79,6 +79,7 @@ public class PlantCropsView extends View{
         System.out.println("\nEnter the number that you want to plant(q to quit):");
         choice = scanner.nextLine();
             
+            //check for escape
             if(choice.toLowerCase().trim().equals("q")) {
                 System.out.println("quitting to previous menu");
                 return;
@@ -87,7 +88,6 @@ public class PlantCropsView extends View{
         plant = Integer.parseInt(choice);
         pass = true;}
         catch (NumberFormatException e) { System.out.println("Invalid Input"); }
-
         }
         validate = validateInput(plant);
         }
