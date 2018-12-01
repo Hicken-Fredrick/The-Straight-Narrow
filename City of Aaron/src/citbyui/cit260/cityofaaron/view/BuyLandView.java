@@ -21,9 +21,22 @@ class BuyLandView extends View {
     public String[] getInputs() {
         String[] inputs = new String[1];
         
+        
         //build prompt message
         String promptMessage = 
                 "NOT YET BUILT!";
+           "\n" + 
+               "*********************************\n" + 
+                "*   CITY OF AARON : BUY LAND MENU   *\n" +
+                "*********************************\n" +
+               "You currently have: " + game.getWheatinStorage() + " land available \n" +
+               "Enter the number of acres you want to purchase? " +
+               
+               " R - return to previous menu\n";
+        
+        inputs[0] = getInput(promptMessage);
+        
+        return inputs;
         
         inputs[0] = getInput(promptMessage);
         
@@ -35,6 +48,90 @@ class BuyLandView extends View {
         System.out.println("TO BE IMPLEMENTED");
         return true;
     }
+    @Override
+    public boolean doAction(String inputs[]) {
+        String choice = inputs[0];
+        
+        switch (choice.toLowerCase()) {
+            //call new game
+            case "p":{
+                payTithing();
+                return false;
+            }
+            //call restart for current game    
+            case "r":
+                return true;
+            //unknown menu item choice
+            default:{
+                System.out.println("Unknown Menu Choice Please Try Again");
+                return false;
+            }
+            
+        }
+    }
 
+    private void payTithing() {
+        Boolean pass = false;
+        String choice = null;
+        int tithing = 0;
+        Boolean validate = false;
+        
+        while (validate != true){
+            pass = false;
+        while (pass != true)
+        {
+        try {
+        System.out.println("\nEnter the Tithing to Be Paid:");
+        choice = scanner.nextLine();
+        
+            //check for escape
+            if(choice.toLowerCase().trim().equals("q")) {
+                System.out.println("quitting to previous menu");
+                return;
+            }
+            
+        tithing = Integer.parseInt(choice);
+        pass = true;} catch (NumberFormatException e) { 
+            System.out.println("Invalid Input"); }
+        }
+        
+        validate = validateInput(tithing);
+        }
+    }
 
+    private Boolean validateInput(int tithing) {
+        Game game = CityOfAaronSN.getCurrentGame();
+        
+        if (tithing > game.getWheatinStorage() ){
+            System.out.println("\nYou Don't Have Enough Wheat");
+            return false;
+        }
+        else if (tithing < 1 ){
+            System.out.println("\nValue must be 1 or Greater");
+            return false;
+        }
+        else {
+            System.out.println("\nSuccessfully Submittited Tithing To Temple");
+            GameControl.paidTithing(tithing);
+            
+            return true;
+            
+        }
+    }
+    
 }
+
+/*
+try {
+
+GameControl.payTithing(tithing);
+return true
+
+} catch (TithingException te) {
+
+    System.out.println(te.getMessage());
+    return false
+}
+*/
+
+
