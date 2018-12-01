@@ -111,6 +111,7 @@ public class TithingAndOfferingView extends View{
     }
     
 }
+
 /*
 try {
 
