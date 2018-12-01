@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Meroko
+ * @author Edgar
  */
 class BuyLandView extends View {
     public static Scanner scanner = new Scanner( System.in );
