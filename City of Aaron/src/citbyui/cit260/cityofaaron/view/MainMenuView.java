@@ -8,6 +8,8 @@ package citbyui.cit260.cityofaaron.view;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.control.GameControl;
 import citbyui.cit260.cityofaaron.model.Game;
+import citbyui.cit260.cityofaaron.model.Player;
+import citybyui.cit260.cirtyofaaron.exceptions.GameControlException;
 
 /**
  *
@@ -28,6 +30,7 @@ public class MainMenuView extends View {
                 "*   CITY OF AARON : MAIN MENU   *\n" +
                 "*********************************\n" +
                 " N - Start New Game\n" +
+                " T - TEST GAME EXCEPTION (DEV ONLY)\n" +
                 " L - Restart The Game\n" +
                 " H - Get Help on Playing the Game\n" + 
                 " S - Save Game\n" + 
@@ -46,6 +49,11 @@ public class MainMenuView extends View {
             //call new game
             case "n":{
                 startNewGame();
+                return false;
+            }
+            //test for game crash
+            case "t":{
+                startFailureTest();
                 return false;
             }
             //call restart for current game    
@@ -77,18 +85,21 @@ public class MainMenuView extends View {
     }
     
     private void startNewGame() {
+        try {
         //create game and push previously made player
-        int returnValue = GameControl.createNewGame(CityOfAaronSN.getThePlayer());
-        
-        //check to see if create new game worked
-        if (returnValue < 0)
-            System.out.println("ERROR - Failed to create new game");
-        
-        //else call game menu view
-        else {
-            GameMenuView gameMenuView = new GameMenuView();
-            gameMenuView.display();
+        GameControl.createNewGame(CityOfAaronSN.getThePlayer());
+        } catch (GameControlException gce) {
+            System.out.println(gce.getMessage());
+            return;
+        } catch (Throwable ge) {
+            System.out.println(ge.getMessage());
+            ge.printStackTrace();
+            return;
         }
+
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
+        
     }
     
     private void loadGame() {
@@ -103,6 +114,27 @@ public class MainMenuView extends View {
         //call help menu view
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
+    }
+
+    private void startFailureTest() {
+        Player nullPlayer = new Player();
+        nullPlayer = null;
+        
+        try {
+        //create game and push previously made player
+        GameControl.createNewGame(nullPlayer);
+        } catch (GameControlException gce) {
+            System.out.println(gce.getMessage());
+            return;
+        } catch (Throwable ge) {
+            System.out.println(ge.getMessage());
+            ge.printStackTrace();
+            return;
+        }
+
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
+        
     }
     
 }

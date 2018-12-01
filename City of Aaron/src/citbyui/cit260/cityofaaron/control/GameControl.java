@@ -8,6 +8,7 @@ package citbyui.cit260.cityofaaron.control;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.model.*;
 import citbyui.cit260.cityofaaron.control.*;
+import citybyui.cit260.cirtyofaaron.exceptions.GameControlException;
 
 import java.util.ArrayList;
 
@@ -22,10 +23,10 @@ public class GameControl {
     public GameControl() {
     }
     
-    public static int createNewGame(Player player) {
+    public static void createNewGame(Player player) throws GameControlException {
         //check if player is empty
         if (player == null)
-            return -1;
+            throw new GameControlException("Player Entity Was Null");
         Game game = new Game();
         
         int cost = generateLandCost();
@@ -37,13 +38,13 @@ public class GameControl {
         CityOfAaronSN.setCurrentGame(game);
         
         
-        //create starting inventory for player TO BE IMPLEMENTED (see below)
+        //create starting inventory for player
         Storehouse storehouse = new Storehouse();
         ArrayList<InventoryItem> startingInventory;
         startingInventory = createItems();
         //check validity of items
         if (startingInventory == null)
-            return -2;
+            throw new GameControlException("Inventory Failed to Create");
         else {
             storehouse.setInventory(startingInventory);
             game.setTheStorehouse(storehouse);
@@ -54,7 +55,7 @@ public class GameControl {
         map = createMap(game, 5, 5);
         //check validity of map
         if (map == null)
-            return -2;
+            throw new GameControlException("Map Failed to Create");
         else
             game.setTheMap(map);
         
@@ -72,8 +73,6 @@ public class GameControl {
         map.getCurrentLocation().setVisited(true);
         map.setCurrentRow(1);
         map.setCurrentColumn(1);
-        //return value for success
-        return 1;
         
     }
     
@@ -215,15 +214,6 @@ public class GameControl {
         //add item 11
         items.add(item);
         
-        //output arraylist
-        for (InventoryItem inventoryItem : items) {
-            if (inventoryItem.getItemType() == ItemType.Animal)
-                System.out.println(inventoryItem.getName() + " the " + inventoryItem.getItemType());
-        }
-        
-        //check to see if running
-        System.out.println("createItems Called");
-        
         return items;
     }
     
@@ -245,8 +235,6 @@ public class GameControl {
         
         map.setLocations(locations);
         
-        //check to see if running
-        System.out.println("createMap Called");
         
         /*hold for later
         *Locations[][] location = CityOfAaaronSN.getCurrentGmae().getMap().getLocations();
