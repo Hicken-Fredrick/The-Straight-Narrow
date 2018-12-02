@@ -24,19 +24,13 @@ class BuyLandView extends View {
         
         //build prompt message
         String promptMessage = 
-                "NOT YET BUILT!";
-           "\n" + 
-               "*********************************\n" + 
-                "*   CITY OF AARON : BUY LAND MENU   *\n" +
-                "*********************************\n" +
-               "You currently have: " + game.getWheatinStorage() + " land available \n" +
-               "Enter the number of acres you want to purchase? " +
-               
-               " R - return to previous menu\n";
-        
-        inputs[0] = getInput(promptMessage);
-        
-        return inputs;
+            "\n" + 
+            "*********************************\n" + 
+            "*   CITY OF AARON : BUY LAND MENU   *\n" +
+            "*********************************\n" +
+            "You currently have: " + game.getWheatinStorage() + " land available \n" +
+            "Enter the number of acres you want to purchase? " +
+            " R - return to previous menu\n";
         
         inputs[0] = getInput(promptMessage);
         

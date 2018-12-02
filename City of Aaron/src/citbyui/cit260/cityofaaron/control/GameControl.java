@@ -9,6 +9,7 @@ import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.model.*;
 import citbyui.cit260.cityofaaron.control.*;
 import citybyui.cit260.cirtyofaaron.exceptions.GameControlException;
+import citybyui.cit260.cirtyofaaron.exceptions.SellLandException;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,7 @@ import java.util.ArrayList;
  * 
  */
 public class GameControl {
-  
+    
     public GameControl() {
     }
     
@@ -688,6 +689,29 @@ public class GameControl {
         
         //increment the year upwards
         game.setYear(game.getYear()+1);
+    }
+    
+    public static void sellLand(int amountToSell) throws SellLandException {
+        Game game = CityOfAaronSN.getCurrentGame();
+        //validate input
+        if(game.getAcresOwned() + game.getAcresPlanted() < amountToSell)
+            throw new SellLandException("You do not own that much land");
+        //complete transaction
+        else {
+            //add wheat to players inventory
+            int newWheatTotal = (amountToSell * game.getAcreCost()) + game.getWheatinStorage();
+            game.setWheatinStorage(newWheatTotal);
+            
+            //remove land from players inventory
+            if(amountToSell > game.getAcresOwned()) {
+                amountToSell -= game.getAcresOwned();
+                game.setAcresOwned(0);
+                game.setAcresPlanted(game.getAcresPlanted() - amountToSell);
+            }
+            else
+                game.setAcresOwned(game.getAcresOwned() - amountToSell);
+                
+        }
     }
     
 }
