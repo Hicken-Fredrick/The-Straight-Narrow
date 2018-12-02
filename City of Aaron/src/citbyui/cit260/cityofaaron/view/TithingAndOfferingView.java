@@ -8,6 +8,7 @@ package citbyui.cit260.cityofaaron.view;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.model.Game;
 import citbyui.cit260.cityofaaron.control.GameControl;
+import citybyui.cit260.cirtyofaaron.exceptions.TithingException;
 import static citbyui.cit260.cityofaaron.view.PlantCropsView.game;
 
 /**
@@ -86,41 +87,22 @@ public class TithingAndOfferingView extends View{
             System.out.println("Invalid Input"); }
         }
         
-        validate = validateInput(tithing);
-        }
-    }
+        try {
 
-    private Boolean validateInput(int tithing) {
-        Game game = CityOfAaronSN.getCurrentGame();
+        GameControl.payingTithing(tithing);
+        validate = true;
+
+        } catch (TithingException te) {
+
+        System.out.println(te.getMessage());
+        validate = false;
+    }
         
-        if (tithing > game.getWheatinStorage() ){
-            System.out.println("\nYou Don't Have Enough Wheat");
-            return false;
-        }
-        else if (tithing < 1 ){
-            System.out.println("\nValue must be 1 or Greater");
-            return false;
-        }
-        else {
-            System.out.println("\nSuccessfully Submittited Tithing To Temple");
-            GameControl.paidTithing(tithing);
-            
-            return true;
-            
+        
         }
     }
-    
+      
 }
 
-/*
-try {
 
-GameControl.payTithing(tithing);
-return true
 
-} catch (TithingException te) {
-
-    System.out.println(te.getMessage());
-    return false
-}
-*/

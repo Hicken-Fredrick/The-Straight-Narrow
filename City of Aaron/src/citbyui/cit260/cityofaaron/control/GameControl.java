@@ -10,6 +10,7 @@ import citbyui.cit260.cityofaaron.model.*;
 import citbyui.cit260.cityofaaron.control.*;
 import citybyui.cit260.cirtyofaaron.exceptions.GameControlException;
 import citybyui.cit260.cirtyofaaron.exceptions.SellLandException;
+import citybyui.cit260.cirtyofaaron.exceptions.TithingException;
 
 import java.util.ArrayList;
 
@@ -711,6 +712,26 @@ public class GameControl {
             else
                 game.setAcresOwned(game.getAcresOwned() - amountToSell);
                 
+        }
+    }
+    
+    public static Boolean payingTithing(int tithing) throws TithingException{
+        Game game = CityOfAaronSN.getCurrentGame();
+        
+        if (tithing > game.getWheatinStorage() ){
+            throw new TithingException("\nYou Don't Have Enough Wheat");
+            
+        }
+        else if (tithing < 1 ){
+            throw new TithingException("\nValue must be 1 or Greater");
+            
+        }
+        else {
+            System.out.println("\nSuccessfully Submittited Tithing To Temple");
+            paidTithing(tithing);
+            
+            return true;
+            
         }
     }
     
