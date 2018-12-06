@@ -18,7 +18,7 @@ import java.util.Scanner;
 class BuyLandView extends View {
     public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
-    private int landpurchased;
+   
     
     @Override
     public String[] getInputs() {
@@ -90,18 +90,19 @@ class BuyLandView extends View {
         landpurchased = Integer.parseInt(acres);
         pass = true;} catch (NumberFormatException e) { 
             System.out.println("Invalid Input, enter a number please"); }
-        }
         
+        }
       try {
             //validate input against land owned
             GameControl.buyLand(landpurchased);
             validate = true;
         }catch(BuyLandException e){
-            //reset to begining
+            //to begining
             System.out.println(e.getMessage());
             validate = false;
             pass = false;
         }
         }
-    } 
+    }
 }
+
