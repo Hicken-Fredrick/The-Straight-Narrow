@@ -715,6 +715,32 @@ public class GameControl {
         }
     }
     
+    ////
+    
+    public static void buyLand(int landpurchased) throws BuyLandException {
+        Game game = CityOfAaronSN.getCurrentGame();
+        //validate input
+        if(game.getAcresOwned() + game.getAcresPlanted() < landpurchased)
+            throw new BuyLandException("You do not own that much land");
+        //complete transaction
+        else {
+            //add wheat to players inventory
+            int newWheatTotal = (landpurchased * game.getAcreCost()) + game.getWheatinStorage();
+            game.setWheatinStorage(newWheatTotal);
+            
+            //remove land from players inventory
+            if(landpurchased > game.getAcresOwned()) {
+                landpurchased -= game.getAcresOwned();
+                game.setAcresOwned(0);
+                game.setAcresPlanted(game.getAcresPlanted() - landpurchased);
+            }
+            else
+                game.setAcresOwned(game.getAcresOwned() - landpurchased);
+                
+        }
+    }
+    ////
+    
     public static Boolean payingTithing(int tithing) throws TithingException{
         Game game = CityOfAaronSN.getCurrentGame();
         
