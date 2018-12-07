@@ -13,9 +13,11 @@ import citybyui.cit260.cirtyofaaron.exceptions.BuyLandException;
 import citybyui.cit260.cirtyofaaron.exceptions.GameControlException;
 import citybyui.cit260.cirtyofaaron.exceptions.SellLandException;
 import citybyui.cit260.cirtyofaaron.exceptions.TithingException;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import java.util.ArrayList;
@@ -774,6 +776,26 @@ public class GameControl {
                 
                 
             }
+        }
+    
+        public static Game getGame(String filePath) throws GameControlException {
+            if (filePath == null)
+                throw new GameControlException("filePath wasn't set");
+            //holder game file
+            Game game = null;
+            try (ObjectInputStream in =
+                new ObjectInputStream(new FileInputStream(filePath));) {
+                game = (Game) in.readObject();
+                
+            } catch(IOException ex) {
+                ErrorView.display("Load Game",
+                        "I/O Stream has Failed");
+                
+            } catch(ClassNotFoundException cnfe) {
+                ErrorView.display("Load Game",
+                        "File Incorrect or Corrupted");
+            }
+            return game;
         }
 
         

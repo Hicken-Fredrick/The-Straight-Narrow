@@ -31,9 +31,8 @@ public class MainMenuView extends View {
                 "*********************************\n" +
                 " N - Start New Game\n" +
                 " T - TEST GAME EXCEPTION (DEV ONLY)\n" +
-                " L - Restart The Game\n" +
+                " L - Load Game\n" +
                 " H - Get Help on Playing the Game\n" + 
-                " S - Save Game\n" + 
                 " Q - Quit\n";
         
         inputs[0] = getInput(promptMessage);
@@ -64,11 +63,6 @@ public class MainMenuView extends View {
             //call help menu       
             case "h":{
                 getHelp();
-                return false;
-            }
-            //save the game    
-            case "s":{
-                
                 return false;
             }
             //quit out of game    
@@ -109,7 +103,7 @@ public class MainMenuView extends View {
         
         //call start existing game view
         StartExistingGameView startExistingGameView = new StartExistingGameView();
-        startExistingGameView.displayStartExistingGameView();
+        startExistingGameView.display();
     }
     
     private void getHelp() {
