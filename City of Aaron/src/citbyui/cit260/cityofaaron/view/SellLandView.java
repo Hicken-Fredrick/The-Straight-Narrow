@@ -30,7 +30,7 @@ class SellLandView extends View {
                 "*   CITY OF AARON : Sell Land   *\n" +
                 "*********************************\n" +
                 "You Currently own " + (game.getAcresOwned() + game.getAcresPlanted()) +
-                " acres of land\n" + "land currently sells for " + game.getAcreCost() +
+                " acres of land\n" + "Land currently sells for " + game.getAcreCost() +
                 " bushels of wheat\n" +
                 "S - Sell Land\n" + 
                 "R - Return to previous menu";

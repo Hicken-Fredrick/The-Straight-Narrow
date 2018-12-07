@@ -16,7 +16,6 @@ import java.util.Scanner;
  * @author Edgar
  */
 class BuyLandView extends View {
-    public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
    
     
@@ -27,13 +26,15 @@ class BuyLandView extends View {
         
         //build prompt message
         String promptMessage = 
-            "\n" + 
-            "*********************************\n" + 
-            "*   CITY OF AARON : BUY LAND MENU   *\n" +
-            "*********************************\n" +
-            "You currently have: " + game.getAcresOwned() + game.getAcresPlanted() +
-            "Enter the number of acres you want to purchase? " + 
-            " R - return to previous menu\n";
+             "\n" + 
+               "*********************************\n" + 
+                "*   CITY OF AARON : Buy Land   *\n" +
+                "*********************************\n" +
+                "You Currently own " + (game.getAcresOwned() + game.getAcresPlanted()) +
+                " acres of land\n" + "Land currently costs " + game.getAcreCost() +
+                " bushels of wheat\n" +
+                "B - Buy Land\n" + 
+                "R - Return to previous menu";
         
         inputs[0] = getInput(promptMessage);
         
@@ -48,7 +49,7 @@ class BuyLandView extends View {
         
         switch (choice.toLowerCase()) {
             //call new game
-            case "p":{
+            case "b":{
                 BuyLandView();
                 return false;
             }
@@ -67,6 +68,7 @@ class BuyLandView extends View {
 
     private void BuyLandView() {
         Boolean pass = false;
+        boolean valid = false;
         //String choice = null;
         String acres = null;
         
@@ -78,8 +80,26 @@ class BuyLandView extends View {
         while (pass != true)
         {
         try {
-        System.out.println("\nEnter acres of land you want to buy (Q to Exit):");
-        acres = scanner.nextLine();
+        
+            try {
+                while (!valid) {
+                    //print prompt
+                    System.out.println("\nEnter acres of land you want to buy (q to Exit):");
+
+                    //get user input
+                    acres = this.keyboard.readLine();
+                    acres = acres.trim();
+
+                    if (acres.length() < 1){
+                        System.out.println("You must enter a value.");
+                        continue;
+                    }
+                    break;
+
+                        }
+            } catch (Exception e) {
+                        System.out.println("Error Reading Input: " + e.getMessage());
+                }
         
             //check for escape
             if(acres.toLowerCase().trim().equals("q")) {

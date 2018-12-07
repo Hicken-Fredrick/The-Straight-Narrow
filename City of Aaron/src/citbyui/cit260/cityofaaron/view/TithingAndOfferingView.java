@@ -64,6 +64,7 @@ public class TithingAndOfferingView extends View{
 
     private void payTithing() {
         Boolean pass = false;
+        boolean valid = false;
         String choice = null;
         int tithing = 0;
         Boolean validate = false;
@@ -73,24 +74,42 @@ public class TithingAndOfferingView extends View{
         while (pass != true)
         {
         try {
-        System.out.println("\nEnter the Tithing to Be Paid:");
-        choice = scanner.nextLine();
-        
-            //check for escape
-            if(choice.toLowerCase().trim().equals("q")) {
-                System.out.println("quitting to previous menu");
-                return;
-            }
             
-        tithing = Integer.parseInt(choice);
-        pass = true;} catch (NumberFormatException e) { 
-            System.out.println("Invalid Input"); }
+            try {
+            while (!valid) {
+                //print prompt
+                this.console.println("\nEnter the Tithing to Be Paid(q to quit):");
+                
+                //get user input
+                choice = this.keyboard.readLine();
+                choice = choice.trim();
+                
+                if (choice.length() < 1){
+                    System.out.println("You must enter a value.");
+                    continue;
+                }
+                break;
+            
+                    }
+            } catch (Exception e) {
+                    System.out.println("Error Reading Input: " + e.getMessage());
         }
-        
-        try {
 
-        GameControl.payingTithing(tithing);
-        validate = true;
+                //check for escape
+                if(choice.toLowerCase().equals("q")) {
+                    System.out.println("quitting to previous menu");
+                    return;
+                }
+
+            tithing = Integer.parseInt(choice);
+            pass = true;} catch (NumberFormatException e) { 
+                System.out.println("Invalid Input"); }
+            }
+
+            try {
+
+                GameControl.payingTithing(tithing);
+                validate = true;
 
         } catch (TithingException te) {
 

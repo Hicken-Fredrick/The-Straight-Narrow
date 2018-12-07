@@ -27,9 +27,8 @@ public class GameMenuView extends View{
                "*   CITY OF AARON : Game Menu   *\n" +
                "*********************************\n" +
                " V - Map Menu\n" +
-               " M - Manage Crops\n" +
+               " M - Manage Crops & Land\n" +
                " L - Live The Year\n" + 
-               " B - Buy and Sell Land\n" +
                " S - Save Game\n" +
                " R - Reports Menu\n" + 
                " Q - Return To Main Menu\n";
@@ -70,11 +69,6 @@ public class GameMenuView extends View{
                reportsMenu();
                return false;
             }
-            //proceed to buy and sell menu     
-            case "b":{
-                buyAndSellLand();
-                return false;
-            }
             //quit out of game    
             case "q":
                 return true;
@@ -105,12 +99,5 @@ public class GameMenuView extends View{
     private void reportsMenu() {
         ReportsView reportsView = new ReportsView();
         reportsView.display();
-    }
-
-    private void buyAndSellLand() {
-        LandView landView = new LandView();
-        landView.display();
-    }
-
-    
+    }   
 }

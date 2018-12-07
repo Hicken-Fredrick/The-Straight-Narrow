@@ -8,6 +8,8 @@ package citbyui.cit260.cityofaaron.view;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.control.GameControl;
 import citbyui.cit260.cityofaaron.model.Game;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import java.util.Scanner;
@@ -17,7 +19,8 @@ import java.util.Scanner;
  * @author Meroko
  */
 public abstract class View implements ViewInterface {
-        public static Scanner scanner = new Scanner( System.in );
+        protected final BufferedReader keyboard = CityOfAaronSN.getInFile();
+        protected final PrintWriter console = CityOfAaronSN.getOutFile();
 
     public View() {
     }
@@ -39,31 +42,29 @@ public abstract class View implements ViewInterface {
     
     @Override
     public String getInput(String promptMessage) {
-        String input = null;
-        
-        //loop escape boolean
+        String selection = null;
         boolean valid = false;
-        
-        //get input and validate loop
-        while (valid == false) {
+        try {
+            while (!valid) {
+                //print prompt
+                this.console.println(promptMessage);
+                
+                //get user input
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
+                
+                if (selection.length() < 1){
+                    System.out.println("You must enter a value.");
+                    continue;
+                }
+                break;
             
-            //output prompt
-            System.out.println(promptMessage);
-            System.out.println("Please Enter Your Choice: \n");
-            
-            //get input and trim
-            input = (scanner.nextLine());
-            input = input.trim();
-            
-            //validate
-            if (input.length() < 1) {
-                System.out.println("You must enter a value\n");
-            }
-            else
-                valid = true;
+                    }
+        } catch (Exception e) {
+                    System.out.println("Error Reading Input: " + e.getMessage());
         }
-        
-        return input;
+
+        return selection;
     }
     
 }

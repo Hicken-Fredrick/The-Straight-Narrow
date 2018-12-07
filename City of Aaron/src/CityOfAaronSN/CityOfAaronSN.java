@@ -10,6 +10,10 @@ import java.util.Scanner;
 import citbyui.cit260.cityofaaron.model.*;
 import citbyui.cit260.cityofaaron.control.*;
 import citbyui.cit260.cityofaaron.view.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -19,12 +23,17 @@ public class CityOfAaronSN {
     /**
      * @param args the command line arguments
      */
-    public static Scanner scanner = new Scanner( System.in );
     
     //statics for game / player
     private static Game currentGame= null;
     private static Player player = null;
+    
+    //statics for reader / writer
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
 
+    //getters & setters
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -40,17 +49,57 @@ public class CityOfAaronSN {
     public static void setThePlayer(Player player) {
         CityOfAaronSN.player = player;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        CityOfAaronSN.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        CityOfAaronSN.inFile = inFile;
+    }
     
     
     public static void main(String[] args) {
         //program creation
         try {
-        StartProgramView startProgram = new StartProgramView();
-        startProgram.display();
+            //open character streams
+            CityOfAaronSN.inFile = new BufferedReader(new InputStreamReader(System.in));
+            CityOfAaronSN.outFile = new PrintWriter(System.out, true);
+            CityOfAaronSN.logFile = new PrintWriter("logFile.txt");
+            
+            //create and start game
+            StartProgramView startProgram = new StartProgramView();
+            startProgram.display();
         } catch (Throwable game) {
             System.out.println("The Program Has Unexpectedly Crashed \n"
-                    + "We Apologize for the Inconvience, Please play again.\n");
+                    + "We Apologize for the Inconvience, Please play again.\n"
+                    + "\nException: " + game.toString()
+                    + "\nCause: " + game.getCause()
+                    + "\nMessage: " + game.getMessage());
             game.printStackTrace();
+        } finally {
+            try {
+                if (inFile != null)
+                    CityOfAaronSN.inFile.close();
+                
+                if (outFile != null)
+                    CityOfAaronSN.outFile.close();
+                
+                if (logFile != null)
+                    CityOfAaronSN.logFile.close();
+                
+            } catch (IOException ex) {
+                System.console().printf("%s%s", "Error closing the input/output stream");
+                return;
+                }
         }
     }
 

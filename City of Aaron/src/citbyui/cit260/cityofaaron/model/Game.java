@@ -36,26 +36,6 @@ public class Game implements Serializable {
     private int tithingPayed;
     //contains player name and current score
     private Scoreboard score;
-    
-    private LandData landData;
-
-    /**
-     * Get the value of landData
-     *
-     * @return the value of landData
-     */
-    public LandData getLandData() {
-        return landData;
-    }
-
-    /**
-     * Set the value of landData
-     *
-     * @param landData new value of landData
-     */
-    public void setLandData(LandData landData) {
-        this.landData = landData;
-    }
 
     //public instances GETTERS/SETTERS
     

@@ -721,23 +721,16 @@ public class GameControl {
     public static void buyLand(int landpurchased) throws BuyLandException {
         Game game = CityOfAaronSN.getCurrentGame();
         //validate input
-        if(game.getAcresOwned() + game.getAcresPlanted() < landpurchased)
-            throw new BuyLandException("You do not own that much land");
+        if(landpurchased * game.getAcreCost() > game.getWheatinStorage() )
+            throw new BuyLandException("You do not have enough wheat to complete this purchase");
         //complete transaction
         else {
-            //add wheat to players inventory
-            int newWheatTotal = (landpurchased * game.getAcreCost()) + game.getWheatinStorage();
+            //remove wheat from player
+            int newWheatTotal =  game.getWheatinStorage() - (landpurchased * game.getAcreCost());
             game.setWheatinStorage(newWheatTotal);
             
-            //remove land from players inventory
-            if(landpurchased > game.getAcresOwned()) {
-                landpurchased -= game.getAcresOwned();
-                game.setAcresOwned(0);
-                game.setAcresPlanted(game.getAcresPlanted() - landpurchased);
-            }
-            else
-                game.setAcresOwned(game.getAcresOwned() - landpurchased);
-                
+           //add acres to player
+           game.setAcresOwned(landpurchased + game.getAcresOwned());
         }
     }
     ////
