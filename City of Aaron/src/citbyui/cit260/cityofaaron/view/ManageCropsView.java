@@ -70,7 +70,8 @@ public class ManageCropsView extends View {
                 return true;
             //unknown menu item choice
             default:{
-                System.out.println("Unknown Menu Choice Please Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "Unknown Menu Choice Please Try Again");
                 return false;
             }
             
@@ -89,7 +90,7 @@ public class ManageCropsView extends View {
 
     private void feedThePeople() {
         FeedThePeopleView feedThePeopleView = new FeedThePeopleView();
-        feedThePeopleView.displayFeedThePeopleView();
+        feedThePeopleView.display();
     }
 
     private void plantCrops() {

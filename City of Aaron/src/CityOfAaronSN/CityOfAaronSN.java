@@ -65,6 +65,14 @@ public class CityOfAaronSN {
     public static void setInFile(BufferedReader inFile) {
         CityOfAaronSN.inFile = inFile;
     }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        CityOfAaronSN.logFile = logFile;
+    }
     
     
     public static void main(String[] args) {
@@ -79,7 +87,7 @@ public class CityOfAaronSN {
             StartProgramView startProgram = new StartProgramView();
             startProgram.display();
         } catch (Throwable game) {
-            System.out.println("The Program Has Unexpectedly Crashed \n"
+            ErrorView.display("Game", "The Program Has Unexpectedly Crashed \n"
                     + "We Apologize for the Inconvience, Please play again.\n"
                     + "\nException: " + game.toString()
                     + "\nCause: " + game.getCause()

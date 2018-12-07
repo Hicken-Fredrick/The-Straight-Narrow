@@ -10,7 +10,7 @@ import citbyui.cit260.cityofaaron.control.GameControl;
 import citbyui.cit260.cityofaaron.model.Game;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
+import citbyui.cit260.cityofaaron.view.ErrorView;
 
 import java.util.Scanner;
 
@@ -54,14 +54,16 @@ public abstract class View implements ViewInterface {
                 selection = selection.trim();
                 
                 if (selection.length() < 1){
-                    System.out.println("You must enter a value.");
+                    ErrorView.display(this.getClass().getName(),
+                            "You must enter a value.");
                     continue;
                 }
                 break;
             
                     }
         } catch (Exception e) {
-                    System.out.println("Error Reading Input: " + e.getMessage());
+                    ErrorView.display(this.getClass().getName(),
+                            "Error Reading Input: " + e.getMessage());
         }
 
         return selection;

@@ -55,7 +55,8 @@ class SellLandView extends View {
                 return true;
             //unknown menu item choice
             default:{
-                System.out.println("Unknown Menu Choice Please Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "Unknown Menu Choice Please Try Again");
                 return false;
             }
             
@@ -75,36 +76,39 @@ class SellLandView extends View {
             while (pass != true)
             {
             try {
-            System.out.println("\nEnter Amount of Land to Sell(or enter q to quit):");
+            this.console.println("\nEnter Amount of Land to Sell(or enter q to quit):");
             try {
                         while (!valid) {
                             //print prompt
-                            System.out.println("\nEnter the number that you want to plant(q to quit):");
+                            this.console.println("\nEnter the number that you want to plant(q to quit):");
                             
                             //get user input
                             choice = this.keyboard.readLine();
                             choice = choice.trim();
                             
                             if (choice.length() < 1){
-                                System.out.println("You must enter a value.");
+                                ErrorView.display(this.getClass().getName(),
+                                        "You must enter a value.");
                                 continue;
                             }
                             break;
                             
                         }
                     } catch (Exception e) {
-                        System.out.println("Error Reading Input: " + e.getMessage());
+                        ErrorView.display(this.getClass().getName(),
+                                "Error Reading Input: " + e.getMessage());
                     }
 
                 //check for escape
                 if(choice.toLowerCase().trim().equals("q")) {
-                    System.out.println("quitting to previous menu");
+                    this.console.println("quitting to previous menu");
                     return;
                 }
                 
             amountToSell = Integer.parseInt(choice);
             pass = true;} catch (NumberFormatException e) { 
-                System.out.println("Please Enter Only Numbers"); }
+                ErrorView.display(this.getClass().getName(),
+                        "Please Enter Only Numbers"); }
         }
         try {
             //validate input against land owned
@@ -112,7 +116,8 @@ class SellLandView extends View {
             validate = true;
         }catch(SellLandException sle){
             //reset to begining
-            System.out.println(sle.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    sle.getMessage());
             validate = false;
             pass = false;
         }

@@ -55,7 +55,8 @@ public class TithingAndOfferingView extends View{
                 return true;
             //unknown menu item choice
             default:{
-                System.out.println("Unknown Menu Choice Please Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "Unknown Menu Choice Please Try Again");
                 return false;
             }
             
@@ -85,25 +86,28 @@ public class TithingAndOfferingView extends View{
                 choice = choice.trim();
                 
                 if (choice.length() < 1){
-                    System.out.println("You must enter a value.");
+                    ErrorView.display(this.getClass().getName(),
+                            "You must enter a value.");
                     continue;
                 }
                 break;
             
                     }
             } catch (Exception e) {
-                    System.out.println("Error Reading Input: " + e.getMessage());
+                    ErrorView.display(this.getClass().getName(),
+                            "Error Reading Input: " + e.getMessage());
         }
 
                 //check for escape
                 if(choice.toLowerCase().equals("q")) {
-                    System.out.println("quitting to previous menu");
+                    this.console.println("quitting to previous menu");
                     return;
                 }
 
             tithing = Integer.parseInt(choice);
             pass = true;} catch (NumberFormatException e) { 
-                System.out.println("Invalid Input"); }
+                ErrorView.display(this.getClass().getName(),
+                        "Invalid Input"); }
             }
 
             try {
@@ -112,8 +116,8 @@ public class TithingAndOfferingView extends View{
                 validate = true;
 
         } catch (TithingException te) {
-
-        System.out.println(te.getMessage());
+        ErrorView.display(this.getClass().getName(),
+                te.getMessage());
         validate = false;
     }
         

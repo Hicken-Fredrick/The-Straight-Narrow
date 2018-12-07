@@ -9,13 +9,24 @@ package citbyui.cit260.cityofaaron.view;
  *
  * @author Meroko
  */
-class FeedThePeopleView {
+class FeedThePeopleView extends View {
 
-    public FeedThePeopleView() {
+    @Override
+    public String[] getInputs() {
+        String[] inputs = new String[1];
+        
+        //build prompt message
+        String promptMessage = 
+               "THIS MENU ISN'T IMPLEMENTED YET - any value to return";
+        
+        inputs[0] = getInput(promptMessage);
+        
+        return inputs;
     }
 
-    void displayFeedThePeopleView() {
-        System.out.println("Feed The People Display");
+    @Override
+    public boolean doAction(String[] inputs) {
+        return true;
     }
     
 }

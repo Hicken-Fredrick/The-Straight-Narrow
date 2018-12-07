@@ -43,7 +43,6 @@ class BuyLandView extends View {
 
     @Override
     public boolean doAction(String[] inputs) {
-       // System.out.println("TO BE IMPLEMENTED");
        
         String choice = inputs[0];
         
@@ -58,7 +57,7 @@ class BuyLandView extends View {
                 return true;
             //unknown menu item choice
             default:{
-                System.out.println("Unknown Menu Choice Please Try Again");
+                ErrorView.display("BuyLandView", "Unknown Menu Choice Please Try Again");
                 return false;
             }
             
@@ -84,32 +83,35 @@ class BuyLandView extends View {
             try {
                 while (!valid) {
                     //print prompt
-                    System.out.println("\nEnter acres of land you want to buy (q to Exit):");
+                    this.console.println("\nEnter acres of land you want to buy (q to Exit):");
 
                     //get user input
                     acres = this.keyboard.readLine();
                     acres = acres.trim();
 
                     if (acres.length() < 1){
-                        System.out.println("You must enter a value.");
+                        ErrorView.display(this.getClass().getName(),
+                                "You must enter a value.");
                         continue;
                     }
                     break;
 
                         }
             } catch (Exception e) {
-                        System.out.println("Error Reading Input: " + e.getMessage());
+                        ErrorView.display(this.getClass().getName(),
+                                "Error Reading Input: " + e.getMessage());
                 }
         
             //check for escape
             if(acres.toLowerCase().trim().equals("q")) {
-                System.out.println("quitting to previous menu");
+                this.console.println("quitting to previous menu");
                 return;
             }
             
         landpurchased = Integer.parseInt(acres);
         pass = true;} catch (NumberFormatException e) { 
-            System.out.println("Invalid Input, enter a number please"); }
+            ErrorView.display(this.getClass().getName(),
+                    "Invalid Input, enter a number please"); }
         
         }
       try {
@@ -118,7 +120,7 @@ class BuyLandView extends View {
             validate = true;
         }catch(BuyLandException e){
             //to begining
-            System.out.println(e.getMessage());
+            ErrorView.display(this.getClass().getName(),e.getMessage());
             validate = false;
             pass = false;
         }

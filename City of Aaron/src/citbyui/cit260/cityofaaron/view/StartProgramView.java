@@ -59,13 +59,13 @@ public class StartProgramView extends View{
         Player player = GameControl.savePlayer(playerName);
         
         if (player == null) {
-            System.out.println("Failed to create player. " +
+            this.console.println("Failed to create player. " +
                     "Please Try Again!");
            
             return false;
         }
         
-        System.out.println("==================================="
+        this.console.println("==================================="
         + "\nWelcome to the game " + playerName
         + "\nWe hope you have lots of fun!"
         + "\n===================================");

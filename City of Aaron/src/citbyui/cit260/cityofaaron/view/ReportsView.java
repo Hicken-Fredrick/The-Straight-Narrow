@@ -80,7 +80,8 @@ public class ReportsView extends View{
                 return true;
             //unknown menu item choice
             default:{
-                System.out.println("Unknown Menu Choice Please Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "Unknown Menu Choice Please Try Again");
                 return false;
             }
             
@@ -98,12 +99,12 @@ public class ReportsView extends View{
         ArrayList<InventoryItem> animalList = new ArrayList<>();
         animalList = StorehouseControl.buildAnimalList();
         
-        System.out.println("*****************************\n" +
+        this.console.println("*****************************\n" +
                            "*** LIST OF OWNED ANIMALS ***\n");
         
         for (int i = 0; i < animalList.size(); i++) {
             InventoryItem item = animalList.get(i);
-            System.out.println(item.getName() + " and has " + item.getAge() 
+            this.console.println(item.getName() + " and has " + item.getAge() 
                     + " years old and it is Valued at " + item.getValue() + " Bushels of Wheat\n");
         }
     }
@@ -112,12 +113,12 @@ public class ReportsView extends View{
         ArrayList<InventoryItem> medicineList = new ArrayList<>();
         medicineList = StorehouseControl.buildMedicineList();
         
-        System.out.println("*****************************\n" +
+        this.console.println("*****************************\n" +
                            "*** LIST OF OWNED Medicines ***\n");
         
         for (int i = 0; i < medicineList.size(); i++) {
             InventoryItem item = medicineList.get(i);
-            System.out.println(item.getName() + " x " + item.getQuantity() 
+            this.console.println(item.getName() + " x " + item.getQuantity() 
                     + "\n" + item.getDescription() + " - Perishable: " 
                     + item.isPerishable() + "\n");
         }
@@ -127,12 +128,12 @@ public class ReportsView extends View{
         ArrayList<InventoryItem> toolList = new ArrayList<>();
         toolList = StorehouseControl.buildToolList();
         
-        System.out.println("*****************************\n" +
+        this.console.println("*****************************\n" +
                            "*** LIST OF OWNED Tools ***\n");
         
         for (int i = 0; i < toolList.size(); i++) {
             InventoryItem item = toolList.get(i);
-            System.out.println(item.getName() + " x " + item.getQuantity() 
+            this.console.println(item.getName() + " x " + item.getQuantity() 
                     + "\n" + item.getDescription() + " - Perishable: " 
                     + item.isPerishable() + "\n");
         }

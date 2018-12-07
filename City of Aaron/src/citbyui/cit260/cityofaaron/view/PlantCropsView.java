@@ -58,7 +58,8 @@ public class PlantCropsView extends View{
                 return true;
             //unknown menu item choice
             default:{
-                System.out.println("Unknown Menu Choice Please Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "Unknown Menu Choice Please Try Again");
                 return false;
             }
             
@@ -79,32 +80,36 @@ public class PlantCropsView extends View{
                     try {
                         while (!valid) {
                             //print prompt
-                            System.out.println("\nEnter the number that you want to plant(q to quit):");
+                            this.console.println("\nEnter the number that you want to plant(q to quit):");
                             
                             //get user input
                             choice = this.keyboard.readLine();
                             choice = choice.trim();
                             
                             if (choice.length() < 1){
-                                System.out.println("You must enter a value.");
+                                ErrorView.display(this.getClass().getName(),
+                                        "You must enter a value.");
                                 continue;
                             }
                             break;
                             
                         }
                     } catch (Exception e) {
-                        System.out.println("Error Reading Input: " + e.getMessage());
+                        ErrorView.display(this.getClass().getName(),
+                                "Error Reading Input: " + e.getMessage());
                     }
                     
                     //check for escape
                     if(choice.toLowerCase().equals("q")) {
-                        System.out.println("quitting to previous menu");
+                        this.console.println("quitting to previous menu");
                         return;
                     }
                     
                     plant = Integer.parseInt(choice);
                     pass = true;}
-                catch (NumberFormatException e) { System.out.println("Invalid Input"); }
+                catch (NumberFormatException e) { 
+                    ErrorView.display(this.getClass().getName(),
+                            "Invalid Input"); }
             }
             validate = validateInput(plant);
         }
@@ -112,15 +117,17 @@ public class PlantCropsView extends View{
 
     private Boolean validateInput(int plant) {
         if (plant > game.getAcresOwned()){
-            System.out.println("\nYou do not have enough land to do that");
+            ErrorView.display(this.getClass().getName(),
+                    "\nYou do not have enough land to do that");
             return false;
         }
         else if (plant / 2 > game.getWheatinStorage()){
-            System.out.println("\nYou do not have enough wheat to do that");
+            ErrorView.display(this.getClass().getName(),
+                    "\nYou do not have enough wheat to do that");
             return false;
         }
         else {
-            System.out.println("\nLand successfully planted ");
+            this.console.println("\nLand successfully planted ");
             GameControl.plantCrops(plant);
             
             return true;

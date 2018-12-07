@@ -76,7 +76,8 @@ public class MainMenuView extends View {
                 return true;
             //unknown menu item choice
             default:{
-                System.out.println("Unknown Menu Choice Please Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "Unknown Menu Choice Please Try Again");
                 return false;
             }
             
@@ -89,10 +90,12 @@ public class MainMenuView extends View {
         //create game and push previously made player
         GameControl.createNewGame(CityOfAaronSN.getThePlayer());
         } catch (GameControlException gce) {
-            System.out.println(gce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    gce.getMessage());
             return;
         } catch (Throwable ge) {
-            System.out.println(ge.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    ge.getMessage());
             ge.printStackTrace();
             return;
         }
@@ -124,7 +127,8 @@ public class MainMenuView extends View {
         //create game and push previously made player
         GameControl.createNewGame(nullPlayer);
         } catch (GameControlException gce) {
-            System.out.println(gce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    gce.getMessage());
             return;
         }
 
