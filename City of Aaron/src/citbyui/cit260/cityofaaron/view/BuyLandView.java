@@ -49,7 +49,6 @@ class BuyLandView extends View {
         switch (choice.toLowerCase()) {
             //call new game
             case "p":{
-               
                 BuyLandView();
                 return false;
             }
@@ -63,7 +62,7 @@ class BuyLandView extends View {
             }
             
         }
-        */
+        
     }
 
     private void BuyLandView() {
