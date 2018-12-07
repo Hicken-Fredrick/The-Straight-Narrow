@@ -6,6 +6,7 @@
 package citbyui.cit260.cityofaaron.view;
 
 import CityOfAaronSN.CityOfAaronSN;
+import citbyui.cit260.cityofaaron.control.GameControl;
 import citbyui.cit260.cityofaaron.model.Game;
 import java.util.Scanner;
 
@@ -38,12 +39,10 @@ class BuyLandView extends View {
     }
 
     @Override
-    public boolean doAction(String[] inputs) {
-        System.out.println("TO BE IMPLEMENTED");
-        return true;
-    }
-    @Override
     public boolean doAction(String inputs[]) {
+        System.out.println("\nNOT YET IMPLEMENTED");
+        return true;
+        /*
         String choice = inputs[0];
         
         switch (choice.toLowerCase()) {
@@ -62,6 +61,7 @@ class BuyLandView extends View {
             }
             
         }
+        */
     }
 
     private void payTithing() {
