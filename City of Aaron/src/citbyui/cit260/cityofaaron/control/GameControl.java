@@ -8,10 +8,15 @@ package citbyui.cit260.cityofaaron.control;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.model.*;
 import citbyui.cit260.cityofaaron.control.*;
+import citbyui.cit260.cityofaaron.view.ErrorView;
 import citybyui.cit260.cirtyofaaron.exceptions.BuyLandException;
 import citybyui.cit260.cirtyofaaron.exceptions.GameControlException;
 import citybyui.cit260.cirtyofaaron.exceptions.SellLandException;
 import citybyui.cit260.cirtyofaaron.exceptions.TithingException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 import java.util.ArrayList;
 
@@ -755,4 +760,21 @@ public class GameControl {
         }
     }
     
-}
+    public static void saveGame(Game game, String filepath) throws GameControlException, IOException {
+        
+        if(game == null || filepath == null || filepath.length() < 1)
+            throw new GameControlException("Failed to Save Game");
+        else {
+            try (ObjectOutputStream out =
+                new ObjectOutputStream(new FileOutputStream(filepath));) {
+                
+                //write to location
+                out.writeObject(game);
+            }
+                
+                
+            }
+        }
+
+        
+    }

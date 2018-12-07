@@ -61,7 +61,7 @@ public class GameMenuView extends View{
             }
             //save the game    
             case "s":{
-                
+                saveGame();
                 return false;
             }
             //reports menu
@@ -101,4 +101,9 @@ public class GameMenuView extends View{
         ReportsView reportsView = new ReportsView();
         reportsView.display();
     }   
+
+    private void saveGame() {
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
+    }
 }
