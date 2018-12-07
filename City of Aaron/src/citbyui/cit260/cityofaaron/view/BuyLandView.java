@@ -8,6 +8,7 @@ package citbyui.cit260.cityofaaron.view;
 import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.control.GameControl;
 import citbyui.cit260.cityofaaron.model.Game;
+import citybyui.cit260.cirtyofaaron.exceptions.BuyLandException;
 import java.util.Scanner;
 
 /**
@@ -17,6 +18,7 @@ import java.util.Scanner;
 class BuyLandView extends View {
     public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
+   
     
     @Override
     public String[] getInputs() {
@@ -29,8 +31,8 @@ class BuyLandView extends View {
             "*********************************\n" + 
             "*   CITY OF AARON : BUY LAND MENU   *\n" +
             "*********************************\n" +
-            "You currently have: " + game.getWheatinStorage() + " land available \n" +
-            "Enter the number of acres you want to purchase? " +
+            "You currently have: " + game.getAcresOwned() + game.getAcresPlanted() +
+            "Enter the number of acres you want to purchase? " + 
             " R - return to previous menu\n";
         
         inputs[0] = getInput(promptMessage);
@@ -39,16 +41,16 @@ class BuyLandView extends View {
     }
 
     @Override
-    public boolean doAction(String inputs[]) {
-        System.out.println("\nNOT YET IMPLEMENTED");
-        return true;
-        /*
+    public boolean doAction(String[] inputs) {
+       // System.out.println("TO BE IMPLEMENTED");
+       
         String choice = inputs[0];
         
         switch (choice.toLowerCase()) {
             //call new game
             case "p":{
-                payTithing();
+               
+                BuyLandView();
                 return false;
             }
             //call restart for current game    
@@ -64,10 +66,12 @@ class BuyLandView extends View {
         */
     }
 
-    private void payTithing() {
+    private void BuyLandView() {
         Boolean pass = false;
-        String choice = null;
-        int tithing = 0;
+        //String choice = null;
+        String acres = null;
+        
+        int landpurchased = 0;
         Boolean validate = false;
         
         while (validate != true){
@@ -75,57 +79,31 @@ class BuyLandView extends View {
         while (pass != true)
         {
         try {
-        System.out.println("\nEnter the Tithing to Be Paid:");
-        choice = scanner.nextLine();
+        System.out.println("\nEnter acres of land you want to buy (Q to Exit):");
+        acres = scanner.nextLine();
         
             //check for escape
-            if(choice.toLowerCase().trim().equals("q")) {
+            if(acres.toLowerCase().trim().equals("q")) {
                 System.out.println("quitting to previous menu");
                 return;
             }
             
-        tithing = Integer.parseInt(choice);
+        landpurchased = Integer.parseInt(acres);
         pass = true;} catch (NumberFormatException e) { 
-            System.out.println("Invalid Input"); }
-        }
+            System.out.println("Invalid Input, enter a number please"); }
         
-        validate = validateInput(tithing);
+        }
+      try {
+            //validate input against land owned
+            GameControl.buyLand(landpurchased);
+            validate = true;
+        }catch(BuyLandException e){
+            //to begining
+            System.out.println(e.getMessage());
+            validate = false;
+            pass = false;
+        }
         }
     }
-
-    private Boolean validateInput(int tithing) {
-        Game game = CityOfAaronSN.getCurrentGame();
-        
-        if (tithing > game.getWheatinStorage() ){
-            System.out.println("\nYou Don't Have Enough Wheat");
-            return false;
-        }
-        else if (tithing < 1 ){
-            System.out.println("\nValue must be 1 or Greater");
-            return false;
-        }
-        else {
-            System.out.println("\nSuccessfully Submittited Tithing To Temple");
-            GameControl.paidTithing(tithing);
-            
-            return true;
-            
-        }
-    }
-    
 }
-
-/*
-try {
-
-GameControl.payTithing(tithing);
-return true
-
-} catch (TithingException te) {
-
-    System.out.println(te.getMessage());
-    return false
-}
-*/
-
 
