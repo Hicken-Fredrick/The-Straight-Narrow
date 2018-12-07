@@ -16,7 +16,6 @@ import java.util.Scanner;
  * @author Meroko
  */
 class SellLandView extends View {
-    public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
     
     @Override
@@ -64,10 +63,11 @@ class SellLandView extends View {
     }
 
     private void sellLand() {
-        Boolean pass = false;
+        boolean pass = false;
+        boolean valid = false;
         String choice = null;
         int amountToSell = 0;
-        Boolean validate = false;
+        boolean validate = false;
         
         //get input and validate
         while (validate != true){
@@ -76,7 +76,25 @@ class SellLandView extends View {
             {
             try {
             System.out.println("\nEnter Amount of Land to Sell(or enter q to quit):");
-            choice = scanner.nextLine();
+            try {
+                        while (!valid) {
+                            //print prompt
+                            System.out.println("\nEnter the number that you want to plant(q to quit):");
+                            
+                            //get user input
+                            choice = this.keyboard.readLine();
+                            choice = choice.trim();
+                            
+                            if (choice.length() < 1){
+                                System.out.println("You must enter a value.");
+                                continue;
+                            }
+                            break;
+                            
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Error Reading Input: " + e.getMessage());
+                    }
 
                 //check for escape
                 if(choice.toLowerCase().trim().equals("q")) {

@@ -20,8 +20,6 @@ import java.util.Scanner;
  * @author tayta
  */
 public class ReportsView extends View{
-    
-    public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
     
     public ReportsView(){

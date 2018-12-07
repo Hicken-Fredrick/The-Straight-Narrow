@@ -16,7 +16,6 @@ import java.util.Scanner;
  * @author Meroko
  */
 public class PlantCropsView extends View{
-    public static Scanner scanner = new Scanner( System.in );
     public static Game game = CityOfAaronSN.getCurrentGame();
     
     public PlantCropsView() {
@@ -67,29 +66,47 @@ public class PlantCropsView extends View{
     }
 
     private void plantCrops() {
-        Boolean pass = false;
+        boolean pass = false;
+        boolean valid = false;
         String choice = null;
         int plant = 0;
-        Boolean validate = false;
+        boolean validate = false;
         while (validate != true){
             pass = false;
-        while (pass != true)
-        {
-        try {
-        System.out.println("\nEnter the number that you want to plant(q to quit):");
-        choice = scanner.nextLine();
-            
-            //check for escape
-            if(choice.toLowerCase().trim().equals("q")) {
-                System.out.println("quitting to previous menu");
-                return;
+            while (pass != true)
+            {
+                try {
+                    try {
+                        while (!valid) {
+                            //print prompt
+                            System.out.println("\nEnter the number that you want to plant(q to quit):");
+                            
+                            //get user input
+                            choice = this.keyboard.readLine();
+                            choice = choice.trim();
+                            
+                            if (choice.length() < 1){
+                                System.out.println("You must enter a value.");
+                                continue;
+                            }
+                            break;
+                            
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Error Reading Input: " + e.getMessage());
+                    }
+                    
+                    //check for escape
+                    if(choice.toLowerCase().equals("q")) {
+                        System.out.println("quitting to previous menu");
+                        return;
+                    }
+                    
+                    plant = Integer.parseInt(choice);
+                    pass = true;}
+                catch (NumberFormatException e) { System.out.println("Invalid Input"); }
             }
-        
-        plant = Integer.parseInt(choice);
-        pass = true;}
-        catch (NumberFormatException e) { System.out.println("Invalid Input"); }
-        }
-        validate = validateInput(plant);
+            validate = validateInput(plant);
         }
     }
 
