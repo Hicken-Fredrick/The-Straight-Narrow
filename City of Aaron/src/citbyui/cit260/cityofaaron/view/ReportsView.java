@@ -43,6 +43,7 @@ public class ReportsView extends View{
                 + "A - View List of Animals: \n"
                 + "D - View List of Medicine\n"
                 + "T - View List of Tools\n"
+                + "P - Printable List Menu\n"
                 + "R - return to previous menu\n";
         
         inputs[0] = getInput(promptMessage);
@@ -73,6 +74,11 @@ public class ReportsView extends View{
             //call tool list view
             case "t":{
                 printToolList();
+                return false;
+            }
+            //open printable list menu for outgoing streams
+            case "p":{
+                printableMenu();
                 return false;
             }
             //return to previous menu    
@@ -137,6 +143,11 @@ public class ReportsView extends View{
                     + "\n" + item.getDescription() + " - Perishable: " 
                     + item.isPerishable() + "\n");
         }
+    }
+
+    private void printableMenu() {
+        PrintableMenuView printableMenuView = new PrintableMenuView();
+        printableMenuView.display();
     }
 }
 
