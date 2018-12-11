@@ -35,9 +35,9 @@ public class BuyLandReportView extends View{
         //build prompt message
        String promptMessage = 
              "\n" + 
-               "*********************************\n" + 
-                "*   CITY OF AARON : Buy Land   *\n" +
-                "*********************************\n" +
+               "*****************************************\n" + 
+                "*   CITY OF AARON : Buy Land Reports   *\n" +
+                "****************************************\n" +
                 "You Currently own " + (game.getAcresOwned() + game.getAcresPlanted()) +
                 " acres of land\n" + "Land currently costs " + game.getAcreCost() +
                 " bushels of wheat\n" +
@@ -57,7 +57,7 @@ public class BuyLandReportView extends View{
         switch (choice.toLowerCase()) {
             //call new game
             case "b":{
-                BuyLandView();
+                buylandView();
                 return false;
             }
             //call restart for current game    
@@ -76,7 +76,7 @@ public class BuyLandReportView extends View{
         
     }
 
-    private void BuyLandView() {
+    private void buylandView() {
         Boolean pass = false;
         boolean valid = false;
         //String choice = null;
@@ -142,7 +142,7 @@ public class BuyLandReportView extends View{
         toolList = StorehouseControl.buildToolList();
         
         this.console.println("*****************************\n" +
-                           "*** LIST OF OWNED Tools ***\n");
+                           "*** LIST OF ANIMALS ***\n");
         
         for (int i = 0; i < toolList.size(); i++) {
             InventoryItem item = toolList.get(i);
