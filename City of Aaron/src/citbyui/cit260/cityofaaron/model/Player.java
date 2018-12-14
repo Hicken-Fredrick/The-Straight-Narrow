@@ -14,6 +14,7 @@ import java.util.Objects;
  */
 public class Player implements Serializable {
     private String name;
+    private boolean alive;
 
     public Player() {
     }
@@ -24,6 +25,14 @@ public class Player implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
     }
     
     @Override

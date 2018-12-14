@@ -27,9 +27,19 @@ public abstract class View implements ViewInterface {
     
     @Override
     public void display() {
+        //if player is dead exit back
+        Game game = CityOfAaronSN.getCurrentGame();
+        if (game != null) {
+            if (!game.getThePlayer().isAlive())
+                return;
+        }
         boolean endOfView = false;
         
         do {
+            if (game != null) {
+                if (!game.getThePlayer().isAlive())
+                    return;
+            }
             String[] inputs = this.getInputs();
             
             if (inputs == null || "q".equals(inputs[0].toLowerCase()))

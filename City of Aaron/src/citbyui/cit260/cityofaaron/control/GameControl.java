@@ -77,6 +77,7 @@ public class GameControl {
         game.setCurrentPopulation(20);
         game.setTithingPayed(0);
         game.setAcreCost(cost);
+        game.getThePlayer().setAlive(true);
         
         //set starting location
         map.setCurrentLocation(map.getLocations()[0][0]);
