@@ -15,6 +15,7 @@ import java.util.Objects;
 public class Player implements Serializable {
     private String name;
     private boolean alive;
+    private boolean gameOverResultsViewed = false;
 
     public Player() {
     }
@@ -33,6 +34,14 @@ public class Player implements Serializable {
 
     public void setAlive(boolean alive) {
         this.alive = alive;
+    }
+
+    public boolean isGameOverResultsViewed() {
+        return gameOverResultsViewed;
+    }
+
+    public void setGameOverResultsViewed(boolean gameOverResultsViewed) {
+        this.gameOverResultsViewed = gameOverResultsViewed;
     }
     
     @Override

@@ -77,7 +77,10 @@ public class GameControl {
         game.setCurrentPopulation(20);
         game.setTithingPayed(0);
         game.setAcreCost(cost);
+        
+        //game over state checks
         game.getThePlayer().setAlive(true);
+        game.getThePlayer().setGameOverResultsViewed(false);
         
         //set starting location
         map.setCurrentLocation(map.getLocations()[0][0]);

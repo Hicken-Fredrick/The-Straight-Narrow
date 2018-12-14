@@ -1,8 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 package citbyui.cit260.cityofaaron.view;
 
 import CityOfAaronSN.CityOfAaronSN;
@@ -19,9 +19,9 @@ import java.util.Scanner;
  * @author Meroko
  */
 public abstract class View implements ViewInterface {
-        protected final BufferedReader keyboard = CityOfAaronSN.getInFile();
-        protected final PrintWriter console = CityOfAaronSN.getOutFile();
-
+    protected final BufferedReader keyboard = CityOfAaronSN.getInFile();
+    protected final PrintWriter console = CityOfAaronSN.getOutFile();
+    
     public View() {
     }
     
@@ -29,24 +29,26 @@ public abstract class View implements ViewInterface {
     public void display() {
         //if player is dead exit back
         Game game = CityOfAaronSN.getCurrentGame();
-        if (game != null) {
-            if (!game.getThePlayer().isAlive())
-                return;
-        }
+        GameOverView gameOverView = new GameOverView();
         boolean endOfView = false;
         
         do {
             if (game != null) {
-                if (!game.getThePlayer().isAlive())
+                if (!game.getThePlayer().isAlive()) {
+                    if (game.getThePlayer().isGameOverResultsViewed() == false) {
+                        gameOverView.displayResults(game);
+                        game.getThePlayer().setGameOverResultsViewed(true);
+                    }
                     return;
+                }
             }
             String[] inputs = this.getInputs();
             
             if (inputs == null || "q".equals(inputs[0].toLowerCase()))
                 return;
-           
+            
             endOfView = this.doAction(inputs);
-           
+            
         } while(endOfView != true);
     }
     
@@ -69,13 +71,13 @@ public abstract class View implements ViewInterface {
                     continue;
                 }
                 break;
-            
-                    }
+                
+            }
         } catch (Exception e) {
-                    ErrorView.display(this.getClass().getName(),
-                            "Error Reading Input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error Reading Input: " + e.getMessage());
         }
-
+        
         return selection;
     }
     
