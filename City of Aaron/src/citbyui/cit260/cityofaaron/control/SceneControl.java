@@ -5,10 +5,12 @@
  */
 package citbyui.cit260.cityofaaron.control;
 
+import CityOfAaronSN.CityOfAaronSN;
 import citbyui.cit260.cityofaaron.model.InventoryItem;
 import citbyui.cit260.cityofaaron.model.ItemType;
 import citbyui.cit260.cityofaaron.model.Question;
 import citbyui.cit260.cityofaaron.model.Scene;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,6 +26,7 @@ public class SceneControl {
         //add params
         scene.setName("Ruler's Court");
         scene.setDescription("Beautiful marble pillers line the walls leading to a great throne");
+        scene.setSceneComplete(false);
         //make item
         InventoryItem item = new InventoryItem();
         item.setDescription("a beautifully gilded hammer");
@@ -37,8 +40,8 @@ public class SceneControl {
         //make question
         Question question = new Question("You See a Group Of Men Bickering Over A Money Table", 
                 "Approce them and help", 
-                "Attack them with your fist to drive them out",
-                "get the gaurds involved", 
+                "Attack them with your fists to drive them out",
+                "Get the gaurds involved", 
                 "Throw Rocks at Them",
                 1);
         //add question
@@ -51,6 +54,7 @@ public class SceneControl {
         //add params
         scene.setName("Village");
         scene.setDescription("Your Have come to the Village outside the City of Aarron");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a beautifully silver hammer");
@@ -78,6 +82,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -105,6 +110,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -132,6 +138,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -159,6 +166,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -186,6 +194,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -213,6 +222,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -240,6 +250,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -267,6 +278,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -294,6 +306,7 @@ public class SceneControl {
         //add params
         scene.setName("Ruler's Court");
         scene.setDescription("Beautiful marble pillers line the walls leading to a great throne");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a beautifully gilded hammer");
@@ -321,6 +334,7 @@ public class SceneControl {
         //add params
         scene.setName("Village");
         scene.setDescription("Your Have come to the Village outside the City of Arron");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a beautifully silver hammer");
@@ -348,6 +362,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -375,6 +390,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -402,6 +418,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -429,6 +446,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -456,6 +474,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -483,6 +502,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -510,6 +530,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -537,6 +558,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -564,6 +586,7 @@ public class SceneControl {
         //add params
         scene.setName("Ruler's Court");
         scene.setDescription("Beautiful marble pillers line the walls leading to a great throne");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a beautifully gilded hammer");
@@ -591,6 +614,7 @@ public class SceneControl {
         //add params
         scene.setName("Village");
         scene.setDescription("Your Have come to the Village outside the City of Arron");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a beautifully silver hammer");
@@ -618,6 +642,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -645,6 +670,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -672,6 +698,7 @@ public class SceneControl {
         //add params
         scene.setName("Local River");
         scene.setDescription("Right next to the mountain side you have come to the Local River");
+        scene.setSceneComplete(false);
         //make item
         item = new InventoryItem();
         item.setDescription("a big Cow");
@@ -696,6 +723,11 @@ public class SceneControl {
         
         
         return sceneList;
+    }
+
+    public static void giveItem(Scene scene) {
+        ArrayList<InventoryItem> playerInventory = CityOfAaronSN.getCurrentGame().getTheStorehouse().getInventory();
+        playerInventory.add(scene.getItem());
     }
     
 }

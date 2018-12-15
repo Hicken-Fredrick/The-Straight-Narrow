@@ -17,6 +17,7 @@ public class Scene implements Serializable {
     private String description;
     private Question question;
     private InventoryItem item;
+    private boolean sceneComplete;
 
     public Scene() {
         name = "City of Aaron";
@@ -55,6 +56,14 @@ public class Scene implements Serializable {
         this.item = item;
     }
 
+    public boolean isSceneComplete() {
+        return sceneComplete;
+    }
+
+    public void setSceneComplete(boolean sceneComplete) {
+        this.sceneComplete = sceneComplete;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;
