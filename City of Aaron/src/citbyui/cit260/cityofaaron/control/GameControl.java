@@ -259,6 +259,7 @@ public class GameControl {
         
         //make all acres unplanted again
         game.setAcresOwned(game.getAcresOwned() + game.getAcresPlanted());
+        game.setAcresPlanted(0);
         
         //generate vermin to eat a portion of your stored wheat
         game.setWheatinStorage(CalculateWheatLoss.calcWheatLoss
