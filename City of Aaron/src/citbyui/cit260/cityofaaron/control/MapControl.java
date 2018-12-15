@@ -58,6 +58,8 @@ public class MapControl {
         Scene [] sceneList = SceneControl.buildSceneList();
         //create location storage
         Location [][] locations = new Location[noOfRows][noOfColumns];
+        //add scene incrementor
+        int sceneAdd = 0;
         
         //create each location and store it
         //location 1
@@ -73,6 +75,8 @@ public class MapControl {
         location.setName("The Ruler's Court");
         //set map symbol
         location.setMapSymbol("RC");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[0][0] = location;
         
@@ -89,6 +93,8 @@ public class MapControl {
         location.setName("Village");
         //set map symbol
         location.setMapSymbol("VI");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[0][1] = location;
         
@@ -105,6 +111,8 @@ public class MapControl {
         location.setName("Local River");
         //set map symbol
         location.setMapSymbol("LR");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[0][2] = location;
         
@@ -121,6 +129,8 @@ public class MapControl {
         location.setName("The Temple");
         //set map symbol
         location.setMapSymbol("TS");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[0][3] = location;
         
@@ -137,6 +147,8 @@ public class MapControl {
         location.setName("The Farms");
         //set map symbol
         location.setMapSymbol("FL");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[0][4] = location;
         
@@ -153,6 +165,8 @@ public class MapControl {
         location.setName("Border Lands");
         //set map symbol
         location.setMapSymbol("BL");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[1][0] = location;
         
@@ -169,6 +183,8 @@ public class MapControl {
         location.setName("Personal Room");
         //set map symbol
         location.setMapSymbol("PR");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[1][1] = location;
         
@@ -185,6 +201,8 @@ public class MapControl {
         location.setName("Westerfall");
         //set map symbol
         location.setMapSymbol("WF");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[1][2] = location;
         
@@ -201,6 +219,8 @@ public class MapControl {
         location.setName("Bywald");
         //set map symbol
         location.setMapSymbol("BW");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[1][3] = location;
         
@@ -217,6 +237,8 @@ public class MapControl {
         location.setName("Aldmarsh");
         //set map symbol
         location.setMapSymbol("AM");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[1][4] = location;
         
@@ -233,6 +255,8 @@ public class MapControl {
         location.setName("Morford");
         //set map symbol
         location.setMapSymbol("MF");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[2][0] = location;
         
@@ -249,6 +273,8 @@ public class MapControl {
         location.setName("Snowbeech");
         //set map symbol
         location.setMapSymbol("SW");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[2][1] = location;
         
@@ -265,6 +291,8 @@ public class MapControl {
         location.setName("Butterdell");
         //set map symbol
         location.setMapSymbol("BD");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[2][2] = location;
         
@@ -281,6 +309,8 @@ public class MapControl {
         location.setName("Sevokith");
         //set map symbol
         location.setMapSymbol("SK");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[2][3] = location;
         
@@ -297,6 +327,8 @@ public class MapControl {
         location.setName("Kingdom of Coir");
         //set map symbol
         location.setMapSymbol("KC");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[2][4] = location;
         
@@ -313,6 +345,8 @@ public class MapControl {
         location.setName("West Border");
         //set map symbol
         location.setMapSymbol("WB");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[3][0] = location;
         
@@ -329,6 +363,8 @@ public class MapControl {
         location.setName("East Border");
         //set map symbol
         location.setMapSymbol("EB");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[3][1] = location;
         
@@ -345,6 +381,8 @@ public class MapControl {
         location.setName("North Border");
         //set map symbol
         location.setMapSymbol("NB");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[3][2] = location;
         
@@ -361,6 +399,8 @@ public class MapControl {
         location.setName("South Border");
         //set map symbol
         location.setMapSymbol("SB");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[3][3] = location;
         
@@ -377,6 +417,8 @@ public class MapControl {
         location.setName("Captain's Office");
         //set map symbol
         location.setMapSymbol("CO");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[3][4] = location;
         
@@ -393,6 +435,8 @@ public class MapControl {
         location.setName("Judge's Office");
         //set map symbol
         location.setMapSymbol("JO");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[4][0] = location;
         
@@ -409,6 +453,8 @@ public class MapControl {
         location.setName("Advisor's Office");
         //set map symbol
         location.setMapSymbol("AO");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[4][1] = location;
         
@@ -425,6 +471,8 @@ public class MapControl {
         location.setName("Tool Store");
         //set map symbol
         location.setMapSymbol("TS");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[4][2] = location;
         
@@ -441,6 +489,8 @@ public class MapControl {
         location.setName("Animal Store");
         //set map symbol
         location.setMapSymbol("AS");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[4][3] = location;
         
@@ -457,6 +507,8 @@ public class MapControl {
         location.setName("Medicine Store");
         //set map symbol
         location.setMapSymbol("MS");
+        //add scene
+        location.setScene(sceneList[sceneAdd++]);
         //save location
         locations[4][4] = location;
         

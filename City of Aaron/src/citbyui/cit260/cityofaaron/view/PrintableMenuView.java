@@ -72,7 +72,14 @@ class PrintableMenuView extends View {
     
 
     private void animalListPrintLocation() {
+        String[] inputs = new String[1];
         
+        //build prompt message
+        String promptMessage = "\nEnter Where You Wish To Save The List: (ex: D:/animalList.txt";
+        
+        inputs[0] = getInput(promptMessage);
+        
+        saveAnimalList(inputs);
     }
     
     //asks for where you wish to save the list
@@ -147,6 +154,34 @@ class PrintableMenuView extends View {
             for (InventoryItem item: toolList){
                 save.printf("%n%-20s%-10s%-35s%-10s",item.getName(), " x " + item.getQuantity(),
                 item.getDescription(), "Perishable: " + item.isPerishable());
+            }
+            
+        }catch(IOException e) {
+            ErrorView.display(this.getClass().getName(), "IO Stream Has Stopped Functioning");
+        }
+        
+        //success
+        this.console.println("List Has Been Successfully Saved at: " + inputs[0]);
+    }
+
+    private void saveAnimalList(String[] inputs) {
+        if (inputs == null || inputs[0].length() < 1) {
+            ErrorView.display(this.getClass().getName(), "Unable to Parse Save Location");
+            return;
+        }
+        
+        try(PrintWriter save = new PrintWriter(inputs[0])) {
+            //generate list for printing
+            ArrayList<InventoryItem> animalList = new ArrayList<>();
+            animalList = StorehouseControl.buildAnimalList();
+            
+            //make header & column headings
+            save.println("\n----------------------------------ANIMAL LIST----------------------------------");
+            save.printf("%n%-20s%-20s%-15s", "Name", "Age", "Value");
+            //print whole list
+            for (InventoryItem item: animalList){
+                save.printf("%n%-20s%-20s%-35s",item.getName(), item.getAge() + " Years Old",
+                item.getValue());
             }
             
         }catch(IOException e) {
