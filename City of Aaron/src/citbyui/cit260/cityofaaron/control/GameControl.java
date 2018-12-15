@@ -79,6 +79,8 @@ public class GameControl {
         //game over state checks
         game.getThePlayer().setAlive(true);
         game.getThePlayer().setGameOverResultsViewed(false);
+        game.setYearsDeaths(0);
+        game.setTotalDeaths(0);
         
         //set starting location
         map.setCurrentLocation(map.getLocations()[0][0]);
@@ -255,12 +257,22 @@ public class GameControl {
         game.setWheatinStorage(RolloverControl.wheatGenerated
         (game.getTithingPayed(), game.getWheatinStorage(), game.getAcresPlanted()));
         
+        //make all acres unplanted again
+        game.setAcresOwned(game.getAcresOwned() + game.getAcresPlanted());
+        
         //generate vermin to eat a portion of your stored wheat
         game.setWheatinStorage(CalculateWheatLoss.calcWheatLoss
         (game.getTithingPayed(), game.getWheatinStorage()));
         
         //find the deaths from starvation
         game.setYearsDeaths(FindDeaths.calculateDeaths(game.getCurrentPopulation(), game.getWheatinStorage(), game.getYear()));
+        
+        //remove wheat from player for population
+        game.setWheatinStorage(game.getWheatinStorage() - (game.getCurrentPopulation() * 2));
+        
+        //check to see if it's game over
+        if (game.getYearsDeaths() > 9 || game.getCurrentPopulation() < 10 || game.getTotalDeaths() > 40)
+            game.getThePlayer().setAlive(false);
         
         //increment the year upwards
         game.setTotalDeaths(game.getTotalDeaths() + game.getYearsDeaths());

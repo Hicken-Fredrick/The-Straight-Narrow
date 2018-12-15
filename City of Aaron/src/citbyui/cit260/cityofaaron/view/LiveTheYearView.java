@@ -31,6 +31,7 @@ class LiveTheYearView extends View {
             "*********************************\n" +
             "This Will Progress The Game By One Year Make Sure Your Ready\n" +
             "REMINDERS\n" +
+            "You have ruled " + game.getYear() + " years as King\n" +
             "You Have " + game.getAcresOwned() + " Acres of Unplanted Land\n" +
             "You Have Payed " + game.getTithingPayed() + " Into Your Tithing\n" +
             "L - Live The Year \n" +
