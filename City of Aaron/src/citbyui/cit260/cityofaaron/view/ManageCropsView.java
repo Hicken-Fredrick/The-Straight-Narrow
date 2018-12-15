@@ -25,7 +25,6 @@ public class ManageCropsView extends View {
                "*************************************\n" +
                " B - Buy Land\n" +
                " S - Sell Land\n" +
-               " F - Feed The People\n" + 
                " P - Plant Crops\n" +
                " T - Tithing & Offerings\n" + 
                " R - Return To Game Menu\n";
@@ -48,11 +47,6 @@ public class ManageCropsView extends View {
             //sell land   
             case "s":{
                 sellLand();
-                return false;
-            }
-            //feed the people for the year     
-            case "f":{
-                feedThePeople();
                 return false;
             }
             //plant crops   
@@ -86,11 +80,6 @@ public class ManageCropsView extends View {
     private void sellLand() {
         SellLandView sellLandView = new SellLandView();
         sellLandView.display();
-    }
-
-    private void feedThePeople() {
-        FeedThePeopleView feedThePeopleView = new FeedThePeopleView();
-        feedThePeopleView.display();
     }
 
     private void plantCrops() {
