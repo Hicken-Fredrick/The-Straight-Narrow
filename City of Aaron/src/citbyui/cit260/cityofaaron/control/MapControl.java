@@ -468,9 +468,9 @@ public class MapControl {
         //set visited
         location.setVisited(false);
         //set name
-        location.setName("Tool Store");
+        location.setName("Dungeons");
         //set map symbol
-        location.setMapSymbol("TS");
+        location.setMapSymbol("DS");
         //add scene
         location.setScene(sceneList[sceneAdd++]);
         //save location
@@ -486,9 +486,9 @@ public class MapControl {
         //set visited
         location.setVisited(false);
         //set name
-        location.setName("Animal Store");
+        location.setName("Libraries");
         //set map symbol
-        location.setMapSymbol("AS");
+        location.setMapSymbol("LS");
         //add scene
         location.setScene(sceneList[sceneAdd++]);
         //save location
@@ -504,9 +504,9 @@ public class MapControl {
         //set visited
         location.setVisited(false);
         //set name
-        location.setName("Medicine Store");
+        location.setName("Alchemy Lab");
         //set map symbol
-        location.setMapSymbol("MS");
+        location.setMapSymbol("AL");
         //add scene
         location.setScene(sceneList[sceneAdd++]);
         //save location
