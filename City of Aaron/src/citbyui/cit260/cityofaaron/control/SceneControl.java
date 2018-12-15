@@ -50,7 +50,7 @@ public class SceneControl {
         scene = new Scene();
         //add params
         scene.setName("Village");
-        scene.setDescription("Your Have come to the Village outside the City of Arron");
+        scene.setDescription("Your Have come to the Village outside the City of Aarron");
         //make item
         item = new InventoryItem();
         item.setDescription("a beautifully silver hammer");
