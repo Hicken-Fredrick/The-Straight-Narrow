@@ -12,8 +12,8 @@ package citbyui.cit260.cityofaaron.control;
 public class FindDeaths {
      
     //check score validity and return score if it passes
-    public static double calculateDeaths(int population, int wheat, int year) {
-        double deaths = 0;
+    public static int calculateDeaths(int population, int wheat, int year) {
+        int deaths = 0;
         
         
         /*error checking

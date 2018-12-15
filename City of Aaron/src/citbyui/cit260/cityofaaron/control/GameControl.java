@@ -259,9 +259,11 @@ public class GameControl {
         game.setWheatinStorage(CalculateWheatLoss.calcWheatLoss
         (game.getTithingPayed(), game.getWheatinStorage()));
         
-        //needs more work here to complete including a game over state
+        //find the deaths from starvation
+        game.setYearsDeaths(FindDeaths.calculateDeaths(game.getCurrentPopulation(), game.getWheatinStorage(), game.getYear()));
         
         //increment the year upwards
+        game.setTotalDeaths(game.getTotalDeaths() + game.getYearsDeaths());
         game.setYear(game.getYear()+1);
     }
     

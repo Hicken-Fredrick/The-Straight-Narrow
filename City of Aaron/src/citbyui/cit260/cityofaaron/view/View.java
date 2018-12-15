@@ -34,7 +34,7 @@ public abstract class View implements ViewInterface {
         
         do {
             if (game != null) {
-                if (!game.getThePlayer().isAlive()) {
+                if (!game.getThePlayer().isAlive() || game.getYear() > 10) {
                     if (game.getThePlayer().isGameOverResultsViewed() == false) {
                         gameOverView.displayResults(game);
                         game.getThePlayer().setGameOverResultsViewed(true);

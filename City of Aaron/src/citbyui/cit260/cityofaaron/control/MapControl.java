@@ -10,6 +10,7 @@ import citbyui.cit260.cityofaaron.model.Game;
 import citbyui.cit260.cityofaaron.model.Location;
 import citbyui.cit260.cityofaaron.model.Map;
 import citbyui.cit260.cityofaaron.model.Point;
+import citbyui.cit260.cityofaaron.model.Scene;
 
 /**
  *
@@ -53,7 +54,8 @@ public class MapControl {
     private static Location[][] createLocations(int noOfRows, int noOfColumns) {
         if (CityOfAaronSN.getCurrentGame() == null || noOfRows < 1 || noOfColumns < 1)
             return null;
-        
+        //get scene list
+        Scene [] sceneList = SceneControl.buildSceneList();
         //create location storage
         Location [][] locations = new Location[noOfRows][noOfColumns];
         

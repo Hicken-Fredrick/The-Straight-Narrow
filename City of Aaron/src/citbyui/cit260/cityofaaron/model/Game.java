@@ -24,6 +24,10 @@ public class Game implements Serializable {
     private int year;
     //current population of that land
     private int currentPopulation;
+    //deaths this year
+    private int yearsDeaths;
+    //deaths total
+    private int totalDeaths;
     //current land owned by player
     private int acresOwned;
     //current acres planted
@@ -69,6 +73,22 @@ public class Game implements Serializable {
 
     public void setCurrentPopulation(int currentPopulation) {
         this.currentPopulation = currentPopulation;
+    }
+
+    public int getYearsDeaths() {
+        return yearsDeaths;
+    }
+
+    public void setYearsDeaths(int yearsDeaths) {
+        this.yearsDeaths = yearsDeaths;
+    }
+
+    public int getTotalDeaths() {
+        return totalDeaths;
+    }
+
+    public void setTotalDeaths(int totalDeaths) {
+        this.totalDeaths = totalDeaths;
     }
     
     public int getYear() {

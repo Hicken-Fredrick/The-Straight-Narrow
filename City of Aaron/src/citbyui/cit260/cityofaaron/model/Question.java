@@ -32,6 +32,15 @@ public class Question implements Serializable {
 
     public Question() {
     }
+
+    public Question(String questionText, String answerOne, String answerTwo, String answerThree, String answerFour, int correctAnswer) {
+        this.questionText = questionText;
+        this.answerOne = answerOne;
+        this.answerTwo = answerTwo;
+        this.answerThree = answerThree;
+        this.answerFour = answerFour;
+        this.correctAnswer = correctAnswer;
+    }
     
     // getters & setters
 
