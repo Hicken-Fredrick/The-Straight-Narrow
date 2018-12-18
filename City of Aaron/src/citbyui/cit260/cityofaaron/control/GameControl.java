@@ -272,6 +272,10 @@ public class GameControl {
         //remove wheat from player for population
         game.setWheatinStorage(game.getWheatinStorage() - (game.getCurrentPopulation() * 2));
         
+        //keep data valid
+        if (game.getWheatinStorage() < 0)
+            game.setWheatinStorage(0);
+        
         //check to see if it's game over
         if (game.getYearsDeaths() > 9 || game.getCurrentPopulation() < 10 || game.getTotalDeaths() > 40)
             game.getThePlayer().setAlive(false);

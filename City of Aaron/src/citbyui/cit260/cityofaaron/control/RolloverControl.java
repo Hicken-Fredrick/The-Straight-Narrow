@@ -51,14 +51,14 @@ public class RolloverControl {
         
         //break down tithing percents
         if (tithingPercent > 12) {
-            min = 2;
-            max = 5;
+            min = 9;
+            max = 13;
         } else if (tithingPercent <= 12 && tithingPercent > 7) {
-            min = 2;
-            max = 4;
+            min = 7;
+            max = 10;
         } else if (tithingPercent <= 7){
-            min = 1;
-            max = 3;
+            min = 3;
+            max = 9;
         }
         
         //generate a random based on tithing given
