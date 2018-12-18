@@ -242,6 +242,7 @@ public class GameControl {
     public static void paidTithing(int tithing) {
         Game game = CityOfAaronSN.getCurrentGame();
         
+        game.setTithingPayed(tithing);
         game.setWheatinStorage(game.getWheatinStorage() - tithing);    
     }
 
